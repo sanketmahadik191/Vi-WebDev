@@ -1,7 +1,7 @@
 
 
 .button {
-    padding: 4px 24px;
+    padding: 6px 24px;
     border-radius: 4px;
     color: #FFFFFF;
     background-color: #0d3553;
@@ -10,4 +10,13 @@
 
 .button:hover{
     background-color: #082134;
+}
+
+.tag-text{
+    background-color: #e2edfd;
+    color: #0d3553;
+    border-radius: 4px;
+    padding: 2px 16px;
+    font-size: 20px;
+    font-weight: 600;
 }
