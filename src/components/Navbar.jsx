@@ -14,8 +14,11 @@ function Navbar() {
           <li><a className="ml-10 ">About Us</a></li>
           <li><a className="ml-10 ">FAQ</a></li>
         </ul>
-        <button className="ml-10  bg-white font-medium text-blue-950 px-4 rounded-lg" >Login</button>
-        <button className="ml-10 bg-white font-medium text-blue-950 px-4 rounded-lg">Sign Up</button>
+        <Link to='/login'>
+        <button className="ml-10  bg-white font-medium text-blue-950 px-4 rounded-lg" >Login</button></Link>
+        <Link to='/signup'>
+        <button className="ml-10 bg-white font-medium 
+         text-blue-950 px-4 rounded-lg">Sign Up</button></Link>
       </div>
     </nav>
 
