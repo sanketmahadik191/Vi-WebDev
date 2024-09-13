@@ -1,28 +1,58 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className="flex justify-between items-center bg-[#134074] text-white h-[13vh]" >
-      <div className="ml-20">
-        <h1 className='text-3xl'>V O R K I N S T A</h1>
-        <h6 className='text-sm text-gray-300'>WE BUILD ENTREPRENEURS</h6>
+    <nav className="bg-[#134074] text-white h-[13vh] px-6 md:px-20 flex justify-between items-center">
+      {/* Brand */}
+      <div className="flex items-center">
+        <h1 className="text-2xl md:text-3xl font-bold">V O R K I N S T A</h1>
+        <h6 className="hidden md:block text-sm md:text-base text-gray-300 ml-2">WE BUILD ENTREPRENEURS</h6>
       </div>
-      <div className="flex mr-20 text-lg font-normal">
-        <ul className="flex ">
-          <li><a className="ml-10 text-2xl font-bold border-b-4">HOME</a></li>
-          <li><a className="ml-10 ">About Us</a></li>
-          <li><a className="ml-10 ">FAQ</a></li>
-        </ul>
-        <Link to='/login'>
-        <button className="ml-10  bg-white font-medium text-blue-950 px-4 rounded-lg" >Login</button></Link>
-        <Link to='/signup'>
-        <button className="ml-10 bg-white font-medium 
-         text-blue-950 px-4 rounded-lg">Sign Up</button></Link>
+
+      <div className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FiX className="text-3xl" /> : <FiMenu className="text-3xl" />}
+      </div>
+
+      <ul
+        className={`${
+          menuOpen ? 'flex' : 'hidden'
+        } flex-col md:flex md:flex-row items-center md:items-center w-full md:w-auto bg-[#134074] md:bg-transparent absolute md:static top-16 left-0 md:top-0 z-10 md:z-auto transition-all duration-300 ease-in-out md:space-x-10 text-lg md:text-lg`}
+      >
+        <li className="my-2 md:my-0">
+          <Link to="/" className="text-white hover:text-gray-200 border-b-2 md:border-none text-2xl font-bold">
+            HOME
+          </Link>
+        </li>
+        <li className="my-2 md:my-0">
+          <Link to="/about" className="text-white hover:text-gray-200">
+            About Us
+          </Link>
+        </li>
+        <li className="my-2 md:my-0">
+          <Link to="/faq" className="text-white hover:text-gray-200">
+            FAQ
+          </Link>
+        </li>
+      </ul>
+
+      <div className="hidden md:flex items-center space-x-6">
+        <Link to="/login">
+          <button className="bg-white text-blue-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-200 transition duration-200">
+            Login
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button className="bg-white text-blue-900 font-medium px-4 py-2 rounded-lg hover:bg-gray-200 transition duration-200">
+            Sign Up
+          </button>
+        </Link>
       </div>
     </nav>
-
-  )
+  );
 }
 
 export default Navbar;
