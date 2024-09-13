@@ -15,7 +15,7 @@ function AboutUs() {
           {/* Embedded Video */}
           <iframe
             className="w-full h-80 md:h-96 rounded-lg"
-            src="https://www.youtube.com/embed/yWWUaV77JYQ"
+            src="https://www.youtube.com/embed/rNSIwjmynYQ"
             title="About Us Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
