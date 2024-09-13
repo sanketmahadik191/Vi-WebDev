@@ -1,16 +1,27 @@
 import React from 'react'
+import img from '../../assets/AboutUs.png'
 
 function AboutUs() {
   return (
-    <section className="py-20 bg-gray-100">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">About Us</h2>
-        <p className="text-lg text-gray-700">
-          Learn more about Vorkinsta's mission and how we aim to empower businesses and individuals
-          alike by building a better tomorrow.
-        </p>
+      <div className="bg-gray-50 py-12">
+      <div className="text-center mb-8">
+        <h3 className="text-2xl font-bold">Know More About Us</h3>
       </div>
-    </section>
+      <div className="max-w-4xl mx-auto">
+        <div className="relative">
+          <img
+            src={img}
+            alt="Know More Video"
+            className="rounded-lg"
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <button className="bg-blue-600 p-4 rounded-full text-white">
+              &#9654; {/* Play icon */}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
