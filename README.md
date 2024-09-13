@@ -13,5 +13,3 @@
 `npm run dev`
 
 ---
-
-## [Design reference](./Myvorkinsta.pdf)
