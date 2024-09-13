@@ -15,7 +15,9 @@ function ForBusinessesSection() {
         <button className='button my-4'>
           <a href="#" className='flex items-center gap-2'>Start your journey <FaArrowRightLong /> </a>
         </button>
-        <img src="#" alt="image" />
+        <div className='flex justify-center my-4'>
+        <img src="./src/assets/businesses-img.png" alt="image" />
+        </div>
       </div>
     </section>
   )

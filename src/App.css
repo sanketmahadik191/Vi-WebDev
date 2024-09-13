@@ -12,6 +12,19 @@
     background-color: #082134;
 }
 
+.button-secondary{
+    padding: 6px 24px;
+    border-radius: 9999px;
+    color: #0d3553;
+    border: 1px solid #0d3553;
+    font-weight: 600;
+}
+
+.button-secondary:hover{
+    color: #155b91;
+    border-color: #155b91;
+}
+
 .tag-text{
     background-color: #e2edfd;
     color: #0d3553;
@@ -20,3 +33,13 @@
     font-size: 20px;
     font-weight: 600;
 }
+
+.triangle {
+    width: 50px;
+    position: relative;
+    bottom: 26px;
+    aspect-ratio: 1;
+    clip-path: polygon(0 100%, 0 0, 100% 100%, 0 100%);
+    transform: rotate(-45deg);
+    box-shadow: 0px 0px 100px;
+  }
