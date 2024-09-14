@@ -1,10 +1,10 @@
-import React from 'react'
-import img from '../../assets/Home-img.jpeg'
-
+import React from 'react';
+import img from '../../assets/Home-img.jpeg';
 
 
 function HeroSection() {
   return (
+
     <section className=" md:flex items-center justify-evenly py-20 text-center">
       <div className='md:w-[40%] text-xl lg:text-2xl xl:text-3xl'>
       <p className=" mb-8 ">
@@ -31,9 +31,10 @@ function HeroSection() {
       </div>
       <div className="w-full md:w-[40%] flex justify-center p-10 md:p-0">
         <img src={img} alt='images' className='rounded-lg'></img>
+
       </div>
     </section>
-  )
+  );
 }
 
-export default HeroSection
+export default HeroSection;

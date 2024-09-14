@@ -8,6 +8,7 @@ import BrowseJobSection from '../components/Home/BrowseJobSection'
 import Employers from '../components/Home/Employers'
 import AboutUs from '../components/Home/AboutUs'
 import GetInTouchSection from '../components/Home/GetInTouchSection'
+import Opportunity from '../components/Home/Opportunity'
 
 function Home() {
   return (
@@ -20,6 +21,7 @@ function Home() {
       <BrowseJobSection />
       <Employers />
       <AboutUs />
+      <Opportunity />
       <GetInTouchSection />
     </div>
   )

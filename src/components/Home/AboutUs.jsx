@@ -1,17 +1,30 @@
-import React from 'react'
+import React from 'react';
 
 function AboutUs() {
   return (
-    <section className="py-20 bg-gray-100">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">About Us</h2>
-        <p className="text-lg text-gray-700">
-          Learn more about Vorkinsta's mission and how we aim to empower businesses and individuals
-          alike by building a better tomorrow.
-        </p>
+    <div className="bg-gray-50 py-16 px-4 lg:px-0">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h3 className="text-4xl font-bold text-gray-800">Know More About Us</h3>
+        
       </div>
-    </section>
-  )
+
+      {/* Video Section */}
+      <div className="max-w-5xl mx-auto">
+        <div className="relative rounded-lg overflow-hidden shadow-lg">
+          {/* Embedded Video */}
+          <iframe
+            className="w-full h-80 md:h-96 rounded-lg"
+            src="https://www.youtube.com/embed/rNSIwjmynYQ"
+            title="About Us Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default AboutUs
+export default AboutUs;
