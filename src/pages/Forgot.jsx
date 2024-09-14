@@ -1,7 +1,11 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
 
 const Forgot = () => {
   return (
+    <>
+  
+        
     <div className=" flex flex-col items-center justify-center border-r-black">
       {/* Header Section */}
       <div className="text-center mb-6">
@@ -47,6 +51,7 @@ const Forgot = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
