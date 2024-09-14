@@ -1,57 +1,85 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-200 via-purple-300 to-purple-400 py-10">
-      <div className="flex shadow-lg rounded-lg overflow-hidden">
-        {/* Login form */}
-        <div className="flex flex-col justify-center bg-white p-8 shadow-lg rounded-lg" style={{ width: '24rem', height: '32rem' }}>
-          <div>
-            <h1 className="text-2xl font-semibold mb-2">Welcome back</h1>
-            <p className="text-gray-500 mb-6">Please enter your details to login.</p>
-
-            <form>
-              <div className="mb-4">
-                <label className="block text-sm font-semibold mb-1">Email</label>
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 py-2 px-3 text-gray-900" 
-                />
-              </div>
-
-              <div className="mb-4">
-                <label className="block text-sm font-semibold mb-1">Password</label>
-                <input 
-                  type="password" 
-                  placeholder="Enter your password" 
-                  className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:ring-1 focus:ring-purple-700 py-2 px-3 text-gray-900" 
-                />
-              </div>
-
-              <button 
-                type="submit"
-                className="w-full text-white bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded-md">
-                Login
-              </button>
-            </form>
-
-            <div className="mt-4 text-center">
-              <p className="text-sm text-gray-500">Don't have an account? <a href="#" className="text-purple-700 font-semibold">Sign up</a></p>
+    <div className="min-h-screen flex items-center justify-center border-r-black">
+      <div className="border-4 border-gray-200 rounded-lg p-8 w-lg">
+        <h2 className="text-5xl font-bold text-center text-gray-800 mb-10">
+          Connect to My Vorkinsta!
+        </h2>
+        <div className="ml-24 w-4/6">
+          <form className="space-y-8">
+            <div>
+              <label htmlFor="email" className="sr-only">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Username or Email"
+                className="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
             </div>
-          </div>
-        </div>
+            <div>
+              <label htmlFor="password" className="sr-only">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                className="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div className="flex justify-end mt-2">
+                <Link to="/forgot" className="text-sm text-blue-900 hover:underline">
+                  Forget Password?
+                </Link>
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="w-full py-3 bg-blue-950 text-white font-bold rounded-md hover:bg-blue-700 transition duration-150"
+            >
+              Log in
+            </button>
+          </form>
 
-        {/* Text banner */}
-        <div className="flex items-center justify-center bg-purple-700 text-white" style={{ width: '24rem', height: '32rem' }}>
-          <div className="text-center p-6">
-            <h1 className="text-6xl font-extrabold leading-tight">MY</h1>
-            <h2 className="text-5xl font-semibold mt-2">VORKINSTA</h2>
+          <div className="my-4 flex items-center">
+            <div className="flex-grow border-t border-gray-300"></div>
+            <span className="mx-4 text-gray-500">or</span>
+            <div className="flex-grow border-t border-gray-300"></div>
+          </div>
+
+          <div className="space-y-4">
+            <button className="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition duration-150">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png"
+                alt="Google"
+                className="w-6 h-6 mr-3"
+              />
+              Continue with Google
+            </button>
+            <button className="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition duration-150">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+                alt="Apple"
+                className="w-6 h-6 mr-3"
+              />
+              Continue with Apple
+            </button>
+          </div>
+
+          <div className="mt-4 text-center">
+            <p className="text-sm text-gray-600">
+              Don't have an account?{' '}
+              <a href="#" className="text-blue-600 font-semibold hover:underline">
+                Sign Up
+              </a>
+            </p>
           </div>
         </div>
       </div>
-
-
     </div>
   );
 }
