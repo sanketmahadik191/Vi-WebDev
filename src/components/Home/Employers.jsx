@@ -3,16 +3,16 @@ import img from '../../assets/Employeer.png';
 
 function Employers() {
   return (
-    <section className="min-h-auto py-10 px-5 bg-white flex items-center">
+    <section className="min-h-auto py-10 lg:px-72 px-5 bg-white flex items-center">
     <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
       {/* Text Content */}
       <div className="max-w-xl lg:w-1/2 text-center lg:text-left">
-        <h1 className="text-5xl font-extrabold text-gray-700 ">Employers</h1>
-        <h2 className="text-4xl font-bold mt-6 text-gray-500">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-700 ">Employers</h1>
+        <h2 className="text-2xl sm:text-4xl font-bold mt-6 text-gray-500">
         Discover Talented Interns and
         Onboard Now
         </h2>
-        <p className="text-lg text-gray-500 mt-8">
+        <p className="text-md sm:text-lg text-gray-500 mt-8">
         With access to millions of tech professionals and AI
 powered matching tools, Vorkinsta simplifies finding the
 perfect candidates, making it easier than ever to fill your
