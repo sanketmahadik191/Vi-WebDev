@@ -2,6 +2,7 @@ import React from 'react'
 import logo from'../assets/Vorkinsta logo.png'
 import { HiMenu } from "react-icons/hi";
 
+
 function Navbar() {
   return (
     <nav className="flex justify-between items-center bg-[#0D3451] text-white h-[13vh]" >
@@ -21,6 +22,7 @@ function Navbar() {
         <button className="ml-5 lg:ml-10 bg-white font-medium text-[#0D3451] px-2 lg:px-4  rounded-lg">Sign Up</button>
       </div>
     </nav>
+
   )
 }
 
