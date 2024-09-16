@@ -1,5 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
@@ -32,7 +33,10 @@ function Login() {
                 className="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <div className="flex justify-end mt-2">
-                <Link to="/forgot" className="text-sm text-blue-900 hover:underline">
+                <Link
+                  to="/forgot"
+                  className="text-sm text-blue-900 hover:underline"
+                >
                   Forget Password?
                 </Link>
               </div>
@@ -53,11 +57,7 @@ function Login() {
 
           <div className="space-y-4">
             <button className="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition duration-150">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png"
-                alt="Google"
-                className="w-6 h-6 mr-3"
-              />
+              <FcGoogle className="w-6 h-6 mr-3" />
               Continue with Google
             </button>
             <button className="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition duration-150">
@@ -72,8 +72,11 @@ function Login() {
 
           <div className="mt-4 text-center">
             <p className="text-sm text-gray-600">
-              Don't have an account?{' '}
-              <a href="#" className="text-blue-600 font-semibold hover:underline">
+              Don't have an account?{" "}
+              <a
+                href="#"
+                className="text-blue-600 font-semibold hover:underline"
+              >
                 Sign Up
               </a>
             </p>
