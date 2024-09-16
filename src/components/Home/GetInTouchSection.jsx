@@ -1,11 +1,52 @@
-import React from 'react';
+import React, { useState } from "react";
 
 function GetInTouchSection() {
+  let [fname, setFname] = useState("");
+  let [lname, setLname] = useState("");
+  let [email, setEmail] = useState("");
+  let [phone, setPhone] = useState("");
+  let [message, setMessage] = useState("");
+
+  let handlesubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      fname: fname,
+      lname: lname,
+      email: email,
+      phone: phone,
+      message: message
+    };
+    
+  
+    try {
+      const response = await fetch('', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if(true){
+        console.log(result);
+        alert('message sent')
+        setFname('')
+        setLname('')
+        setEmail('')
+        setPhone('')
+        setMessage('')
+        
+      }
+    } catch (error) {
+      console.error('Error:', error); 
+    }
+  };
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8"
-    >
-      <form className="bg-white p-6 sm:p-10 rounded-lg shadow-2xl w-full max-w-xl sm:max-w-2xl lg:max-w-4xl  border border-gray-200">
+    <div className="min-h-screen flex items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8">
+      <form
+        onSubmit={handlesubmit}
+        className="bg-white p-6 sm:p-10 rounded-lg shadow-2xl w-full max-w-xl sm:max-w-2xl lg:max-w-4xl  border border-gray-200"
+      >
         {/* Form Heading */}
         <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 text-center text-gray-900 tracking-wide">
           Get In Touch
@@ -20,6 +61,8 @@ function GetInTouchSection() {
             </label>
             <input
               type="text"
+              value={fname}
+              onChange={(e) => setFname(e.target.value)}
               className="p-3 sm:p-4 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
               placeholder="First Name"
             />
@@ -31,6 +74,8 @@ function GetInTouchSection() {
             </label>
             <input
               type="text"
+              value={lname}
+              onChange={(e) => setLname(e.target.value)}
               className="p-3 sm:p-4 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
               placeholder="Last Name"
             />
@@ -45,6 +90,8 @@ function GetInTouchSection() {
             </label>
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="p-3 sm:p-4 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
               placeholder="E-mail"
             />
@@ -56,6 +103,8 @@ function GetInTouchSection() {
             </label>
             <input
               type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="p-3 sm:p-4 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
               placeholder="Phone Number"
             />
@@ -70,6 +119,8 @@ function GetInTouchSection() {
           <textarea
             className="p-3 sm:p-4 block w-full rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
             rows="4"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             placeholder="Write your message..."
           ></textarea>
         </div>
