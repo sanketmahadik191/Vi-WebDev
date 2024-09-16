@@ -27,7 +27,6 @@ function GetInTouchSection() {
         body: JSON.stringify(formData),
       });
       const result = await response.json();
-      if(true){
         console.log(result);
         alert('message sent')
         setFname('')
@@ -35,8 +34,6 @@ function GetInTouchSection() {
         setEmail('')
         setPhone('')
         setMessage('')
-        
-      }
     } catch (error) {
       console.error('Error:', error); 
     }
