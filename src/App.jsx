@@ -10,6 +10,8 @@ import { shouldHideHeaderFooter } from './utils/shouldHideHederFooter'
 import Forgot from './pages/Forgot'
 import ForgotPassword from './pages/ForgotPassword'
 import Selection from './pages/Selection'
+import SignUpIntern from './pages/SignUpIntern'
+import SignUpEmployer from './pages/SignUpEmployer'
 
 function App() {
   const location = useLocation();
@@ -23,7 +25,8 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/selection' element={<Selection />} />
         <Route path='/login' element={<Login />}></Route>
-        <Route path='/signup/:role' element={<SignUp />}></Route>
+        <Route path='/signup/intern' element={<SignUpIntern />}></Route>
+        <Route path='/signup/employer' element={<SignUpEmployer />}></Route>
         <Route path='/forgot' element={<Forgot/>}></Route>
         <Route path='/forgot' element={<ForgotPassword />}></Route>
      </Routes>
