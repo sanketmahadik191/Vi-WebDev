@@ -71,7 +71,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/signup">
+            <Link to="/selection">
               <button className="mt-4 bg-white font-medium text-[#0D3451] px-4 py-2 rounded-lg">
                 Sign Up
               </button>
@@ -107,7 +107,7 @@ function Navbar() {
             Login
           </button>
         </Link>
-        <Link to="/signup">
+        <Link to="/selection">
           <button className="ml-5 lg:ml-10 bg-white font-medium text-[#0D3451] px-4 py-2 rounded-lg">
             Sign Up
           </button>
