@@ -1,4 +1,7 @@
 import React from 'react';
+import { FaFacebookSquare, FaTwitter } from "react-icons/fa";
+import instaLogo from '../assets/instagram-logo.png';
+import gmailLogo from '../assets/gmail-logo.png';
 
 const Footer = () => {
   return (
@@ -9,17 +12,32 @@ const Footer = () => {
           <h2 className="text-xl font-semibold mb-4">Vorkinsta</h2>
           <p className="text-md text-gray-600 max-w-md">
             Vorkinsta lets any client connect with any consultant and collaborate independently on their own terms. 
-            We aim at increased collaboration in IT for a high-tech world. Our objective is to give every member of our 
-            platform, big or small, the opportunity to realize their dreams of achieving their goals of becoming an entrepreneur.
+            We aim to increase collaboration in IT for a high-tech world, giving every member of our platform, big or small, 
+            the opportunity to realize their dreams of becoming an entrepreneur.
           </p>
           <p className="text-sm text-gray-600 mt-4 max-w-md">
-            We strictly advise using your own discretion on any confidential information to be shared, such as name, phone, 
-            address, ID, photo, or any other information.
+            We strictly advise using your own discretion when sharing confidential information such as name, phone, address, ID, 
+            photo, or any other information.
           </p>
+          {/* Social Media Icons */}
+          <div className="mt-8 flex lg:justify-start justify-center space-x-4">
+            <a href="#" aria-label="Facebook" className="text-blue-900 hover:text-blue-700">
+              <FaFacebookSquare size={24} />
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:opacity-80">
+              <img src={instaLogo} alt="Instagram logo" className="w-6" />
+            </a>
+            <a href="#" aria-label="Twitter" className="text-blue-400 hover:text-blue-300">
+              <FaTwitter size={24} />
+            </a>
+            <a href="#" aria-label="Gmail" className="hover:opacity-80">
+              <img src={gmailLogo} alt="Gmail logo" className="w-6" />
+            </a>
+          </div>
         </div>
 
         {/* Right Section */}
-        <div className="text-center lg:text-left">
+        <nav className="text-center lg:text-left">
           <h3 className="text-xl font-semibold mb-4">Links</h3>
           <ul className="space-y-2">
             <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900">Terms & Conditions</a></li>
@@ -28,31 +46,16 @@ const Footer = () => {
             <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900">Vorkinsta License</a></li>
             <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900">Partners</a></li>
           </ul>
-        </div>
-      </div>
-
-      {/* Social Media Icons */}
-      <div className="mt-8 flex justify-center space-x-4">
-        <a href="#" className="text-gray-600 hover:text-gray-900">
-          <i className="fab fa-facebook"></i> {/* Add FontAwesome or any other icon package */}
-        </a>
-        <a href="#" className="text-gray-600 hover:text-gray-900">
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a href="#" className="text-gray-600 hover:text-gray-900">
-          <i className="fab fa-twitter"></i>
-        </a>
-        <a href="#" className="text-gray-600 hover:text-gray-900">
-          <i className="fab fa-google"></i>
-        </a>
+        </nav>
       </div>
 
       {/* Copyright Section */}
       <div className="mt-4 text-center">
-        <p className="text-sm text-gray-500">&copy; Vorkinsta.Com, 2021. All Rights Reserved</p>
+        <p className="text-sm ">&copy; Vorkinsta.Com, 2021. All Rights Reserved</p>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
