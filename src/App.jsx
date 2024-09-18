@@ -12,6 +12,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import Selection from './pages/Selection'
 import SignUpIntern from './pages/SignUpIntern'
 import SignUpEmployer from './pages/SignUpEmployer'
+import ProfileCreation from './pages/ProfileCreation'
 
 function App() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
         <Route path='/signup/employer' element={<SignUpEmployer />}></Route>
         <Route path='/forgot' element={<Forgot/>}></Route>
         <Route path='/forgot' element={<ForgotPassword />}></Route>
+        <Route path='/createprofile' element={<ProfileCreation />}></Route>
      </Routes>
      {!hideHeaderFooter && <Footer />}
     </>
