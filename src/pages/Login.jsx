@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 function Login() {
   return (
-    <div className="min-h-screen flex items-center justify-center border-r-black">
-      <div className="border-4 border-gray-200 rounded-lg p-8 w-lg">
-        <h2 className="text-5xl font-bold text-center text-gray-800 mb-10">
+    <div className="h-screen flex items-center justify-center px-4 md:px-0 md:border-r-black">
+      <div className="md:border-4 border-gray-200 rounded-lg p-6 md:p-8 w-full max-w-md md:max-w-lg">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-10">
           Connect to My Vorkinsta!
         </h2>
-        <div className="ml-24 w-4/6">
-          <form className="space-y-8">
+        <div className="w-full">
+          <form className="space-y-6 md:space-y-8">
             <div>
               <label htmlFor="email" className="sr-only">
                 Email
@@ -37,7 +37,7 @@ function Login() {
                   to="/forgot"
                   className="text-sm text-blue-900 hover:underline"
                 >
-                  Forget Password?
+                  Forgot Password?
                 </Link>
               </div>
             </div>
@@ -73,12 +73,9 @@ function Login() {
           <div className="mt-4 text-center">
             <p className="text-sm text-gray-600">
               Don't have an account?{" "}
-              <a
-                href="#"
-                className="text-blue-600 font-semibold hover:underline"
-              >
+              <Link to="/signup" className="text-blue-600 font-semibold hover:underline">
                 Sign Up
-              </a>
+              </Link>
             </p>
           </div>
         </div>
@@ -86,4 +83,6 @@ function Login() {
     </div>
   );
 }
+
 export default Login;
+
