@@ -1,60 +1,168 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function ProfileCreation() {
-  const [countryCode, setCountryCode] = useState("+91");
-  let [fname, setFname] = useState("");
-  let [lname, setLname] = useState("");
-  let [email, setEmail] = useState("");
-  let [phone, setPhone] = useState("");
-  let [message, setMessage] = useState("");
   let [firstpage, setFirstpage] = useState(true);
-  const [selectedOption, setSelectedOption] = useState("option1");
+  let [personaDetails, setpersonalDetails] = useState({
+    firsname: "",
+    lastname: "",
+    countryCode: "+91",
+    phone: "",
+    email: "",
+    address: "",
+    streetname: "",
+    city: "",
+    state: "",
+    country: "India",
+    pincode: "",
+    dob: "",
+    gender: "",
+    language: "",
+    careerGap: "",
+    skills: "",
+  });
 
-  const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
+  let [userFiles, setuserFiles] = useState({
+    profilePic: {},
+    resume: {},
+  });
+
+  let [education, setEducation] = useState({
+    education: "",
+    university: "",
+    course: "",
+    specialization: "",
+    courseType: "",
+    courseStart: "",
+    courseEnd: "",
+    grades: "",
+  });
+
+  let [projectDetails, setprojectDetails] = useState({
+    title: "",
+    courseType: "",
+    start: "",
+    end: "",
+    details: "",
+  });
+
+  let [certification, setCertification] = useState({
+    name: "",
+    provider: "",
+    url: "",
+    completionDate: "",
+  });
+
+  let handleFileChange = (e, isprofilepic) => {
+    let maxprofilephoto = 5;
+    let maxresume = 10;
+    console.log(isprofilepic);
+    let file = e.target.files[0];
+    let filesize = file.size / (1024 * 1024);
+    if (file) {
+      if (isprofilepic) {
+        if (filesize > maxprofilephoto) {
+          alert("Profile photo size should be smaller than 5mb");
+          return;
+        }
+        setuserFiles((prev) => {
+          return {
+            ...prev,
+            profilePic: {
+              fileName: file.name,
+              fileSize: file.size,
+              fileType: file.type,
+              fileContent: file,
+            },
+          };
+        });
+      } else {
+        if (filesize > maxresume) {
+          alert("Resume size should be smaller than 5mb");
+          return;
+        }
+        setuserFiles((prev) => {
+          return {
+            ...prev,
+            resume: {
+              fileName: file.name,
+              fileSize: file.size,
+              fileType: file.type,
+              fileContent: file,
+            },
+          };
+        });
+      }
+    }
   };
 
-  let handlesubmit = async (e) => {
-    e.preventDefault();
-    const formData = {
-      fname: fname,
-      lname: lname,
-      email: email,
-      phone: phone,
-      message: message,
-    };
+  let handleCancel = () => {
+    setpersonalDetails({});
+    setuserFiles({});
+    setEducation({});
+    setprojectDetails({});
+    setCertification({});
+    setFirstpage(true);
+  };
+  const logFormDataContents = (formData) => {
+    const formDataObject = {};
+    for (let [key, value] of formData.entries()) {
+      formDataObject[key] = value;
+    }
+    console.log(formDataObject);
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!personaDetails.email || !personaDetails.phone) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    const formData = new FormData();
+
+    formData.append("personaDetails", JSON.stringify(personaDetails));
+
+    if (userFiles.profilePic.fileContent) {
+      formData.append("profilePic", userFiles.profilePic.fileContent);
+    }
+    if (userFiles.resume.fileContent) {
+      formData.append("resume", userFiles.resume.fileContent);
+    }
+
+    formData.append("education", JSON.stringify(education));
+
+    formData.append("projectDetails", JSON.stringify(projectDetails));
+
+    formData.append("certification", JSON.stringify(certification));
+
+    logFormDataContents(formData);
 
     try {
       const response = await fetch("", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        body: formData,
       });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok.");
+      }
+
       const result = await response.json();
-      console.log(result);
-      alert("message sent");
-      setFname("");
-      setLname("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
+      console.log("Success:", result);
+      alert("Form submitted successfully!");
     } catch (error) {
       console.error("Error:", error);
+      alert("There was a problem with the submission.");
     }
   };
-  const [courseType, setCourseType] = useState("");
-  const [startYear, setStartYear] = useState("");
-  const [endYear, setEndYear] = useState("");
 
-  const handleCourseTypeChange = (e) => {
-    setCourseType(e.target.value);
-  };
+  ///////////////////////////////////////////////////////////////////////////////////
+
+  const [courseType, setCourseType] = useState("");
   return (
     <div className="min-h-screen flex w-full items-center justify-center bg-cover bg-center mt-8 mb-8  px-4 sm:px-6 lg:px-8">
       <form
-        onSubmit={handlesubmit}
+        onSubmit={handleSubmit}
         className="bg-white p-6 sm:p-10 rounded-2xl shadow-[0px_0px_7px_0px_rgba(0,0,0,0.7)]  w-full max-w-xl sm:max-w-2xl lg:max-w-4xl border border-gray-300"
       >
         {" "}
@@ -71,26 +179,36 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    First Name<span class="text-red-500">*</span>
+                    First Name<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={personaDetails.firsname}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        firsname: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: Albert"
                   />
                 </div>
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Last Name<span class="text-red-500">*</span>
+                    Last Name<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={personaDetails.lastname}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        lastname: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: Einstein"
                   />
@@ -104,8 +222,13 @@ function ProfileCreation() {
                   <div className="flex border border-gray-800 shadow-sm rounded-lg overflow-hidden">
                     <select
                       className="bg-gray-100 p-2 border-r border-gray-300"
-                      value={countryCode}
-                      onChange={(e) => setCountryCode(e.target.value)}
+                      value={personaDetails.countryCode}
+                      onChange={(e) =>
+                        setpersonalDetails((prev) => ({
+                          ...prev,
+                          countryCode: e.target.value,
+                        }))
+                      }
                     >
                       <option value="+91">in +91</option>
                       <option value="+1">rus +7</option>
@@ -113,23 +236,33 @@ function ProfileCreation() {
                       {/* Add more options as needed */}
                     </select>
                     <input
-                      type="text"
+                      type="number"
                       className="w-full px-3 py-2 focus:outline-none focus:ring-2 focus:border-blue-500 focus:ring-blue-500"
                       placeholder="eg. 9783-343-134"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
+                      value={personaDetails.phone}
+                      onChange={(e) =>
+                        setpersonalDetails((prev) => ({
+                          ...prev,
+                          phone: e.target.value,
+                        }))
+                      }
                     />
                   </div>
                 </div>
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Email<span class="text-red-500">*</span>
+                    Email<span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="text"
-                    value={fname}
+                    type="email"
+                    value={personaDetails.email}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        email: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: xyz@gmail.com"
                   />
@@ -138,26 +271,36 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Door Address<span class="text-red-500">*</span>
+                    Door Address<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={personaDetails.address}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        address: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg. No. 19"
                   />
                 </div>
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Street Name<span class="text-red-500">*</span>
+                    Street Name<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={personaDetails.streetname}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        streetname: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: Gandhi Street"
                   />
@@ -166,26 +309,36 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    City<span class="text-red-500">*</span>
+                    City<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={personaDetails.city}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        city: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: Mumbai"
                   />
                 </div>
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    State<span class="text-red-500">*</span>
+                    State<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={personaDetails.state}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        state: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: Maharashtra"
                   />
@@ -194,26 +347,36 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Country<span class="text-red-500">*</span>
+                    Country<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={personaDetails.country}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        country: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: India"
                   />
                 </div>
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Pin Code<span class="text-red-500">*</span>
+                    Pin Code<span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="text"
-                    value={fname}
+                    type="number"
+                    value={personaDetails.pincode}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        pincode: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: 400004"
                   />
@@ -222,7 +385,7 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 rounded-lg border-2 mt-24 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className=" mb-0 font-semibold text-gray-800">
-                  Profile Photo<span class="text-red-500">*</span>
+                  Profile Photo<span className="text-red-500">*</span>
                   <br />
                   <p className="font-light text-sm">
                     Kindly Upload a picture of Yourself
@@ -242,6 +405,7 @@ function ProfileCreation() {
                     <input
                       id="dropzone-file"
                       type="file"
+                      onChange={(e) => handleFileChange(e, true)}
                       accept="image/png, image/jpeg"
                       className="hidden"
                     />
@@ -254,7 +418,7 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className=" mb-0 font-semibold text-gray-800">
-                  Upload Resume<span class="text-red-500">*</span>
+                  Upload Resume<span className="text-red-500">*</span>
                   <br />
                   <p className="font-light text-sm">
                     Employers can download and view this resume
@@ -262,7 +426,7 @@ function ProfileCreation() {
                 </label>
                 <div className="flex items-center justify-center w-full">
                   <label
-                    htmlFor="dropzone-file"
+                    htmlFor="dropzone-resume-file"
                     className="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 light:hover:bg-gray-800 light:bg-gray-700 hover:bg-gray-100 light:border-gray-600 light:hover:border-gray-500 light:hover:bg-gray-600"
                   >
                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -272,8 +436,9 @@ function ProfileCreation() {
                       </p>
                     </div>
                     <input
-                      id="dropzone-file"
+                      id="dropzone-resume-file"
                       type="file"
+                      onChange={(e) => handleFileChange(e, false)}
                       accept="image/png, image/jpeg, .pdf, .doc, .docx"
                       className="hidden"
                     />
@@ -287,12 +452,17 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Education<span class="text-red-500">*</span>
+                  Education<span className="text-red-500">*</span>
                   <br />
                   <select
                     className="p-3 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     name="Education"
-                    id=""
+                    onChange={(e) =>
+                      setEducation((prev) => ({
+                        ...prev,
+                        education: e.target.value,
+                      }))
+                    }
                   >
                     <option value="">
                       <p className="font-light">Select Education</p>
@@ -307,12 +477,17 @@ function ProfileCreation() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 mb-2">
-                  University/Institute<span class="text-red-500">*</span>
+                  University/Institute<span className="text-red-500">*</span>
                   <br />
                   <select
                     className="p-3 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     name="Education"
-                    id=""
+                    onChange={(e) =>
+                      setEducation((prev) => ({
+                        ...prev,
+                        university: e.target.value,
+                      }))
+                    }
                   >
                     <option value="">
                       <p>Select University/Institute</p>
@@ -324,12 +499,17 @@ function ProfileCreation() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Course<span class="text-red-500">*</span>
+                  Course<span className="text-red-500">*</span>
                   <br />
                   <select
                     className="p-3 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     name="Education"
-                    id=""
+                    onChange={(e) =>
+                      setEducation((prev) => ({
+                        ...prev,
+                        course: e.target.value,
+                      }))
+                    }
                   >
                     <option value="">
                       <p className="font-light">Select Course</p>
@@ -342,12 +522,17 @@ function ProfileCreation() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Specialization<span class="text-red-500">*</span>
+                  Specialization<span className="text-red-500">*</span>
                   <br />
                   <select
                     className="p-3 mt-2 sm:p-2 block font-light w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     name="Education"
-                    id=""
+                    onChange={(e) =>
+                      setEducation((prev) => ({
+                        ...prev,
+                        specialization: e.target.value,
+                      }))
+                    }
                   >
                     <option value="">
                       <p className="font-light">Select Specialization</p>
@@ -360,15 +545,20 @@ function ProfileCreation() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 ">
-                  Course Type<span class="text-red-500">*</span>
+                  Course Type<span className="text-red-500">*</span>
                 </label>
                 <div className="flex flex-col sm:flex-row sm:space-x-20 space-y-4 sm:space-y-0">
                   <label className="flex items-center space-x-2">
                     <input
                       type="radio"
                       value="Full Time"
-                      checked={courseType === "Full Time"}
-                      onChange={handleCourseTypeChange}
+                      checked={education.courseType === "Full Time"}
+                      onChange={(e) =>
+                        setEducation((prev) => ({
+                          ...prev,
+                          courseType: e.target.value,
+                        }))
+                      }
                       className="form-radio h-4 w-4 text-indigo-600"
                     />
                     <span>Full Time</span>
@@ -378,8 +568,13 @@ function ProfileCreation() {
                     <input
                       type="radio"
                       value="Part Time"
-                      checked={courseType === "Part Time"}
-                      onChange={handleCourseTypeChange}
+                      checked={education.courseType === "Part Time"}
+                      onChange={(e) =>
+                        setEducation((prev) => ({
+                          ...prev,
+                          courseType: e.target.value,
+                        }))
+                      }
                       className="form-radio h-4 w-4 text-indigo-600"
                     />
                     <span>Part Time</span>
@@ -390,9 +585,15 @@ function ProfileCreation() {
                       type="radio"
                       value="Correspondence/Distance learning"
                       checked={
-                        courseType === "Correspondence/Distance learning"
+                        education.courseType ===
+                        "Correspondence/Distance learning"
                       }
-                      onChange={handleCourseTypeChange}
+                      onChange={(e) =>
+                        setEducation((prev) => ({
+                          ...prev,
+                          courseType: e.target.value,
+                        }))
+                      }
                       className="form-radio h-4 w-4 text-indigo-600"
                     />
                     <span>Correspondence/ Distance learning</span>
@@ -401,16 +602,20 @@ function ProfileCreation() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800">
-                  Course Duration<span class="text-red-500">*</span>
+                  Course Duration<span className="text-red-500">*</span>
                 </label>
                 <div className="flex space-x-4">
                   <select
-                    value={startYear}
-                    onChange={(e) => setStartYear(e.target.value)}
+                    value={education.courseStart}
+                    onChange={(e) =>
+                      setEducation((prev) => ({
+                        ...prev,
+                        courseStart: e.target.value,
+                      }))
+                    }
                     className="p-3 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                   >
                     <option value="">Starting Year</option>
-                    {/* Add more options dynamically as needed */}
                     <option value="2020">2020</option>
                     <option value="2021">2021</option>
                     <option value="2022">2022</option>
@@ -419,8 +624,13 @@ function ProfileCreation() {
                   <span className="flex items-center font-bold">to</span>
 
                   <select
-                    value={endYear}
-                    onChange={(e) => setEndYear(e.target.value)}
+                    value={education.courseEnd}
+                    onChange={(e) =>
+                      setEducation((prev) => ({
+                        ...prev,
+                        courseEnd: e.target.value,
+                      }))
+                    }
                     className="p-3 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                   >
                     <option value="">Ending Year</option>
@@ -435,13 +645,18 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    CGPA/Grade<span class="text-red-500">*</span>
+                    CGPA/Grade<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={education.grades}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setEducation((prev) => ({
+                        ...prev,
+                        grades: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="Enter your cgpa or grade"
                   />
@@ -469,7 +684,7 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Skills<span class="text-red-500">*</span>
+                    Skills<span className="text-red-500">*</span>
                   </label>
                   <h5 className="mb-5 font-extralight">
                     Add the skills that highlight your expertise, eg. Software
@@ -477,11 +692,16 @@ function ProfileCreation() {
                   </h5>
                   <input
                     type="text"
-                    value={fname}
+                    value={personaDetails.skills}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        skills: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
-                    placeholder="eg: Albert"
+                    placeholder="eg: Python Developer, Ui/Ux"
                   />
                 </div>
                 <div>
@@ -496,17 +716,22 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Project Details<span class="text-red-500">*</span>
+                  Project Details<span className="text-red-500">*</span>
                 </label>
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Project Title<span class="text-red-500">*</span>
+                    Project Title<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={projectDetails.title}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setprojectDetails((prev) => ({
+                        ...prev,
+                        title: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="Enter project title"
                   />
@@ -514,15 +739,20 @@ function ProfileCreation() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 ">
-                  Course Type<span class="text-red-500">*</span>
+                  Course Type<span className="text-red-500">*</span>
                 </label>
                 <div className="flex flex-col sm:flex-row sm:space-x-20 space-y-4 sm:space-y-0">
                   <label className="flex items-center space-x-2">
                     <input
                       type="radio"
                       value="Full Time"
-                      checked={courseType === "Full Time"}
-                      onChange={handleCourseTypeChange}
+                      checked={projectDetails.courseType === "Full Time"}
+                      onChange={(e) =>
+                        setprojectDetails((prev) => ({
+                          ...prev,
+                          courseType: e.target.value,
+                        }))
+                      }
                       className="form-radio h-4 w-4 text-indigo-600"
                     />
                     <span>In Progress</span>
@@ -532,9 +762,13 @@ function ProfileCreation() {
                     <input
                       type="radio"
                       value="Part Time"
-                      checked={courseType === "Part Time"}
-                      onChange={handleCourseTypeChange}
-                      className="form-radio h-4 w-4 text-indigo-600"
+                      checked={projectDetails.courseType === "Part Time"}
+                      onChange={(e) =>
+                        setprojectDetails((prev) => ({
+                          ...prev,
+                          courseType: e.target.value,
+                        }))
+                      }
                     />
                     <span>Completed</span>
                   </label>
@@ -542,36 +776,53 @@ function ProfileCreation() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 ">
-                  Worked Till<span class="text-red-500">*</span>
+                  Worked Till<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="w-52 border border-black p-2 rounded-md"
                   type="date"
+                  onChange={(e) =>
+                    setprojectDetails((prev) => ({
+                      ...prev,
+                      start: e.target.value,
+                    }))
+                  }
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 ">
-                  Worked from<span class="text-red-500">*</span>
+                  Worked from<span className="text-red-500">*</span>
                 </label>
                 <input
                   className="w-52 border border-black p-2 rounded-md"
                   type="date"
+                  onChange={(e) =>
+                    setprojectDetails((prev) => ({
+                      ...prev,
+                      end: e.target.value,
+                    }))
+                  }
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Details of Project<span class="text-red-500">*</span>
+                    Details of Project<span className="text-red-500">*</span>
                   </label>
                   <textarea
                     type="text"
                     style={{ resize: "none" }}
-                    value={fname}
+                    value={projectDetails.details}
                     required
                     maxLength={1000}
                     rows="5"
                     cols="15"
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setprojectDetails((prev) => ({
+                        ...prev,
+                        details: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="Type here..."
                   />
@@ -587,15 +838,20 @@ function ProfileCreation() {
                 </label>
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Certificate Name<span class="text-red-500">*</span>
+                    Certificate Name<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={certification.name}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setCertification((prev) => ({
+                        ...prev,
+                        name: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
-                    placeholder="Enter project title"
+                    placeholder="Enter Certification Name"
                   />
                 </div>
               </div>
@@ -606,11 +862,16 @@ function ProfileCreation() {
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={certification.provider}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setCertification((prev) => ({
+                        ...prev,
+                        provider: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
-                    placeholder="Enter project title"
+                    placeholder="Enter Certification Provider Name"
                   />
                 </div>
               </div>
@@ -621,11 +882,16 @@ function ProfileCreation() {
                   </label>
                   <input
                     type="text"
-                    value={fname}
+                    value={certification.url}
                     required
-                    onChange={(e) => setFname(e.target.value)}
+                    onChange={(e) =>
+                      setCertification((prev) => ({
+                        ...prev,
+                        url: e.target.value,
+                      }))
+                    }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
-                    placeholder="Enter project title"
+                    placeholder="Enter Certification URL"
                   />
                 </div>
               </div>
@@ -636,32 +902,49 @@ function ProfileCreation() {
                 <input
                   className="w-52 border border-black p-2 rounded-md"
                   type="date"
+                  onChange={(e) =>
+                    setCertification((prev) => ({
+                      ...prev,
+                      completionDate: e.target.value,
+                    }))
+                  }
                 />
               </div>
               <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
 
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Personal Details<span class="text-red-500">*</span>
+                  Personal Details<span className="text-red-500">*</span>
                 </label>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Date of Birth<span class="text-red-500">*</span>
+                  Date of Birth<span className="text-red-500">*</span>
                   <br />
                   <input
                     className="p-3 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     type="date"
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        dob: e.target.value,
+                      }))
+                    }
                   />
                 </label>
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Gender<span class="text-red-500">*</span>
+                  Gender<span className="text-red-500">*</span>
                   <br />
                   <select
                     className="p-3 h-12 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     name="Education"
-                    id=""
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        gender: e.target.value,
+                      }))
+                    }
                   >
                     <option value="">
                       <p>Select </p>
@@ -674,12 +957,17 @@ function ProfileCreation() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Language<span class="text-red-500">*</span>
+                  Language<span className="text-red-500">*</span>
                   <br />
                   <select
                     className="p-3 h-12 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     name="Education"
-                    id=""
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        language: e.target.value,
+                      }))
+                    }
                   >
                     <option value="">
                       <p>Select </p>
@@ -690,12 +978,17 @@ function ProfileCreation() {
                   </select>
                 </label>
                 <label className="block font-semibold text-gray-800 mb-2">
-                  Career Gap<span class="text-red-500">*</span>
+                  Career Gap<span className="text-red-500">*</span>
                   <br />
                   <select
                     className="p-3 h-12 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     name="Education"
-                    id=""
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        careerGap: e.target.value,
+                      }))
+                    }
                   >
                     <option value="">
                       <p>Select </p>
@@ -707,18 +1000,18 @@ function ProfileCreation() {
                 </label>
               </div>
               <div className="flex flex-col sm:flex-row justify-between sm:space-y-0 space-y-4">
-                {/* Left aligned Save button */}
                 <button
-                  type="submit"
                   className="text-white bg-blue-950 rounded-md h-8 font-semibold w-20"
                   onClick={() => setFirstpage(true)}
                 >
                   Back
                 </button>
 
-                {/* Right aligned Cancel and Save buttons */}
                 <div className="flex space-x-4 sm:ml-auto">
-                  <button className="text-blue-950 bg-white rounded-md font-semibold w-20">
+                  <button
+                    onClick={handleCancel}
+                    className="text-blue-950 bg-white rounded-md font-semibold w-20"
+                  >
                     Cancel
                   </button>
                   <button
