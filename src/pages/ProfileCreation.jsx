@@ -113,12 +113,6 @@ function ProfileCreation() {
       }
     }
   };
-
-  useEffect(() => {
-    console.log(experience);
-    console.log(testimonals);
-    
-  }, [testimonals, experience])
   let handleCancel = () => {
     setpersonalDetails({});
     setuserFiles({});
