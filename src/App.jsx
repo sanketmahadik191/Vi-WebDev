@@ -14,27 +14,29 @@ import SignUpIntern from './pages/SignUpIntern'
 import SignUpEmployer from './pages/SignUpEmployer'
 import ProfileCreation from './pages/ProfileCreation'
 import ProfileIntern from './pages/ProfileIntern'
+import Scrolling from './pages/Scrolling';
 
 function App() {
   const location = useLocation();
 
   const hideHeaderFooter = shouldHideHeaderFooter(location.pathname)
-  
+
   return (
     <>
-     {!hideHeaderFooter && <Navbar />}
-     <Routes>
-        <Route path='/' element={<Home />}/>
+      {!hideHeaderFooter && <Navbar />}
+      <Routes>
+        <Route path='/' element={<Home />} />
         <Route path='/selection' element={<Selection />} />
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup/intern' element={<SignUpIntern />}></Route>
         <Route path='/signup/employer' element={<SignUpEmployer />}></Route>
-        <Route path='/forgot' element={<Forgot/>}></Route>
+        <Route path='/forgot' element={<Forgot />}></Route>
         <Route path='/forgot' element={<ForgotPassword />}></Route>
         <Route path='/createprofile' element={<ProfileCreation />}></Route>
         <Route path='/createprofileintern' element={<ProfileIntern />}></Route>
-     </Routes>
-     {!hideHeaderFooter && <Footer />}
+        <Route path='/test' element={<Scrolling />}></Route>
+      </Routes>
+      {!hideHeaderFooter && <Footer />}
     </>
   )
 }
