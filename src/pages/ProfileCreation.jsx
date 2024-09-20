@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 function ProfileCreation() {
   let [firstpage, setFirstpage] = useState(true);
+  let [profileUpload, setprofileUpload] = useState(null);
+  let [resumeUpload, setresumeUpload] = useState(null);
   let [personaDetails, setpersonalDetails] = useState({
     firsname: "",
     lastname: "",
@@ -36,6 +38,18 @@ function ProfileCreation() {
     grades: "",
   });
 
+  let [experience, setExperience] = useState({
+    companyName: "",
+    jobeRole: "",
+    start: "",
+    end: ""
+  })
+
+  let [testimonals, setTestimonals] = useState({
+    name: "",
+    testimonal: ""
+  })
+
   let [projectDetails, setprojectDetails] = useState({
     title: "",
     courseType: "",
@@ -43,6 +57,7 @@ function ProfileCreation() {
     end: "",
     details: "",
   });
+
 
   let [certification, setCertification] = useState({
     name: "",
@@ -62,42 +77,54 @@ function ProfileCreation() {
         if (filesize > maxprofilephoto) {
           alert("Profile photo size should be smaller than 5mb");
           return;
+        } else {
+          setuserFiles((prev) => {
+            return {
+              ...prev,
+              profilePic: {
+                fileName: file.name,
+                fileSize: file.size,
+                fileType: file.type,
+                fileContent: file,
+              },
+            };
+          });
+
+          setprofileUpload(URL.createObjectURL(file));
         }
-        setuserFiles((prev) => {
-          return {
-            ...prev,
-            profilePic: {
-              fileName: file.name,
-              fileSize: file.size,
-              fileType: file.type,
-              fileContent: file,
-            },
-          };
-        });
       } else {
         if (filesize > maxresume) {
           alert("Resume size should be smaller than 5mb");
           return;
+        } else {
+          setuserFiles((prev) => {
+            return {
+              ...prev,
+              resume: {
+                fileName: file.name,
+                fileSize: file.size,
+                fileType: file.type,
+                fileContent: file,
+              },
+            };
+          });
+          setresumeUpload(URL.createObjectURL(file));
         }
-        setuserFiles((prev) => {
-          return {
-            ...prev,
-            resume: {
-              fileName: file.name,
-              fileSize: file.size,
-              fileType: file.type,
-              fileContent: file,
-            },
-          };
-        });
       }
     }
   };
 
+  useEffect(() => {
+    console.log(experience);
+    console.log(testimonals);
+    
+  }, [testimonals, experience])
   let handleCancel = () => {
     setpersonalDetails({});
     setuserFiles({});
     setEducation({});
+    setExperience({})
+    setTestimonals({})
     setprojectDetails({});
     setCertification({});
     setFirstpage(true);
@@ -130,6 +157,10 @@ function ProfileCreation() {
 
     formData.append("education", JSON.stringify(education));
 
+    formData.append("experience", JSON.stringify(experience));
+
+    formData.append("testimonals", JSON.stringify(testimonals));
+
     formData.append("projectDetails", JSON.stringify(projectDetails));
 
     formData.append("certification", JSON.stringify(certification));
@@ -155,9 +186,7 @@ function ProfileCreation() {
     }
   };
 
-  ///////////////////////////////////////////////////////////////////////////////////
-
-  const [courseType, setCourseType] = useState("");
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <div className="min-h-screen flex w-full items-center justify-center bg-cover bg-center mt-8 mb-8 profile px-4 sm:px-6 lg:px-8">
       <form
@@ -384,7 +413,7 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 rounded-lg border-2 mt-24 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className=" mb-0 font-semibold text-gray-800">
-                  Profile Photo<span className="text-red-500">*</span>
+                  Profile Photo
                   <br />
                   <p className="font-light text-sm">
                     Kindly Upload a picture of Yourself
@@ -413,11 +442,37 @@ function ProfileCreation() {
                 <p className="font-light text-sm">
                   Max file size: 5Mb. File type - PNG, JPEG
                 </p>
+                {profileUpload ? (
+                  <div className="flex items-center">
+                    <p>
+                      ✅ -{" "}
+                      <a
+                        href={profileUpload}
+                        target="_blank"
+                        className="underline"
+                        rel="noopener noreferrer"
+                      >
+                        {userFiles.profilePic.fileName}
+                      </a>
+                    </p>
+                    <button
+                      className="w-5 ml-2"
+                      onClick={() => {
+                        setprofileUpload(null);
+                        setuserFiles((prev) => ({ ...prev, profilePic: {} }));
+                      }}
+                    >
+                      ❌
+                    </button>
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
               <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <label className=" mb-0 font-semibold text-gray-800">
-                  Upload Resume<span className="text-red-500">*</span>
+                  Upload Resume
                   <br />
                   <p className="font-light text-sm">
                     Employers can download and view this resume
@@ -446,6 +501,33 @@ function ProfileCreation() {
                 <p className="font-light text-sm">
                   Max file size: 10Mb. File type - PDF, DOC, DOCX, PNG, JPEG
                 </p>
+                {resumeUpload ? (
+                  <div className="flex items-center">
+                    <p>
+                      ✅ -{" "}
+                      <a
+                        className="underline"
+                        href={resumeUpload}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {userFiles.resume.fileName}
+                      </a>{" "}
+                    </p>
+
+                    <button
+                      className="w-5 ml-2"
+                      onClick={() => {
+                        setresumeUpload(null);
+                        setuserFiles((prev) => ({ ...prev, resume: {} }));
+                      }}
+                    >
+                      ❌
+                    </button>
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
 
               <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
@@ -680,6 +762,7 @@ function ProfileCreation() {
               Fill out the required details below
             </h5>
             <div className="p-5">
+              {/* <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div> */}
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
@@ -710,6 +793,127 @@ function ProfileCreation() {
                   >
                     Add
                   </button>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
+              <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
+                <label className="block font-semibold text-gray-800 mb-2">
+                  Experience
+                  <p className="mb-5 font-light">Add any prior experience</p>
+                </label>
+                <div>
+                  <label className="block font-semibold text-gray-800 mb-2">
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    value={experience.companyName}
+                    required
+                    onChange={(e) =>
+                      setExperience((prev) => ({
+                        ...prev,
+                        companyName: e.target.value,
+                      }))
+                    }
+                    className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                    placeholder="Enter Certification Name"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
+                <div>
+                  <label className="block font-semibold text-gray-800 mb-2">
+                    Job Role
+                  </label>
+                  <input
+                    type="text"
+                    value={experience.jobeRole}
+                    required
+                    onChange={(e) =>
+                      setExperience((prev) => ({
+                        ...prev,
+                        jobeRole: e.target.value,
+                      }))
+                    }
+                    className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                    placeholder="Enter Certification Name"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
+                <label className="block font-semibold text-gray-800 mb-2">
+                  Worked From
+                  <br />
+                  <input
+                    className="p-3 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                    type="date"
+                    onChange={(e) =>
+                      setExperience((prev) => ({
+                        ...prev,
+                        start: e.target.value,
+                      }))
+                    }
+                  />
+                </label>
+                <label className="block font-semibold text-gray-800 mb-2">
+                  Worked Till
+                  <br />
+                  <input
+                    className="p-3 mt-2 sm:p-2 font-light block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                    type="date"
+                    onChange={(e) =>
+                      setExperience((prev) => ({
+                        ...prev,
+                        end: e.target.value,
+                      }))
+                    }
+                  />
+                </label>
+                
+              </div>
+              <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
+              <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
+                <label className="block font-semibold text-gray-800 mb-2">
+                  Testimonals
+                  <p className="mb-5 font-light">Add any prior experience</p>
+                </label>
+                <div>
+                  <label className="block font-semibold text-gray-800 mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    value={testimonals.name}
+                    required
+                    onChange={(e) =>
+                      setTestimonals((prev) => ({
+                        ...prev,
+                        name: e.target.value,
+                      }))
+                    }
+                    className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                    placeholder="Enter Certification Name"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-1 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
+                <div>
+                  <label className="block font-semibold text-gray-800 mb-2">
+                    Testimonal
+                  </label>
+                  <input
+                    type="text"
+                    value={testimonals.testimonal}
+                    required
+                    onChange={(e) =>
+                      setTestimonals((prev) => ({
+                        ...prev,
+                        testimonal: e.target.value,
+                      }))
+                    }
+                    className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                    placeholder="Enter Certification Name"
+                  />
                 </div>
               </div>
               <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>
