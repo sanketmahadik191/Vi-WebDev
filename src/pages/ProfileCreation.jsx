@@ -9,10 +9,9 @@ function ProfileCreation() {
     phone: "",
     email: "",
     address: "",
-    streetname: "",
     city: "",
     state: "",
-    country: "India",
+    country: "",
     pincode: "",
     dob: "",
     gender: "",
@@ -160,7 +159,7 @@ function ProfileCreation() {
 
   const [courseType, setCourseType] = useState("");
   return (
-    <div className="min-h-screen flex w-full items-center justify-center bg-cover bg-center mt-8 mb-8  px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex w-full items-center justify-center bg-cover bg-center mt-8 mb-8 profile px-4 sm:px-6 lg:px-8">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-6 sm:p-10 rounded-2xl shadow-[0px_0px_7px_0px_rgba(0,0,0,0.7)]  w-full max-w-xl sm:max-w-2xl lg:max-w-4xl border border-gray-300"
@@ -271,7 +270,7 @@ function ProfileCreation() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    Door Address<span className="text-red-500">*</span>
+                    Address<span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -289,6 +288,24 @@ function ProfileCreation() {
                 </div>
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
+                    City<span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={personaDetails.city}
+                    required
+                    onChange={(e) =>
+                      setpersonalDetails((prev) => ({
+                        ...prev,
+                        city: e.target.value,
+                      }))
+                    }
+                    className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                    placeholder="eg: Mumbai"
+                  />
+                </div>
+                {/* <div>
+                  <label className="block font-semibold text-gray-800 mb-2">
                     Street Name<span className="text-red-500">*</span>
                   </label>
                   <input
@@ -304,25 +321,25 @@ function ProfileCreation() {
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: Gandhi Street"
                   />
-                </div>
+                </div> */}
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg">
                 <div>
                   <label className="block font-semibold text-gray-800 mb-2">
-                    City<span className="text-red-500">*</span>
+                    Pin Code<span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="text"
-                    value={personaDetails.city}
+                    type="number"
+                    value={personaDetails.pincode}
                     required
                     onChange={(e) =>
                       setpersonalDetails((prev) => ({
                         ...prev,
-                        city: e.target.value,
+                        pincode: e.target.value,
                       }))
                     }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
-                    placeholder="eg: Mumbai"
+                    placeholder="eg: 400004"
                   />
                 </div>
                 <div>
@@ -361,24 +378,6 @@ function ProfileCreation() {
                     }
                     className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
                     placeholder="eg: India"
-                  />
-                </div>
-                <div>
-                  <label className="block font-semibold text-gray-800 mb-2">
-                    Pin Code<span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="number"
-                    value={personaDetails.pincode}
-                    required
-                    onChange={(e) =>
-                      setpersonalDetails((prev) => ({
-                        ...prev,
-                        pincode: e.target.value,
-                      }))
-                    }
-                    className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
-                    placeholder="eg: 400004"
                   />
                 </div>
               </div>

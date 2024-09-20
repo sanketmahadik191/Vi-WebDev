@@ -20,3 +20,8 @@
     font-size: 20px;
     font-weight: 600;
 }
+
+.profile input::-webkit-input-placeholder{
+    font-style: italic;
+    padding-left: 8px;
+}
