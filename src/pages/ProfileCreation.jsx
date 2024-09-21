@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+//Initializing all the components
 import Education from "../components/Profile/Education";
 import Skills from "../components/Profile/Skills";
 import Experience from "../components/Profile/Experience";
@@ -12,7 +13,7 @@ import ResumeUpload from "../components/Profile/ResumeUpload";
 
 function ProfileCreation() {
   let [firstpage, setFirstpage] = useState(true);
-
+  //Initializing all the usestate variables
   let [personaDetails, setpersonalDetails] = useState({
     firsname: "",
     lastname: "",
@@ -36,13 +37,51 @@ function ProfileCreation() {
     resume: {},
   });
 
+  let [education, setEducation] = useState({
+    education: "",
+    university: "",
+    course: "",
+    specialization: "",
+    courseType: "",
+    courseStart: "",
+    courseEnd: "",
+    grades: "",
+  });
+
+  let [experience, setExperience] = useState({
+    companyName: "",
+    jobeRole: "",
+    start: "",
+    end: "",
+  });
+
+  let [testimonals, setTestimonals] = useState({
+    name: "",
+    testimonal: "",
+  });
+
+  let [projectDetails, setprojectDetails] = useState({
+    title: "",
+    courseType: "",
+    start: "",
+    end: "",
+    details: "",
+  });
+
+  let [certification, setCertification] = useState({
+    name: "",
+    provider: "",
+    url: "",
+    completionDate: "",
+  });
+
   let [profileUpload, setprofileUpload] = useState(null);
   let [resumeUpload, setresumeUpload] = useState(null);
 
+  //initializing handlfilechange controls file upload checks file size
   let handleFileChange = (e, isprofilepic) => {
     let maxprofilephoto = 5;
     let maxresume = 10;
-    console.log(isprofilepic);
     let file = e.target.files[0];
     let filesize = file.size / (1024 * 1024);
     if (file) {
@@ -87,12 +126,18 @@ function ProfileCreation() {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [firstpage]);
+
+
+  //handle cancel function initiates cancel
   let handleCancel = () => {
     setpersonalDetails({});
     setuserFiles({});
     setEducation({});
-    setExperience({})
-    setTestimonals({})
+    setExperience({});
+    setTestimonals({});
     setprojectDetails({});
     setCertification({});
     setFirstpage(true);
@@ -106,6 +151,7 @@ function ProfileCreation() {
     console.log(formDataObject);
   };
 
+  //handle submit function initiates submit 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -156,7 +202,6 @@ function ProfileCreation() {
     }
   };
 
-
   return (
     <div className="min-h-screen flex w-full items-center justify-center bg-cover bg-center mt-8 mb-8 profile px-4 sm:px-6 lg:px-8">
       <form
@@ -166,15 +211,14 @@ function ProfileCreation() {
         <h2 className="text-2xl font-bold mb-6 sm:mb-1 text-start text-gray-900 tracking-wide">
           Profile Details
         </h2>
-        <h5 className="mb-5 font-light">
-          Fill out the required details below
-        </h5>
+        <h5 className="mb-5 font-light">Fill out the required details below</h5>
 
         {firstpage ? (
           <>
             <ProfileDetails
               personaDetails={personaDetails}
-              setpersonalDetails={setpersonalDetails} />
+              setpersonalDetails={setpersonalDetails}
+            />
 
             <ProfileUpload
               profileUpload={profileUpload}
@@ -191,7 +235,7 @@ function ProfileCreation() {
               setuserFiles={setuserFiles}
             />
 
-            <Education />
+            <Education education={education} setEducation={setEducation} />
 
             <div className="flex justify-end mb-6 sm:mb-8 sm:text-lg">
               <button
@@ -205,24 +249,36 @@ function ProfileCreation() {
         ) : (
           <>
             <div className="p-5">
-
               <Skills
                 setpersonalDetails={setpersonalDetails}
-                personaDetails={personaDetails} />
+                personaDetails={personaDetails}
+              />
 
-              <Experience />
-              <Testimonals />
-              <ProjectDetails />
-              <Certification />
-              <PersonalDetails />
+              <Experience
+                experience={experience}
+                setExperience={setExperience}
+              />
+              <Testimonals
+                testimonals={testimonals}
+                setTestimonals={setTestimonals}
+              />
+              <ProjectDetails
+                projectDetails={projectDetails}
+                setprojectDetails={setprojectDetails}
+              />
+              <Certification
+                certification={certification}
+                setCertification={setCertification}
+              />
+              <PersonalDetails personaDetails={personaDetails} setpersonalDetails={setpersonalDetails} />
 
-              <div className="flex flex-col sm:flex-row justify-between sm:space-y-0 space-y-4">
-                <button
-                  className="text-white bg-blue-950 rounded-md h-8 font-semibold w-20"
-                  onClick={() => setFirstpage(true)}
-                >
-                  Back
-                </button>
+              <div className="flex flex-row sm:flex-row justify-between sm:space-y-0 space-y-4">
+                  <button
+                    className="text-white bg-blue-950 rounded-md h-8 font-semibold w-20"
+                    onClick={() => setFirstpage(true)}
+                  >
+                    Back
+                  </button>
                 <div className="flex space-x-4 sm:ml-auto">
                   <button
                     onClick={handleCancel}
@@ -238,7 +294,6 @@ function ProfileCreation() {
                   </button>
                 </div>
               </div>
-
             </div>
           </>
         )}

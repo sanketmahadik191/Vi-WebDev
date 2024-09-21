@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 
-const Testimonals = () => {
-    let [testimonals, setTestimonals] = useState({
-        name: "",
-        testimonal: ""
-    })
+const Testimonals = ({testimonals, setTestimonals}) => {
+    
 
     return (
         <>
@@ -16,7 +13,7 @@ const Testimonals = () => {
                 </label>
                 <div>
                     <label className="block font-semibold text-gray-800 mb-2">
-                        Name
+                        Employee/Colleague Name
                     </label>
                     <input
                         type="text"
@@ -29,7 +26,7 @@ const Testimonals = () => {
                             }))
                         }
                         className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
-                        placeholder="Enter Certification Name"
+                        placeholder="Enter Employee/Colleague Name"
                     />
                 </div>
             </div>
@@ -49,7 +46,7 @@ const Testimonals = () => {
                             }))
                         }
                         className="p-3 sm:p-2 block w-full required:*: rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
-                        placeholder="Enter Certification Name"
+                        placeholder="Testimonal"
                     />
                 </div>
             </div>

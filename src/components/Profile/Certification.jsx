@@ -1,13 +1,6 @@
 import React, { useState } from 'react'
 
-const Certification = () => {
-    let [certification, setCertification] = useState({
-        name: "",
-        provider: "",
-        url: "",
-        completionDate: "",
-    });
-
+const Certification = ({certification, setCertification}) => {
     return (
         <>
             <div className="grid grid-cols-1 rounded-lg border-2 mt-16 border-gray-300 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 text-base sm:text-lg"></div>

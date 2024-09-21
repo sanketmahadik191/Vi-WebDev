@@ -1,16 +1,7 @@
 import React, { useState } from 'react'
 
-const Education = () => {
-    let [education, setEducation] = useState({
-        education: "",
-        university: "",
-        course: "",
-        specialization: "",
-        courseType: "",
-        courseStart: "",
-        courseEnd: "",
-        grades: "",
-    });
+const Education = ({education, setEducation}) => {
+    
 
     return (
         <>

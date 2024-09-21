@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 
-const ProjectDetails = () => {
-    let [projectDetails, setprojectDetails] = useState({
-        title: "",
-        courseType: "",
-        start: "",
-        end: "",
-        details: "",
-    });
+const ProjectDetails = ({projectDetails, setprojectDetails}) => {
+    
 
     return (
         <>
