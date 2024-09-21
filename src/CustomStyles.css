@@ -1,0 +1,46 @@
+/* Adjust the card size and font sizes */
+.custom-card {
+    width: 100%;
+    height: 450px; /* Adjust height to make the cards appear more vertical */
+    border-radius: 10px;
+  }
+  
+  .custom-card-img {
+    height: 150px; /* Smaller image to match the desired aspect ratio */
+    object-fit: cover;
+  }
+  
+  .custom-title {
+    font-size: 16px; /* Smaller title font */
+  }
+  
+  .custom-text {
+    font-size: 14px; /* Smaller text font */
+    color: #6c757d;
+  }
+  
+  .custom-footer {
+    font-size: 12px;
+  }
+  
+  /* Overall page margin and padding adjustments */
+  .container {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+  
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Adjust spacing between cards */
+  .mb-4 {
+    margin-bottom: 20px !important;
+  }
+  .circular-image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
