@@ -1,0 +1,9 @@
+{
+    "companyName": "Example Company",
+    "contactPerson": "John Doe",
+    "email": "johndoe@example.com",
+    "password": "strongpassword123",
+    "country": "USA",
+    "termsAgreement": true,
+    "keepInformed": false
+  }

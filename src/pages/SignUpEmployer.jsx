@@ -1,8 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 function SignUpEmployer() {
+
+  // const [formData, setFormData] = useState({
+  //   companyName: '',
+  //   contactPerson: '',
+  //   email: '',
+  //   password: '',
+  //   country: '',
+  //   termsAgreement: false,
+  //   keepInformed: false,
+  // });
+
+  // const handleChange = (e) => {
+  //   const { id, value, type, checked } = e.target;
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     [id]: type === 'checkbox' ? checked : value,
+  //   }));
+  // };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+    
+  //   try {
+  //     const response = await axios.post('/api/employer/signup', formData);
+  //     if (response.status === 201) {
+  //       toast.success('Registration successful');
+  //       // Redirect or perform additional actions
+  //     }
+  //   } catch (error) {
+  //     toast.error('Registration failed. Please try again.');
+  //   }
+  // };
+
   return (
     <>
       <div className="text-right px-4 py-2">

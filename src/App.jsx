@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Login from './pages/Login'
-import SignUp from './pages/SignUp'
+
 import { shouldHideHeaderFooter } from './utils/shouldHideHederFooter'
 import Forgot from './pages/Forgot'
 import ForgotPassword from './pages/ForgotPassword'

@@ -1,0 +1,9 @@
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "securePassword123",
+    "country": "USA",
+    "keepInformed": true,
+    "termsAgreement": true
+ }
