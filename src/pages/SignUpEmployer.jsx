@@ -2,44 +2,74 @@ import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { toast } from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast';
 
 function SignUpEmployer() {
+  // State to store form input values
+  const [formData, setFormData] = useState({
+    companyName: '',
+    contactPerson: '',
+    email: '',
+    password: '',
+    country: '',
+    keepInformed: false,
+    termsAgreement: false,
+  });
 
-  // const [formData, setFormData] = useState({
-  //   companyName: '',
-  //   contactPerson: '',
-  //   email: '',
-  //   password: '',
-  //   country: '',
-  //   termsAgreement: false,
-  //   keepInformed: false,
-  // });
 
-  // const handleChange = (e) => {
-  //   const { id, value, type, checked } = e.target;
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [id]: type === 'checkbox' ? checked : value,
-  //   }));
-  // };
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value,
+    });
+  };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-    
-  //   try {
-  //     const response = await axios.post('/api/employer/signup', formData);
-  //     if (response.status === 201) {
-  //       toast.success('Registration successful');
-  //       // Redirect or perform additional actions
-  //     }
-  //   } catch (error) {
-  //     toast.error('Registration failed. Please try again.');
-  //   }
-  // };
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log("formData", formData);
+
+    // Validate terms agreement
+    if (!formData.termsAgreement) {
+      toast.error('You must agree to the Terms of Service.');
+      return;
+    }
+
+    try {
+      // API call to register the employer
+       // Sending form data to the backend
+      const response = await axios.post('/api/signup/employer',formData);
+
+      // Handle success response
+      console.log('Sign-up successful:', response.data);
+      toast.success('Sign-up successful!');
+
+      // Reset the form or redirect as necessary
+      setFormData({
+        companyName: '',
+        contactPerson: '',
+        email: '',
+        password: '',
+        country: '',
+        keepInformed: false,
+        termsAgreement: false,
+      });
+    } catch (error) {
+      // Handle error response
+      // Show error message; check if there's a specific message from the backend
+      console.error('Sign-up failed:', error);
+      toast.error('Sign-up failed. Please try again.');
+    }
+  };
 
   return (
     <>
+
+      <Toaster position="top-right" reverseOrder={false} />
+
       <div className="text-right px-4 py-2">
         <h2 className="text-base sm:text-lg font-semibold">
           Already Registered?{' '}
@@ -56,7 +86,6 @@ function SignUpEmployer() {
         Sign up to connect as an Employer
       </h2>
       <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      
         <div className="w-full max-w-md rounded-lg p-6 sm:p-8">
           <div className="space-y-4">
             <button className="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition duration-150">
@@ -79,12 +108,15 @@ function SignUpEmployer() {
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
 
-          <form className="space-y-6 sm:space-y-8">
+          <form className="space-y-6 sm:space-y-8" onSubmit={handleSubmit}>
             <div>
               <span className="text-gray-700 font-medium">Company Name</span>
               <input
                 type="text"
                 id="company-name"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleChange}
                 placeholder="Enter your company name"
                 className="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -94,6 +126,9 @@ function SignUpEmployer() {
               <input
                 type="text"
                 id="contact-person"
+                name="contactPerson"
+                value={formData.contactPerson}
+                onChange={handleChange}
                 placeholder="Enter your contact person's name"
                 className="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -103,6 +138,9 @@ function SignUpEmployer() {
               <input
                 type="email"
                 id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Email"
                 className="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -112,6 +150,9 @@ function SignUpEmployer() {
               <input
                 type="password"
                 id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
                 placeholder="Password"
                 className="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
@@ -120,6 +161,9 @@ function SignUpEmployer() {
               <span className="text-gray-700 font-medium">Country</span>
               <select
                 id="country"
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
                 className="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="" disabled>
@@ -128,14 +172,16 @@ function SignUpEmployer() {
                 <option value="India">India</option>
                 <option value="USA">USA</option>
                 <option value="UK">UK</option>
-           
               </select>
             </div>
             <div className="space-y-4">
               <div className="flex items-center">
                 <input
                   id="keep-informed"
+                  name="keepInformed"
                   type="checkbox"
+                  checked={formData.keepInformed}
+                  onChange={handleChange}
                   className="h-4 w-4 text-blue-600 border-gray-300 rounded"
                 />
                 <label htmlFor="keep-informed" className="ml-2 text-gray-700 text-sm sm:text-base">
@@ -145,7 +191,10 @@ function SignUpEmployer() {
               <div className="flex items-center">
                 <input
                   id="terms-agreement"
+                  name="termsAgreement"
                   type="checkbox"
+                  checked={formData.termsAgreement}
+                  onChange={handleChange}
                   className="h-4 w-4 text-blue-600 border-gray-300 rounded"
                 />
                 <label htmlFor="terms-agreement" className="ml-2 text-gray-700 text-sm sm:text-base">
