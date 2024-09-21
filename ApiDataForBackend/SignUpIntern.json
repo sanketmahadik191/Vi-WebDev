@@ -7,3 +7,23 @@
     "keepInformed": true,
     "termsAgreement": true
  }
+
+ "Success Response""When the signup is successful, the server might return:"
+ {
+     "success": true,
+     "message": "SignUp successful.",
+     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+     "user": {
+         "id": "12345",
+         "name": "John Doe",
+         "email": "user@example.com",
+         "role": "intern"
+     }
+ }
+   
+   "Error Response
+ If the login fails, the response might look like this:"
+ {
+     "success": false,
+     "message": "sign up failed"
+ }
