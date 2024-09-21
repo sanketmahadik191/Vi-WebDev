@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import img from '../../assets/Intern.png';
 
 function InternsSection() {
+  let navigate = useNavigate()
   return (
     <section className="min-h-auto lg:px-72 py-10 px-5 bg-white flex items-center">
       <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
@@ -15,7 +17,7 @@ function InternsSection() {
             Vorkinsta equips you with the tools to quickly find and filter jobs that align with your skills, experience, and career aspirations—empowering you to confidently choose your next role.
           </p>
           <div className="mt-10 flex justify-center lg:justify-start">
-            <button className="bg-gray-700 text-white px-8 py-3 rounded-full hover:bg-blue-700 text-lg">
+            <button onClick={() => navigate('/createprofile')} className="bg-gray-700 text-white px-8 py-3 rounded-full hover:bg-blue-700 text-lg">
               Create Profile
             </button>
           </div>

@@ -13,7 +13,6 @@ import Selection from './pages/Selection'
 import SignUpIntern from './pages/SignUpIntern'
 import SignUpEmployer from './pages/SignUpEmployer'
 import ProfileCreation from './pages/ProfileCreation'
-import ProfileIntern from './pages/ProfileIntern'
 import Scrolling from './pages/Scrolling';
 import InternHome from './pages/InternHome'
 
@@ -34,7 +33,6 @@ function App() {
         <Route path='/forgot' element={<Forgot />}></Route>
         <Route path='/forgot' element={<ForgotPassword />}></Route>
         <Route path='/createprofile' element={<ProfileCreation />}></Route>
-        <Route path='/createprofileintern' element={<ProfileIntern />}></Route>
         <Route path='/test' element={<Scrolling />}></Route>
         <Route path='/intern' element={<InternHome />}></Route>
         

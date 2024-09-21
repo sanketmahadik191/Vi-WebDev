@@ -29,7 +29,7 @@ function ProfileCreation() {
     gender: "",
     language: "",
     careerGap: "",
-    skills: "",
+    skills: [],
   });
 
   let [userFiles, setuserFiles] = useState({
