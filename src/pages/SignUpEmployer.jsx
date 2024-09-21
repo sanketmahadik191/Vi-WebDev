@@ -68,7 +68,7 @@ function SignUpEmployer() {
   return (
     <>
 
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster  reverseOrder={false} />
 
       <div className="text-right px-4 py-2">
         <h2 className="text-base sm:text-lg font-semibold">

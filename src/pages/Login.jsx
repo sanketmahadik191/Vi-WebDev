@@ -50,7 +50,7 @@ function Login() {
 
   return (
     <div className="h-screen flex items-center justify-center px-4 md:px-0 md:border-r-black">
-      <Toaster position="top-right" reverseOrder={false} /> 
+      <Toaster  reverseOrder={false} /> 
       <div className="md:border-4 border-gray-200 rounded-lg p-6 md:p-8 w-full max-w-md md:max-w-lg">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-10">
           Connect to My Vorkinsta!
