@@ -1,23 +1,225 @@
 [
-    { "id": 1, "name": "Task 1", "description": "Description for Task 1" },
-    { "id": 2, "name": "Task 2", "description": "Description for Task 2" },
-    { "id": 3, "name": "Task 3", "description": "Description for Task 3" },
-    { "id": 4, "name": "Task 4", "description": "Description for Task 4" },
-    { "id": 5, "name": "Task 5", "description": "Description for Task 5" },
-    { "id": 6, "name": "Task 6", "description": "Description for Task 6" },
-    { "id": 7, "name": "Task 7", "description": "Description for Task 7" },
-    { "id": 8, "name": "Task 8", "description": "Description for Task 8" },
-    { "id": 9, "name": "Task 9", "description": "Description for Task 9" },
-    { "id": 10, "name": "Task 10", "description": "Description for Task 10" },
-    { "id": 11, "name": "Task 11", "description": "Description for Task 11" },
-    { "id": 12, "name": "Task 12", "description": "Description for Task 12" },
-    { "id": 13, "name": "Task 13", "description": "Description for Task 13" },
-    { "id": 14, "name": "Task 14", "description": "Description for Task 14" },
-    { "id": 15, "name": "Task 15", "description": "Description for Task 15" },
-    { "id": 16, "name": "Task 16", "description": "Description for Task 16" },
-    { "id": 17, "name": "Task 17", "description": "Description for Task 17" },
-    { "id": 18, "name": "Task 18", "description": "Description for Task 18" },
-    { "id": 19, "name": "Task 19", "description": "Description for Task 19" },
-    { "id": 20, "name": "Task 20", "description": "Description for Task 20" }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Full Stack Web Development",
+    "price": 5000,
+    "city": "Mumbai",
+    "duration": "8 months",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js"
+    ],
+    "requirement": [
+      "Basic programming knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Develop web applications",
+      "Handle backend"
+    ],
+    "postTime": "2 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 2,
+    "title": "Data Science with Python",
+    "price": 7000,
+    "city": "Bangalore",
+    "duration": "6 months",
+    "skills": [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Machine Learning"
+    ],
+    "requirement": [
+      "Basic Python knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Analyze data",
+      "Build models"
+    ],
+    "postTime": "5 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design",
+    "price": 4000,
+    "city": "Pune",
+    "duration": "4 months",
+    "skills": [
+      "Figma",
+      "Sketch",
+      "Adobe XD"
+    ],
+    "requirement": [
+      "Basic design knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Design user interfaces",
+      "Enhance user experience"
+    ],
+    "postTime": "10 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 4,
+    "title": "Cyber Security",
+    "price": 8000,
+    "city": "Delhi",
+    "duration": "12 months",
+    "skills": [
+      "Ethical Hacking",
+      "Network Security",
+      "Encryption"
+    ],
+    "requirement": [
+      "Basic networking knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Secure systems",
+      "Monitor networks"
+    ],
+    "postTime": "15 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 5,
+    "title": "Cloud Computing",
+    "price": 6000,
+    "city": "Hyderabad",
+    "duration": "6 months",
+    "skills": [
+      "AWS",
+      "Azure",
+      "Google Cloud"
+    ],
+    "requirement": [
+      "Basic cloud knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Manage cloud resources",
+      "Monitor servers"
+    ],
+    "postTime": "20 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 6,
+    "title": "Mobile App Development",
+    "price": 5500,
+    "city": "Chennai",
+    "duration": "7 months",
+    "skills": [
+      "Flutter",
+      "React Native",
+      "Kotlin"
+    ],
+    "requirement": [
+      "Basic app development knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Develop mobile apps",
+      "Test on devices"
+    ],
+    "postTime": "25 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 7,
+    "title": "Machine Learning with Python",
+    "price": 7500,
+    "city": "Mumbai",
+    "duration": "5 months",
+    "skills": [
+      "Python",
+      "Scikit-learn",
+      "TensorFlow"
+    ],
+    "requirement": [
+      "Basic Python knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Build machine learning models",
+      "Analyze data"
+    ],
+    "postTime": "30 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 8,
+    "title": "Blockchain Development",
+    "price": 9500,
+    "city": "Kolkata",
+    "duration": "8 months",
+    "skills": [
+      "Solidity",
+      "Ethereum",
+      "Smart Contracts"
+    ],
+    "requirement": [
+      "Basic blockchain knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Develop smart contracts",
+      "Implement DApps"
+    ],
+    "postTime": "35 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 9,
+    "title": "Artificial Intelligence",
+    "price": 8500,
+    "city": "Bangalore",
+    "duration": "9 months",
+    "skills": [
+      "AI",
+      "Neural Networks",
+      "Deep Learning"
+    ],
+    "requirement": [
+      "Basic machine learning knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Develop AI models",
+      "Analyze neural networks"
+    ],
+    "postTime": "40 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  },
+  {
+    "id": 10,
+    "title": "DevOps Engineering",
+    "price": 6500,
+    "city": "Pune",
+    "duration": "7 months",
+    "skills": [
+      "Docker",
+      "Kubernetes",
+      "CI/CD"
+    ],
+    "requirement": [
+      "Basic DevOps knowledge",
+      "Laptop"
+    ],
+    "responsibilities": [
+      "Implement CI/CD pipelines",
+      "Monitor infrastructure"
+    ],
+    "postTime": "45 min ago",
+    "overview": "Our Full Stack Web Development program provides a unique opportunity to gain hands-on experience in building and managing full-stack applications. As a participant, you'll collaborate with our seasoned team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment."
+  }
+]
