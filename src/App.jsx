@@ -8,7 +8,6 @@ import Login from './pages/Login'
 
 import { shouldHideHeaderFooter } from './utils/shouldHideHederFooter'
 import Forgot from './pages/Forgot'
-import ForgotPassword from './pages/ForgotPassword'
 import Selection from './pages/Selection'
 import SignUpIntern from './pages/SignUpIntern'
 import SignUpEmployer from './pages/SignUpEmployer'
@@ -31,7 +30,6 @@ function App() {
         <Route path='/signup/intern' element={<SignUpIntern />}></Route>
         <Route path='/signup/employer' element={<SignUpEmployer />}></Route>
         <Route path='/forgot' element={<Forgot />}></Route>
-        <Route path='/forgot' element={<ForgotPassword />}></Route>
         <Route path='/createprofile' element={<ProfileCreation />}></Route>
         <Route path='/test' element={<Scrolling />}></Route>
         <Route path='/intern' element={<InternHome />}></Route>
