@@ -1,11 +1,12 @@
 import React from 'react';
 import img from '../../assets/Home-img.jpeg';
+import { Link } from 'react-router-dom';
 
 
 function HeroSection() {
   return (
 
-    <section className=" md:flex items-center justify-evenly py-20 text-center">
+    <section className=" md:flex items-center justify-evenly py-10 text-center">
       <div className='md:w-[40%] text-xl lg:text-2xl xl:text-3xl'>
       <p className=" mb-8 ">
         Now, You Are In The Hands Of </p>
@@ -21,15 +22,19 @@ function HeroSection() {
         </div>
         </div>
       <div className="flex justify-center items-center space-x-4 mb-10 text-xl lg:text-[1.3rem] lg:font-semibold">
+        <Link to='/selection'>
         <button className="px-4 py-3 lg:px-12 lg:py-4 border bg-[#0D3451] border-[#0D3451] rounded-full text-white ">
           Join Now
         </button>
+        </Link>
+        <Link to='/about'>
         <button className="px-4 py-3 lg:px-12 lg:py-4 border border-[#0D3451] rounded-full text-[#0D3451]">
           Contact Us
         </button>
+        </Link>
       </div>
       </div>
-      <div className="w-full md:w-[40%] flex justify-center p-10 md:p-0">
+      <div className="w-full md:w-[40%] flex justify-center p-8 md:p-0">
         <img src={img} alt='images' className='rounded-lg'></img>
 
       </div>
