@@ -4,7 +4,7 @@ function Opportunity() {
   const navigate = useNavigate()
   return (
     <div className="bg-blue-100 py-10 px-6 sm:px-10">
-      <div className="max-w-2xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center">
         <h3 className="text-3xl sm:text-5xl font-bold mb-4">Your Opportunity Awaits</h3>
         <p className="text-gray-600 mb-6 text-xl sm:text-2xl">
           Become one of the millions of tech professionals who rely on Vorkinsta to grow
