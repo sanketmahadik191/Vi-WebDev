@@ -1,14 +1,14 @@
 import React from 'react';
-import img from '../../assets/Employeer.png';
+import img from '../../assets/Intern.png';
 
 function Employers() {
   return (
     <section className="min-h-auto py-10 lg:px-72 px-5 bg-white flex items-center">
-    <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
+    <div className="container mx-auto flex flex-col space-x-10 lg:flex-row items-center lg:justify-between">
       {/* Text Content */}
       <div className="max-w-xl lg:w-1/2 text-center lg:text-left">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-700 ">Employers</h1>
-        <h2 className="text-2xl sm:text-4xl font-bold mt-6 text-gray-500">
+        <h1 className="inline-block text-3xl sm:text-4xl font-semibold text-gray-700 border-2 bg-blue-100 border-blue-100 rounded-lg px-4 py-2 ">Employers</h1>
+        <h2 className="text-2xl sm:text-4xl font-bold mt-6 ">
         Discover Talented Interns and
         Onboard Now
         </h2>

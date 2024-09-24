@@ -1,15 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import img from '../../assets/Intern.png';
+import img from '../../assets/Employeer.png';
 
 function InternsSection() {
   let navigate = useNavigate()
   return (
     <section className="min-h-auto lg:px-72 py-10 px-5 bg-white flex items-center">
-      <div className="container mx-auto flex flex-col lg:flex-row items-center lg:justify-between">
+      <div className="container mx-auto flex flex-col space-x-10 lg:flex-row items-center lg:justify-between">
         {/* Text Content */}
         <div className="max-w-xl lg:w-1/2 text-center lg:text-left">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-700">Interns</h1>
+          <h1 className="inline-block text-3xl sm:text-4xl font-semibold text-gray-700 border-2 bg-blue-100 border-blue-100 rounded-lg px-4 py-2">Interns</h1>
           <h2 className="text-2xl sm:text-4xl font-bold mt-6">
             Explore internship offers that align with your terms
           </h2>
@@ -17,7 +17,7 @@ function InternsSection() {
             Vorkinsta equips you with the tools to quickly find and filter jobs that align with your skills, experience, and career aspirations—empowering you to confidently choose your next role.
           </p>
           <div className="mt-10 flex justify-center lg:justify-start">
-            <button onClick={() => navigate('/createprofile')} className="bg-gray-700 text-white px-8 py-3 rounded-full hover:bg-blue-700 text-lg">
+            <button onClick={() => navigate('/createprofile')} className="bg-gray-700 text-white px-8 py-3 rounded-full hover:opacity-80 text-lg">
               Create Profile
             </button>
           </div>
