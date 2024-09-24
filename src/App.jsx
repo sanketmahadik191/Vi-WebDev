@@ -4,16 +4,19 @@ import './App.css'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import Login from './pages/Login'
+
 
 import { shouldHideHeaderFooter } from './utils/shouldHideHederFooter'
-import Forgot from './pages/Forgot'
-import Selection from './pages/Selection'
-import SignUpIntern from './pages/SignUpIntern'
-import SignUpEmployer from './pages/SignUpEmployer'
+
 import ProfileCreation from './pages/ProfileCreation'
-import Scrolling from './pages/Scrolling';
-import InternHome from './pages/InternHome'
+import Forgot from './pages/Auth/Forgot'
+import Login from './pages/Auth/Login'
+import SignUpIntern from './pages/Auth/SignUpIntern'
+import SignUpEmployer from './pages/Auth/SignUpEmployer'
+import InternHome from './pages/Intern/InternHome'
+import Scrolling from './pages/Others/Scrolling'
+import Selection from './pages/Auth/Selection'
+import InternHome2 from './pages/Intern/InternHome2'
 
 function App() {
   const location = useLocation();
@@ -29,10 +32,11 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup/intern' element={<SignUpIntern />}></Route>
         <Route path='/signup/employer' element={<SignUpEmployer />}></Route>
-        <Route path='/forgot' element={<Forgot />}></Route>
+        <Route path='/forgot' element={<Forgot/>}></Route>
         <Route path='/createprofile' element={<ProfileCreation />}></Route>
-        <Route path='/test' element={<Scrolling />}></Route>
+        <Route path='/test' element={<Scrolling/>}></Route>
         <Route path='/intern' element={<InternHome />}></Route>
+        <Route path='/intern2' element={<InternHome2 />}></Route>
         
       </Routes>
       {!hideHeaderFooter && <Footer />}

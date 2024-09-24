@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import taskData from '../assets/tasks/task.json';
-import Card from '../components/InternHomepage/Card';
-import InternForm from '../components/InternHomepage/InternForm';
+import taskData from '../../assets/tasks/task.json';
+import Card from '../../components/InternHomepage/Card';
+import InternForm from '../../components/InternHomepage/InternForm';
 
 const InternHome = () => {
   const [selectedTask, setSelectedTask] = useState(null);
