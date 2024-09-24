@@ -1,40 +1,63 @@
+import react, { useState } from 'react';
 import JobCard from './JobCard';
 import { FiFilter } from 'react-icons/fi';
+import Pagination from './Pagination';
 
 const JobList = () => {
+
   const jobs = [
     { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
 
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
+    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
+
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
+    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
+    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
+
+    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+
+
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
     { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
     { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
     { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
 
-    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
     { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
     { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
 
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
     { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
     { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+
     { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
 
     { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
-    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
-    
-    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
 
-    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
-    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
-    
-    
-    
-    
     // Add more jobs here
   ];
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+
+  // Calculate total pages
+  const totalPages = Math.ceil(jobs.length / itemsPerPage);
+
+  // Get current items for the current page
+  const currentItems = jobs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
 
   return (
     <>
 
-      <div className="bg-white shadow-lg rounded-lg border mt-4 ">
+      <div className="bg-white  shadow-lg rounded-lg border mt-4 ">
         {/* top div */}
         <div className="flex items-center  p-6 rounded-t-lg justify-between bg-cyan-100 ">
           <div className=' pr-6'>
@@ -69,12 +92,13 @@ const JobList = () => {
 
         </div>
 
-        {jobs.map((job, index) => (
+        {currentItems.map((job, index) => (
           <JobCard key={index} {...job} />
         ))}
 
 
       </div>
+      <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} totalPages={totalPages} />
 
     </>
   );
