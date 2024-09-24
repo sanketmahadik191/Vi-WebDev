@@ -7,6 +7,27 @@ const JobList = () => {
 
     { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
     { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
+
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
+
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
+
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+    
+    { title: 'UI/UX Designer', salary: '₹10,000 - ₹15,000', location: 'Mumbai', type: 'Paid' },
+
+    { title: 'UI Designer', salary: 'Unpaid', location: ' Mumbai ', type: 'Unpaid' },
+    { title: 'Animator', salary: '₹5,000', location: 'pune', type: 'Paid' },
+    
+    
+    
+    
     // Add more jobs here
   ];
 

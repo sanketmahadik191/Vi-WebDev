@@ -1,5 +1,5 @@
 // utils/shouldHideHeaderFooter.js
 
 export const shouldHideHeaderFooter = (pathname) => {
-  return pathname === '/login' || pathname ==='/signup/intern' || pathname === '/signup/employer' ;
+  return pathname === '' || pathname ==='' || pathname === '/signup/employer' ;
 };
