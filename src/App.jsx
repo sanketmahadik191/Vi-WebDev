@@ -17,6 +17,7 @@ import InternHome from './pages/Intern/InternHome'
 import Scrolling from './pages/Others/Scrolling'
 import Selection from './pages/Auth/Selection'
 import InternHome2 from './pages/Intern/InternHome2'
+import Internship from './pages/Intern/Internship'
 
 function App() {
   const location = useLocation();
@@ -37,6 +38,7 @@ function App() {
         <Route path='/test' element={<Scrolling/>}></Route>
         <Route path='/intern' element={<InternHome />}></Route>
         <Route path='/intern2' element={<InternHome2 />}></Route>
+        <Route path='/internship' element={<Internship />}></Route>
         
       </Routes>
       {!hideHeaderFooter && <Footer />}
