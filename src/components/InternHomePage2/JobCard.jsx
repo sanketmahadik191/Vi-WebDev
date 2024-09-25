@@ -4,10 +4,8 @@ import img from "../../assets/InternImg.png"
 const JobCard = ({ title, salary, location, type }) => {
   return (
     <>
-
-
       {/* bottom div */}
-      <div className='w-full  p-6 flex justify-between items-center'>
+      <div className='w-full  py-8 p-6 flex justify-between items-center'>
         <div className='flex  w-1/3'>
           <div className='flex justify-center items-center mx-2'>
             <img
@@ -61,7 +59,7 @@ const JobCard = ({ title, salary, location, type }) => {
         </div>
 
       </div>
-      <hr className="border-t-2 border-gray-300 my-2" />
+      <hr className="border-t-2 border-gray-300 " />
     </>
   );
 };
