@@ -1,17 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { GrLocation } from "react-icons/gr";
+import { BsCurrencyDollar } from "react-icons/bs";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { MdOutlineTimer } from "react-icons/md";
+import { TfiBag } from "react-icons/tfi";
+import { FaUserGroup } from "react-icons/fa6";
+import { GrUpdate } from "react-icons/gr";
+import { MdDateRange } from "react-icons/md";
+
 
 // Sample JSON data
 const jobData = {
   title: "UI/UX Designer",
   company: "Genex Corporate service",
   location: "Mumbai",
+  locationIcon: <GrLocation />,
   stipend: "₹ 15,000 / month",
+  stipendIcon: <BsCurrencyDollar />,
   duration: "3 months",
+  durationIcon: <FaRegCalendarAlt />,
   applyBy: "20 OCT '24",
+  applyByIcon: <MdOutlineTimer />,
   openings: 6,
+  openingsIcon: <TfiBag />,
   applicants: "18 Candidates",
+  applicantsIcon: <FaUserGroup />,
   onboarding: "Immediate Join",
+  onboardingIcon: <GrUpdate />,
   posted: "Today",
+  postedIcon: <MdDateRange />,
   internshipSpotlight: [
     "Proficient in Designing tools like Adobe XD, Figma, etc.",
     "Certification regarding designing courses."
@@ -46,60 +65,86 @@ const JobApply = () => {
   return (
     <div className="max-w-4xl mx-auto p-6">
       {/* Back Button */}
-      <button className="text-blue-600 mb-6">&larr; Back</button>
+      <Link to="/intern2">
+      <button className="border border-gray-600 text-gray-600 font-semibold px-4 py-1 rounded-md mb-6">&larr; Back</button>
+      </Link>
 
       {/* Job Header */}
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className="text-3xl font-bold">{jobData.title}</h1>
-          <p className="text-gray-600">{jobData.company}</p>
+          <h1 className="text-2xl sm:text-4xl font-bold mb-2">{jobData.title}</h1>
+          <FaArrowUpRightFromSquare className='inline-flex mr-3 text-gray-600'/>
+          <span className="font-bold text-sm sm:text-lg text-gray-600">{jobData.company}</span>
         </div>
-        <div>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-md mr-2">Apply Now</button>
-          <button className="border border-gray-300 px-4 py-2 rounded-md">Save</button>
+        <div className='flex flex-col space-y-2'>
+          <button className="button px-4">Apply Now</button>
+          <button className="border border-[#0D3451] text-[#0D3451] font-semibold px-4 py-1 rounded-md">Save</button>
         </div>
       </div>
 
       {/* Job Details */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-800 mb-6">
-        <div className="p-4 border rounded-lg">
-          <p className="font-semibold">Location</p>
+      <div className="flex flex-col sm:grid grid-cols-2 gap-4 p-4">
+      {/* Left Column */}
+      <div className="grid grid-cols-2 gap-2">
+        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span className="font-medium flex items-center gap-4">{jobData.locationIcon} Location</span>
+        </div>
+        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
           <p>{jobData.location}</p>
         </div>
-        <div className="p-4 border rounded-lg">
-          <p className="font-semibold">Stipend</p>
+        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span className="font-medium flex items-center gap-4">{jobData.stipendIcon} Stipend</span>
+        </div>
+        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
           <p>{jobData.stipend}</p>
         </div>
-        <div className="p-4 border rounded-lg">
-          <p className="font-semibold">Duration</p>
+        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span className="font-medium flex items-center gap-4">{jobData.durationIcon} Duration</span>
+        </div>
+        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
           <p>{jobData.duration}</p>
         </div>
-        <div className="p-4 border rounded-lg">
-          <p className="font-semibold">Apply by</p>
+        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span className="font-medium flex items-center gap-4">{jobData.applyByIcon} Apply by</span>
+        </div>
+        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
           <p>{jobData.applyBy}</p>
-        </div>
-        <div className="p-4 border rounded-lg">
-          <p className="font-semibold">Openings</p>
-          <p>{jobData.openings}</p>
-        </div>
-        <div className="p-4 border rounded-lg">
-          <p className="font-semibold">Applicants</p>
-          <p>{jobData.applicants}</p>
-        </div>
-        <div className="p-4 border rounded-lg">
-          <p className="font-semibold">Onboarding</p>
-          <p>{jobData.onboarding}</p>
-        </div>
-        <div className="p-4 border rounded-lg">
-          <p className="font-semibold">Posted</p>
-          <p>{jobData.posted}</p>
         </div>
       </div>
 
+      {/* Right Column */}
+      <div className="grid grid-cols-2 gap-2">
+        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span className="font-medium flex items-center gap-4">{jobData.openingsIcon} Openings</span>
+        </div>
+        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>{jobData.openings}</p>
+        </div>
+        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span className="font-medium flex items-center gap-4">{jobData.applicantsIcon} Applicants</span>
+        </div>
+        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>{jobData.applicants}</p>
+        </div>
+        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span className="font-medium flex items-center gap-4">{jobData.onboardingIcon} Onboarding</span>
+        </div>
+        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>{jobData.onboarding}</p>
+        </div>
+        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span className="font-medium flex items-center gap-4">{jobData.postedIcon} Posted</span>
+        </div>
+        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>{jobData.posted}</p>
+        </div>
+      </div>
+    </div>
+
       {/* Internship Spotlight */}
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Internship Spotlight</h2>
-        <ul className="list-disc pl-6">
+      <div className="mt-10 mb-10">
+        <h2 className="text-xl mb-2 font-bold">Internship Spotlight</h2>
+        <ul className="list-disc pl-6 text-gray-600 font-medium">
           {jobData.internshipSpotlight.map((spotlight, index) => (
             <li key={index}>{spotlight}</li>
           ))}
@@ -107,11 +152,11 @@ const JobApply = () => {
       </div>
 
       {/* Skills Required */}
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Skill(s) Required</h2>
-        <div className="flex flex-wrap gap-2">
+      <div className="mb-10">
+        <h2 className="text-xl font-bold mb-2">Skill(s) Required</h2>
+        <div className="flex flex-wrap  pl-3 text-gray-600 gap-4 mt-4 font-medium">
           {jobData.skillsRequired.map((skill, index) => (
-            <span key={index} className="px-3 py-1 border rounded-md text-sm text-gray-600">
+            <span key={index} className="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">
               {skill}
             </span>
           ))}
@@ -119,15 +164,15 @@ const JobApply = () => {
       </div>
 
       {/* Overview */}
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Overview</h2>
-        <p className="text-gray-700">{jobData.overview}</p>
+      <div className="mb-10">
+        <h2 className="text-xl font-bold mb-2">Overview</h2>
+        <p className="text-gray-600 font-semibold">{jobData.overview}</p>
       </div>
 
       {/* Requirements */}
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Requirements</h2>
-        <ul className="list-disc pl-6 text-gray-700">
+      <div className="mb-10">
+        <h2 className="text-xl font-bold mb-2">Requirements</h2>
+        <ul className="list-disc pl-6 font-semibold text-gray-600">
           {jobData.requirements.map((requirement, index) => (
             <li key={index}>{requirement}</li>
           ))}
@@ -135,9 +180,9 @@ const JobApply = () => {
       </div>
 
       {/* Responsibilities */}
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Responsibilities</h2>
-        <ul className="list-disc pl-6 text-gray-700">
+      <div className="mb-10">
+        <h2 className="text-xl font-bold mb-2">Responsibilities</h2>
+        <ul className="list-disc font-semibold pl-6 text-gray-700">
           {jobData.responsibilities.map((responsibility, index) => (
             <li key={index}>{responsibility}</li>
           ))}
@@ -146,7 +191,7 @@ const JobApply = () => {
 
       {/* Apply Button */}
       <div className="flex justify-center">
-        <button className="bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold">Apply</button>
+        <button className="button">Apply</button>
       </div>
     </div>
   );
