@@ -18,6 +18,7 @@ import Scrolling from './pages/Others/Scrolling'
 import Selection from './pages/Auth/Selection'
 import InternHome2 from './pages/Intern/InternHome2'
 import Internship from './pages/Intern/Internship'
+import JobApply from './pages/JobApply'
 
 function App() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function App() {
         <Route path='/intern' element={<InternHome />}></Route>
         <Route path='/intern2' element={<InternHome2 />}></Route>
         <Route path='/internship' element={<Internship />}></Route>
+        <Route path='/apply' element={<JobApply/>}></Route>
         
       </Routes>
       {!hideHeaderFooter && <Footer />}

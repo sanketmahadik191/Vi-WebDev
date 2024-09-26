@@ -12,7 +12,7 @@ const Suggestions = () => {
       </div>
 
       {/* Right Side: List of Suggestions */}
-      <div className="flex flex-wrap gap-2 w-3/4 px-16">
+      <div className="hidden md:flex flex-wrap gap-2 w-3/4 px-16">
         {suggestions && suggestions.map((suggestion, index) => (
           <button
             key={index}
