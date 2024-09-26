@@ -13,8 +13,6 @@ const Suggestions = () => {
       {/* Right Side: List of Suggestions */}
       <div className="flex flex-wrap gap-2 w-full md:w-3/4 justify-center md:justify-start">
         {suggestions.map((suggestion, index) => (
-      <div className="hidden md:flex flex-wrap gap-2 w-3/4 px-16">
-        {suggestions && suggestions.map((suggestion, index) => (
           <button
             key={index}
             className="bg-gray-100 p-2 text-sm md:text-base font-semibold px-6 md:px-8 rounded-full text-black"
