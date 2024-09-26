@@ -5,13 +5,22 @@ import MainContent from '../../components/InternHomePage2/MainContent'
 
 function InternHome2() {
   return (
-    <div className="flex">
+  //   <div className="flex">
+  //   <Profile />
+  //   <div className="flex-1">
+  //     <InternNavBar/>
+  //     <MainContent />
+  //   </div>
+  // </div>
+  <div className="flex flex-col md:flex-row">
+  
     <Profile />
-    <div className="flex-1">
-      <InternNavBar/>
-      <MainContent />
-    </div>
+  
+  <div className="flex-1">
+    <InternNavBar />
+    <MainContent />
   </div>
+</div>
   )
 }
 
