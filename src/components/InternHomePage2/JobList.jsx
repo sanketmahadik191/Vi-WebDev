@@ -65,7 +65,7 @@ const JobList = () => {
     <p className="text-sm md:text-base">According to your preferences</p>
   </div>
   
-  <div className="flex flex-nowrap justify-center items-center w-full md:w-auto gap-3 md:gap-5 overflow-x-auto">
+  <div className="flex flex-nowrap justify-between  items-center w-full md:w-auto gap-3 md:gap-5 overflow-x-auto px-2 md:px-0">
   <div className="flex items-center gap-2">
     <input type="checkbox" id="paid" className="w-3 md:w-4 h-3 Md:h-4" />
     <label htmlFor="paid" className="text-sm md:text-lg text-pink-600 font-semibold">Paid</label>
