@@ -20,7 +20,7 @@ const MainContent = () => {
         <img
           src={avtarImage}
           alt="Descriptive Alt Text"
-          className="absolute bottom-0 right-4 md:right-32 w-36 md:w-64"
+          className="absolute bottom-0 right-4 md:right-32 w-40 md:w-64"
         />
       </div>
 

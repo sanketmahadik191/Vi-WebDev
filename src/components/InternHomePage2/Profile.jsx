@@ -34,7 +34,7 @@ const Profile = () => {
 
       {/* Sidebar */}
       <aside
-        className={`bg-gray-100  p-6  min-h-screen w-80 md:w-64 transition-transform duration-300 transform md:translate-x-0 ${isSidebarOpen ? 'translate-x-0 ' : '-translate-x-full'
+        className={`bg-gray-100  p-6  min-h-screen w-96 md:w-64 transition-transform duration-300 transform md:translate-x-0 ${isSidebarOpen ? 'translate-x-0 ' : '-translate-x-full'
           } md:relative fixed inset-y-0 left-0 z-20 md:flex md:flex-col`}
       >
         {/* Close button inside the sidebar (for mobile) */}
