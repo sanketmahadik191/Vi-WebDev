@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex justify-between items-center bg-[#0D3451] text-white h-[13vh]">
+    <nav className="flex justify-between items-center bg-[#0D3451] text-white h-[8vh] sm:h-[13vh]">
       <div className="ml-6 lg:ml-20">
         <img
           src={logo}
