@@ -9,6 +9,7 @@ import { TfiBag } from "react-icons/tfi";
 import { FaUserGroup } from "react-icons/fa6";
 import { GrUpdate } from "react-icons/gr";
 import { MdDateRange } from "react-icons/md";
+import { AiOutlineCheckCircle } from 'react-icons/ai'; // success icon
 
 // Sample JSON data
 const jobData = {
@@ -210,8 +211,14 @@ const JobApply = () => {
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-            <h2 className="text-2xl font-bold mb-4">Application Submitted!</h2>
-            <p className="mb-4 text-gray-600">Thank you for applying. We will review your application and get back to you soon.</p>
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-semibold">Application Submitted</h2>
+              {/* Success icon */}
+              <AiOutlineCheckCircle className="w-8 h-8 text-green-500 ml-2" />
+            </div>
+            <p className="text-gray-600 mt-4">
+              Your application for the UI/UX Designer internship has been submitted successfully
+            </p>
             <button 
               onClick={closePopup} 
               className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700"
