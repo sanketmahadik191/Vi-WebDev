@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { GrLocation } from "react-icons/gr";
@@ -9,9 +9,8 @@ import { TfiBag } from "react-icons/tfi";
 import { FaUserGroup } from "react-icons/fa6";
 import { GrUpdate } from "react-icons/gr";
 import { MdDateRange } from "react-icons/md";
+import { AiOutlineCheckCircle } from 'react-icons/ai'; // Success icon
 
-
-// Sample JSON data
 const jobData = {
   title: "UI/UX Designer",
   company: "Genex Corporate service",
@@ -62,11 +61,21 @@ const jobData = {
 };
 
 const JobApply = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleApply = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-6">
       {/* Back Button */}
       <Link to="/intern2">
-      <button className="border border-gray-600 text-gray-600 font-semibold px-4 py-1 rounded-md mb-6">&larr; Back</button>
+        <button className="border border-gray-600 text-gray-600 font-semibold px-4 py-1 rounded-md mb-6">&larr; Back</button>
       </Link>
 
       {/* Job Header */}
@@ -77,69 +86,69 @@ const JobApply = () => {
           <span className="font-bold text-sm sm:text-lg text-gray-600">{jobData.company}</span>
         </div>
         <div className='flex flex-col space-y-2'>
-          <button className="button px-4">Apply Now</button>
+          <button className="button px-4" onClick={handleApply}>Apply Now</button> {/* Added onClick */}
           <button className="border border-[#0D3451] text-[#0D3451] font-semibold px-4 py-1 rounded-md">Save</button>
         </div>
       </div>
 
       {/* Job Details */}
       <div className="flex flex-col sm:grid grid-cols-2 gap-4 p-4">
-      {/* Left Column */}
-      <div className="grid grid-cols-2 gap-2">
-        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span className="font-medium flex items-center gap-4">{jobData.locationIcon} Location</span>
+        {/* Left Column */}
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+            <span className="font-medium flex items-center gap-4">{jobData.locationIcon} Location</span>
+          </div>
+          <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+            <p>{jobData.location}</p>
+          </div>
+          <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+            <span className="font-medium flex items-center gap-4">{jobData.stipendIcon} Stipend</span>
+          </div>
+          <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+            <p>{jobData.stipend}</p>
+          </div>
+          <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+            <span className="font-medium flex items-center gap-4">{jobData.durationIcon} Duration</span>
+          </div>
+          <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+            <p>{jobData.duration}</p>
+          </div>
+          <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+            <span className="font-medium flex items-center gap-4">{jobData.applyByIcon} Apply by</span>
+          </div>
+          <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+            <p>{jobData.applyBy}</p>
+          </div>
         </div>
-        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>{jobData.location}</p>
-        </div>
-        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span className="font-medium flex items-center gap-4">{jobData.stipendIcon} Stipend</span>
-        </div>
-        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>{jobData.stipend}</p>
-        </div>
-        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span className="font-medium flex items-center gap-4">{jobData.durationIcon} Duration</span>
-        </div>
-        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>{jobData.duration}</p>
-        </div>
-        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span className="font-medium flex items-center gap-4">{jobData.applyByIcon} Apply by</span>
-        </div>
-        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>{jobData.applyBy}</p>
-        </div>
-      </div>
 
-      {/* Right Column */}
-      <div className="grid grid-cols-2 gap-2">
-        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span className="font-medium flex items-center gap-4">{jobData.openingsIcon} Openings</span>
-        </div>
-        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>{jobData.openings}</p>
-        </div>
-        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span className="font-medium flex items-center gap-4">{jobData.applicantsIcon} Applicants</span>
-        </div>
-        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>{jobData.applicants}</p>
-        </div>
-        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span className="font-medium flex items-center gap-4">{jobData.onboardingIcon} Onboarding</span>
-        </div>
-        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>{jobData.onboarding}</p>
-        </div>
-        <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span className="font-medium flex items-center gap-4">{jobData.postedIcon} Posted</span>
-        </div>
-        <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>{jobData.posted}</p>
+        {/* Right Column */}
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+            <span className="font-medium flex items-center gap-4">{jobData.openingsIcon} Openings</span>
+          </div>
+          <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+            <p>{jobData.openings}</p>
+          </div>
+          <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+            <span className="font-medium flex items-center gap-4">{jobData.applicantsIcon} Applicants</span>
+          </div>
+          <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+            <p>{jobData.applicants}</p>
+          </div>
+          <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+            <span className="font-medium flex items-center gap-4">{jobData.onboardingIcon} Onboarding</span>
+          </div>
+          <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+            <p>{jobData.onboarding}</p>
+          </div>
+          <div className="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+            <span className="font-medium flex items-center gap-4">{jobData.postedIcon} Posted</span>
+          </div>
+          <div className="bg-white p-2 rounded border border-gray-300 font-semibold">
+            <p>{jobData.posted}</p>
+          </div>
         </div>
       </div>
-    </div>
 
       {/* Internship Spotlight */}
       <div className="mt-10 mb-10">
@@ -154,7 +163,7 @@ const JobApply = () => {
       {/* Skills Required */}
       <div className="mb-10">
         <h2 className="text-xl font-bold mb-2">Skill(s) Required</h2>
-        <div className="flex flex-wrap  pl-3 text-gray-600 gap-4 mt-4 font-medium">
+        <div className="flex flex-wrap pl-3 text-gray-600 gap-4 mt-4 font-medium">
           {jobData.skillsRequired.map((skill, index) => (
             <span key={index} className="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">
               {skill}
@@ -164,15 +173,15 @@ const JobApply = () => {
       </div>
 
       {/* Overview */}
-      <div className="mb-10">
+      <div className="mb-6">
         <h2 className="text-xl font-bold mb-2">Overview</h2>
-        <p className="text-gray-600 font-semibold">{jobData.overview}</p>
+        <p className="text-gray-600 font-medium">{jobData.overview}</p>
       </div>
 
       {/* Requirements */}
-      <div className="mb-10">
+      <div className="mb-6">
         <h2 className="text-xl font-bold mb-2">Requirements</h2>
-        <ul className="list-disc pl-6 font-semibold text-gray-600">
+        <ul className="list-disc pl-6 text-gray-600 font-medium">
           {jobData.requirements.map((requirement, index) => (
             <li key={index}>{requirement}</li>
           ))}
@@ -182,17 +191,26 @@ const JobApply = () => {
       {/* Responsibilities */}
       <div className="mb-10">
         <h2 className="text-xl font-bold mb-2">Responsibilities</h2>
-        <ul className="list-disc font-semibold pl-6 text-gray-700">
+        <ul className="list-disc pl-6 text-gray-600 font-medium">
           {jobData.responsibilities.map((responsibility, index) => (
             <li key={index}>{responsibility}</li>
           ))}
         </ul>
       </div>
 
-      {/* Apply Button */}
-      <div className="flex justify-center">
-        <button className="button">Apply</button>
-      </div>
+      {/* Success Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-80 text-center">
+            <AiOutlineCheckCircle className="text-5xl text-green-600 mx-auto mb-4" />
+            <h3 className="text-lg font-bold mb-2">Application Successful!</h3>
+            <p className="text-gray-600">You have successfully applied for the {jobData.title} position at {jobData.company}.</p>
+            <button onClick={closePopup} className="mt-4 bg-green-600 text-white py-2 px-6 rounded-md">
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
