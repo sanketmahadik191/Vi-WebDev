@@ -171,7 +171,7 @@ const ProfileDetails = () => {
                     <input
                         type="text"
                         className="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Ex: Recruter"
+                        placeholder="Ex: Recruiter"
                     />
                 </div>
 

@@ -20,6 +20,7 @@ import InternHome2 from './pages/Intern/InternHome2'
 import Internship from './pages/Intern/Internship'
 import JobApply from './pages/JobApply'
 import ProfileDetails from './pages/ProfileDetails'
+import MainInternHome from './pages/Intern/MainInternHome'
 
 function App() {
   const location = useLocation();
@@ -39,10 +40,11 @@ function App() {
         <Route path='/createprofile' element={<ProfileCreation />}></Route>
         <Route path='/test' element={<Scrolling/>}></Route>
         <Route path='/intern' element={<InternHome />}></Route>
-        <Route path='/intern2' element={<InternHome2 />}></Route>
         <Route path='/internship' element={<Internship />}></Route>
         <Route path='/apply' element={<JobApply/>}></Route>
         <Route path='/profileDetails' element={<ProfileDetails />} />
+        <Route path='/intern2' element={<InternHome2 />}></Route>
+        <Route path='/mainInternHome' element={<MainInternHome />}></Route>
 
       </Routes>
       {!hideHeaderFooter && <Footer />}
