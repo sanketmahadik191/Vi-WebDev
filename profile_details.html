@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="min-h-screen pb-12 bg-gray-100 flex flex-col justify-center p-2 space-y-6">
+    <!-- Profile Details Header -->
+    <div class="w-full max-w-6xl mx-auto py-2 md:py-6">
+      <h1 class="text-xl md:text-2xl font-bold">Profile Details<span class="text-red-500 ml-1">*</span></h1>
+      <p class="text-gray-500 text-sm md:text-base mt-1">Fill out the required details below</p>
+    </div>
+
+    <!-- Card Container -->
+    <div class="w-full max-w-6xl mx-auto bg-white shadow-lg border border-gray-500 rounded-lg p-6 md:p-12 space-y-6">
+      <!-- Form -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="flex flex-col">
+          <label class="font-medium mb-1">Name<span class="text-red-500 ml-1">*</span></label>
+          <input type="text" class="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name" />
+        </div>
+        <div class="flex flex-col">
+          <label class="font-medium mb-1">Company<span class="text-red-500 ml-1">*</span></label>
+          <input type="text" class="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter company name" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Mobile Number with Flag and Country Code -->
+        <div class="flex flex-col">
+          <label class="font-medium mb-1">Mobile No.<span class="text-red-500 ml-1">*</span></label>
+          <div class="flex items-center p-2 border rounded-md focus-within:ring-2 focus-within:ring-blue-500">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India Flag" class="w-6 h-4 mr-2 rounded-sm" />
+            <span class="mr-2">+91</span>
+            <input type="text" class="flex-1 focus:outline-none" />
+          </div>
+        </div>
+        <!-- Email ID -->
+        <div class="flex flex-col">
+          <label class="font-medium mb-1">Email ID<span class="text-red-500 ml-1">*</span></label>
+          <input type="email" class="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email" />
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="flex flex-col pr-0 md:pr-4">
+        <label class="font-medium mb-1">Location<span class="text-red-500 ml-1">*</span></label>
+        <input type="text" class="p-2 border rounded-md w-full md:w-1/2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your location" />
+      </div>
+
+      <!-- Logo Upload -->
+      <div class="flex flex-col space-y-2">
+        <label class="font-medium">Company's Logo<span class="text-red-500 ml-1">*</span></label>
+        <p class="text-gray-500">Upload the image of the company's logo</p>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full">
+          <!-- Upload Button -->
+          <div class="relative">
+            <input type="file" id="logo-upload" accept="image/*, application/pdf, .doc, .docx" class="hidden" />
+            <label for="logo-upload" class="cursor-pointer flex items-center space-x-2 py-2 px-4 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition duration-150">
+              &#x1F4E5; <!-- Placeholder for upload icon -->
+              <span>Upload file</span>
+            </label>
+          </div>
+          <span id="file-name">No file chosen</span>
+        </div>
+        <span class="text-sm text-gray-400">Max file size: 10MB, File types: JPG, PNG, PDF, DOC, DOCX</span>
+      </div>
+
+      <!-- Company Bio -->
+      <div class="flex flex-col">
+        <label class="font-medium mb-1">Company Bio<span class="text-red-500 ml-1">*</span></label>
+        <textarea id="company-bio" rows="5" class="p-2 px-2 md:px-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Give a brief description about the company..."></textarea>
+        <div class="text-right text-sm text-gray-400 mt-1" id="char-count">600 characters left</div>
+      </div>
+
+      <!-- Designation -->
+      <div class="flex flex-col">
+        <label class="font-medium mb-1">Your Designation<span class="text-red-500 ml-1">*</span></label>
+        <input type="text" class="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: Recruiter" />
+      </div>
+
+      <!-- Company Based -->
+      <div class="flex flex-col pr-0 md:pr-4">
+        <label class="font-medium mb-1">Company Based<span class="text-red-500 ml-1">*</span></label>
+        <select class="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 w-full md:w-1/2 text-gray-500">
+          <option value="" disabled selected>Select company based</option>
+          <option>Remote</option>
+          <option>On-Site</option>
+          <option>Hybrid</option>
+        </select>
+      </div>
+
+      <!-- Started From Date -->
+      <div class="flex flex-col">
+        <label class="font-medium mb-1">Started From<span class="text-red-500 ml-1">*</span></label>
+        <input type="date" class="p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-1/2 text-gray-500" />
+      </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button class="bg-[#001F3F] text-white my-8 md:mt-12 py-2 mx-auto px-10 rounded-md hover:bg-[#001A33] flex items-center justify-center" id="submit-btn">
+          Submit Your Details
+          &#x27A1; <!-- Placeholder for arrow icon -->
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Handle file upload
+    document.getElementById('logo-upload').addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        document.getElementById('file-name').textContent = file.name;
+      } else {
+        document.getElementById('file-name').textContent = 'No file chosen';
+      }
+    });
+
+    // Handle character count for company bio
+    const bioInput = document.getElementById('company-bio');
+    const charCount = document.getElementById('char-count');
+    const maxChars = 600;
+
+    bioInput.addEventListener('input', function() {
+      const remaining = maxChars - bioInput.value.length;
+      charCount.textContent = `${remaining} characters left`;
+    });
+
+    // Handle submit button click (for demo purpose, we log the action)
+    document.getElementById('submit-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+      alert('Details submitted successfully!');
+    });
+  </script>
+</body>
+</html>
