@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+}
+
+.profile-info h2 {
+  font-size: 16px;
+}
+
+.profile-info p {
+  color: #777;
+  font-size: 14px;
+}
+
+.edit-profile {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav ul {
+  list-style-type: none;
+}
+
+.nav li {
+  margin-bottom: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+.nav a i {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.welcome h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #0D3451;
+  font-weight: bold;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #ff6600, #ff9966);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  color: #fff;
+  margin-right: 40px;
+}
+
+.banner-text {
+  flex: 1;
+}
+
+.banner-text h2 {
+  font-size: 20px;
+}
+
+.btn-view {
+  background-color: #0D3451;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.banner-img {
+  width: 300px;
+}
+
+.recommended {
+  margin: 20px 0;
+  color: #484747;
+  border: 1px solid rgb(231, 236, 236);
+  padding: 20px;
+  margin-right: 80px;
+  background-color: rgb(231, 236, 236);
+  max-width: 72rem; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.view-all{
+  color: gray;
+  text-decoration: none;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.internships {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+
+.internship {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  width: 300px;
+}
+
+
+
+.internship-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.internship-img{
+  width: 50px;
+  height: 50px;
+}
+
+.internship-data{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.float{
+  float: left;
+  padding-top: 5px;
+}
+
+.apply-btn{
+  float: right;
+  text-decoration: none;
+  padding-top: 15px;
+  color: blue;
+}
+
+.internship h3 {
+  font-size: 16px;
+}
+
+
+
+.insights {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.insights h2{
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.insight-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.insight-card {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 10px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.insight-card img{
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+  
+  .internship {
+      width: 240px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      display: none;
+  }
+
+  .main-content {
+      padding: 10px;
+      margin: 0 20px 0 20px;
+  }
+
+  .banner {
+      flex-direction: column;
+      margin-right: 0px;
+  }
+
+  .banner-img {
+      margin-top: 10px;
+  }
+
+  .internships {
+      flex-direction: column;
+  }
+  
+   .internship{
+    width: 100%;
+    min-width: 250px;
+   }
+
+  .insight-cards {
+      flex-direction: column;
+  }
+}
+
+
