@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Employer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-md rounded-lg p-6 sm:p-8">
+            <h1 class="text-2xl sm:text-4xl font-bold text-center text-blue-900 mb-4 sm:mb-6">Welcome to the Vorkinsta Team</h1>
+            <h2 class="text-lg sm:text-3xl font-bold text-center text-gray-800 mb-4 sm:mb-6">Sign up to connect as an Employer</h2>
+
+            <button class="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition duration-150">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 sm:w-6 sm:h-6 mr-3"> Continue with Google
+            </button>
+
+            <div class="my-4 flex items-center">
+                <div class="flex-grow border-t border-gray-300"></div>
+                <span class="mx-4 text-gray-500">or</span>
+                <div class="flex-grow border-t border-gray-300"></div>
+            </div>
+
+            <form class="space-y-6 sm:space-y-8">
+                <div>
+                    <input type="text" name="companyName" placeholder="Company Name" class="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <input type="text" name="contactPerson" placeholder="Contact Person" class="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="Email" class="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder="Password" class="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <select name="country" class="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Select your country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                    </select>
+                </div>
+
+                <div class="space-y-4">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="keepInformed" class="h-4 w-4 text-blue-600 border-gray-300 rounded"> Keep me informed with emails about updates and opportunities.
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="termsAgreement" class="h-4 w-4 text-blue-600 border-gray-300 rounded"> Yes, I understand and agree to the <a href="#" class="text-blue-600 underline">Terms of Service</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full py-3 bg-blue-950 text-white font-bold rounded-md hover:bg-blue-700 transition duration-150">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

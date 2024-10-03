@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Vorkinsta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="h-screen flex items-center justify-center px-4 md:px-0 md:border-r-black">
+        <div class="md:border-4 border-gray-200 rounded-lg p-6 md:p-8 w-full max-w-md md:max-w-lg">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 md:mb-10">
+                Connect to My Vorkinsta!
+            </h2>
+            <div class="w-full">
+                <form class="space-y-6 md:space-y-8">
+                    <div>
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" id="email" placeholder="Username or Email" class="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" id="password" placeholder="Password" class="block w-full px-4 py-3 border border-blue-950 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div class="flex justify-end mt-2">
+                            <a href="forgot.html" class="text-sm text-blue-900 hover:underline">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-blue-950 text-white font-bold rounded-md hover:bg-blue-700 transition duration-150">
+                        Log in
+                    </button>
+                </form>
+
+                <div class="my-4 flex items-center">
+                    <div class="flex-grow border-t border-gray-300"></div>
+                    <span class="mx-4 text-gray-500">or</span>
+                    <div class="flex-grow border-t border-gray-300"></div>
+                </div>
+
+                <div class="space-y-4">
+                    <button class="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition duration-150">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-6 h-6 mr-3">
+                        Continue with Google
+                    </button>
+                    <button class="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-100 transition duration-150">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="w-6 h-6 mr-3">
+                        Continue with Apple
+                    </button>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-gray-600">
+                        Don't have an account? 
+                        <a href="signup.html" class="text-blue-600 font-semibold hover:underline">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
