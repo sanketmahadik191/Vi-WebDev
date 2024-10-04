@@ -6,9 +6,11 @@ export const authSlice = createSlice({
         user:"",
 
     },
+    
+    
     reducers:{
         login:(state,action)=>{
-            const { user ,token} = action.payload;
+            const { user , token} = action.payload;
             state.user = user,
             localStorage.setItem("token",token);
         },
