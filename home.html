@@ -26,7 +26,7 @@
       <div class="flex justify-center">
         <div class="flex text-sm sm:text-xl mb-6 sm:mb-10">
           <input type="text"
-            class="border-2 bg-gray-50 py-2 sm:py-3 pl-4 pr-2 rounded-l-full rounded-r-none w-48 sm:w-50 lg:w-80 outline-none z-20"
+            class="border-2 bg-gray-50 py-2 sm:py-3 pl-4 pr-2 rounded-l-full rounded-r-none w-48 sm:w-50 lg:w-80 outline-none z-20 text-black"
             placeholder="Search">
           <button class="bg-black text-white px-4 lg:px-12 py-2 sm:py-3 rounded-r-full rounded-l-none z-20">Search</button>
         </div>
@@ -187,58 +187,59 @@
     </div>
 
     <!-- Category Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-8">
+    <div class="grid grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 py-8 px-1 sm:px-16 lg:px-18">
       <!-- Business Category -->
       <div
-        class="relative bg-white shadow-lg rounded-lg p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        class="relative bg-white shadow-lg rounded-lg p-6  transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
         <div class="absolute inset-y-0 left-0 w-[0.3rem] sm:w-2 rounded-full bg-[#0D3451]"></div>
-        <div class="flex flex-col justify-center items-center h-full">
-          <i class="fas fa-briefcase text-4xl md:text-5xl lg:text-[6rem] text-[#0D3451]"></i>
-          <span class="text-gray-300 text-3xl md:text-5xl lg:text-7xl font-bold absolute top-2 right-4">01</span>
-          <h2 class="mt-4 text-[#0D3451] font-bold text-sm md:text-lg">Business</h2>
-        </div>
+        
+          <div class="flex justify-between mx-2">
+            <i class="fas fa-briefcase text-4xl md:text-5xl lg:text-[5.5rem] text-[#0D3451] "></i>
+            <span class="text-gray-300 text-3xl md:text-6xl lg:text-8xl font-bold ">01</span>
+          </div>
+          <h2 class="mt-4 text-[#0D3451] font-bold text-sm md:text-lg float-left ">Business</h2>
         <div
           class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-t-[30px] border-t-white">
         </div>
       </div>
-
       <!-- Software Development Category -->
       <div
-        class="relative bg-white shadow-lg rounded-lg p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        class="relative bg-white shadow-lg rounded-lg p-6  transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
         <div class="absolute inset-y-0 left-0 w-[0.3rem] sm:w-2 rounded-full bg-[#0D3451]"></div>
-        <div class="flex flex-col justify-center items-center h-full">
-          <i class="fas fa-laptop-code text-4xl md:text-5xl lg:text-[6rem] text-[#0D3451]"></i>
-          <span class="text-gray-300 text-3xl md:text-5xl lg:text-7xl font-bold absolute top-2 right-4">02</span>
-          <h2 class="mt-4 text-[#0D3451] font-bold text-sm md:text-lg">Software Development</h2>
-        </div>
+        
+          <div class="flex justify-between mx-2">
+            <i class="fas fa-laptop-code text-4xl md:text-5xl lg:text-[5.5rem] text-[#0D3451] "></i>
+            <span class="text-gray-300 text-3xl md:text-6xl lg:text-8xl font-bold  ">02</span>
+          </div>
+          <h2 class="mt-4 text-[#0D3451] font-bold text-sm md:text-lg float-left ">Software Development</h2>
         <div
           class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-t-[30px] border-t-white">
         </div>
       </div>
-
-      <!-- Finance Category -->
+       <!-- Finance Category -->
       <div
-        class="relative bg-white shadow-lg rounded-lg p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        class="relative bg-white shadow-lg rounded-lg p-6  transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
         <div class="absolute inset-y-0 left-0 w-[0.3rem] sm:w-2 rounded-full bg-[#0D3451]"></div>
-        <div class="flex flex-col justify-center items-center h-full">
-          <i class="fas fa-sack-dollar text-4xl md:text-5xl lg:text-[6rem] text-[#0D3451]"></i>
-          <span class="text-gray-300 text-3xl md:text-5xl lg:text-7xl font-bold absolute top-2 right-4">03</span>
-          <h2 class="mt-4 text-[#0D3451] font-bold text-sm md:text-lg">Finance</h2>
-        </div>
+        
+          <div class="flex justify-between mx-2">
+            <i class="fa-solid fa-circle-dollar-to-slot text-4xl md:text-5xl lg:text-[5.5rem]  text-[#0D3451] "></i>
+            <span class="text-gray-300 text-3xl md:text-6xl lg:text-8xl font-bold  ">03</span>
+          </div>
+          <h2 class="mt-4 text-[#0D3451] font-bold text-sm md:text-lg float-left ">Finance</h2>
         <div
           class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-t-[30px] border-t-white">
         </div>
       </div>
-
-      <!-- Design Category -->
+        <!-- Design Category -->
       <div
-        class="relative bg-white shadow-lg rounded-lg p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+        class="relative bg-white shadow-lg rounded-lg p-6  transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
         <div class="absolute inset-y-0 left-0 w-[0.3rem] sm:w-2 rounded-full bg-[#0D3451]"></div>
-        <div class="flex flex-col justify-center items-center h-full">
-          <i class="fas fa-pencil-alt text-4xl md:text-5xl lg:text-[6rem] text-[#0D3451]"></i>
-          <span class="text-gray-300 text-3xl md:text-5xl lg:text-7xl font-bold absolute top-2 right-4">04</span>
-          <h2 class="mt-4 text-[#0D3451] font-bold text-sm md:text-lg">Design</h2>
-        </div>
+        
+          <div class="flex justify-between mx-2">
+            <i class="fas fa-pencil-alt text-4xl md:text-5xl lg:text-[5.5rem] text-[#0D3451] "></i>
+            <span class="text-gray-300 text-3xl md:text-6xl lg:text-8xl font-bold  ">04</span>
+          </div>
+          <h2 class="mt-4 text-[#0D3451] font-bold text-sm md:text-lg float-left">Design</h2>
         <div
           class="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-t-[30px] border-t-white">
         </div>
