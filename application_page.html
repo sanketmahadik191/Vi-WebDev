@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application_page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- --------------------application Section----------------------- -->
+    <!-- Container for the page content -->
+    <div class="max-w-7xl mx-auto p-2 md:p-4">
+
+        <!-- Top Back Button with arrow -->
+        <div class="flex items-center space-x-2 mb-6">
+            <button class="text-blue-500 p-2 bg-white border-2 rounded-md border-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Heading and Description -->
+        <div class="mb-6">
+            <h1 class="text-2xl font-bold">My Applications</h1>
+            <p class="text-gray-700">Manage your internship applications and details.</p>
+        </div>
+
+        <!-- Search Bar and Filter Button -->
+        <div class="mb-6 bg-white p-3 rounded-md">
+            <div class="flex items-center justify-between w-full "> <!-- Added flex-wrap -->
+                <!-- Search Input takes half the width -->
+                <div class="relative w-3/4   sm:w-1/2"> <!-- Full width on mobile, half on larger -->
+                    <!-- Search Icon inside the input -->
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-500"></i>
+                    </span>
+                    <input type="text" placeholder="Search by internship name..."
+                        class="w-full pl-10 pr-0 md:pr-8 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                </div>
+
+                <!-- Filter Button with icon -->
+                <button
+                    class="mt-2 sm:mt-0 ml-2 md:ml-0 px-4 py-2 rounded-md hover:bg-slate-200 transition font-bold bg-slate-100 flex items-center space-x-2 text-sm md:text-base">
+                    <i class="fas fa-filter text-black text-sm md:text-base"></i>
+                    <span>Filter</span>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Applications Table -->
+        <div class="overflow-x-auto bg-white">
+            <table class="min-w-full max-w-full bg-white">
+                <thead class="bg-white border-b">
+                    <tr>
+                        <th class="p-4 text-left text-gray-600">Internship Name</th>
+                        <th class="p-4 text-left text-gray-600">Company Name</th>
+                        <th class="p-4 text-left text-gray-600">Applied Date</th>
+                        <th class="p-4 text-left text-gray-600">Status</th>
+                        <th class="p-4 text-left text-gray-600"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Row 1: Selected Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-green-100 text-green-700 px-4 py-1 rounded-lg text-sm">Selected</span>
+                        </td>
+                        <td class="p-4">
+                            <button
+                                class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-2 md:px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 2: Selected Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-green-100 text-green-700 px-4 py-1 rounded-lg text-sm">Selected</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 3: Rejected Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-red-100 text-red-700 px-4 py-1 rounded-lg text-sm">Rejected</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 4: Applied Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-lg text-sm">Applied</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 5: Selected Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-green-100 text-green-700 px-4 py-1 rounded-lg text-sm">Selected</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 6: Rejected Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-red-100 text-red-700 px-4 py-1 rounded-lg text-sm">Rejected</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 7: Applied Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-lg text-sm">Applied</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 8: Selected Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-green-100 text-green-700 px-4 py-1 rounded-lg text-sm">Selected</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 9: Rejected Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-red-100 text-red-700 px-4 py-1 rounded-lg text-sm">Rejected</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                    <!-- Row 10: Applied Status -->
+                    <tr class="border-b">
+                        <td class="p-4">UI/UX Designer</td>
+                        <td class="p-4">genex corporate services</td>
+                        <td class="p-4">25/09/2024</td>
+                        <td class="p-4">
+                            <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-lg text-sm">Applied</span>
+                        </td>
+                        <td class="p-4">
+                            <button class="text-red-500 bg-gray-200 hover:bg-gray-300 rounded-lg px-4 py-1 text-xs md:text-base">View
+                                Details</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- Pagination Buttons -->
+        <div class="flex justify-center gap-8 items-center mt-6">
+            <!-- Back Button with Icon -->
+            <button class="p-4 bg-white text-gray-700 rounded-md hover:bg-gray-300 flex items-center space-x-2">
+                <i class="fas fa-chevron-left"></i> <!-- Left Arrow Icon -->
+
+            </button>
+
+            <div class="space-x-2">
+                <button
+                    class="px-3 py-2 bg-white text-black font-bold rounded-md hover:border hover:border-gray-300">1</button>
+                <button class="px-3 py-2 text-gray-700 rounded-md hover:bg-gray-300">2</button>
+                <button class="px-3 py-2 text-gray-700 rounded-md hover:bg-gray-300">3</button>
+            </div>
+
+            <!-- Next Button with Icon -->
+            <button class="p-4 bg-white text-gray-700 rounded-md hover:bg-gray-300 flex items-center space-x-2">
+
+                <i class="fas fa-chevron-right"></i> <!-- Right Arrow Icon -->
+            </button>
+        </div>
+
+
+    </div>
+
+
+    <!-- Footer Content -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+        // footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+</body>
+
+</html>

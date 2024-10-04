@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application - UI/UX Designer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="max-w-4xl mx-auto p-6">
+    <!-- Back Button -->
+    <a href="/intern2.html">
+      <button class="border border-gray-600 text-gray-600 font-semibold px-4 py-1 rounded-md mb-6">&larr; Back</button>
+    </a>
+
+    <!-- Job Header -->
+    <div class="flex justify-between items-center mb-6">
+      <div>
+        <h1 class="text-2xl sm:text-4xl font-bold mb-2">UI/UX Designer</h1>
+        <span class="inline-flex mr-3 text-gray-600">&#x2197;</span>
+        <span class="font-bold text-sm sm:text-lg text-gray-600">Genex Corporate service</span>
+      </div>
+      <div class="flex flex-col space-y-2">
+        <button class="button px-4" id="applyButton">Apply Now</button>
+        <button class="border border-[#0D3451] text-[#0D3451] font-semibold px-4 py-1 rounded-md">Save</button>
+      </div>
+    </div>
+
+    <!-- Job Details -->
+    <div class="flex flex-col sm:grid grid-cols-2 gap-4 p-4">
+      <div class="grid grid-cols-2 gap-2">
+        <!-- Location -->
+        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span class="font-medium flex items-center gap-4">&#x1f4cd; Location</span>
+        </div>
+        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>Mumbai</p>
+        </div>
+
+        <!-- Stipend -->
+        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span class="font-medium flex items-center gap-4">&#x1f4b0; Stipend</span>
+        </div>
+        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>₹ 15,000 / month</p>
+        </div>
+
+        <!-- Duration -->
+        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span class="font-medium flex items-center gap-4">&#x1f4c6; Duration</span>
+        </div>
+        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>3 months</p>
+        </div>
+
+        <!-- Apply By -->
+        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span class="font-medium flex items-center gap-4">&#x23f0; Apply by</span>
+        </div>
+        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>20 OCT '24</p>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="grid grid-cols-2 gap-2">
+        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span class="font-medium flex items-center gap-4">&#x1f4bc; Openings</span>
+        </div>
+        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>6</p>
+        </div>
+        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span class="font-medium flex items-center gap-4">&#x1f465; Applicants</span>
+        </div>
+        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>18 Candidates</p>
+        </div>
+        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span class="font-medium flex items-center gap-4">&#x1f4cc; Onboarding</span>
+        </div>
+        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>Immediate Join</p>
+        </div>
+        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
+          <span class="font-medium flex items-center gap-4">&#x1f4c5; Posted</span>
+        </div>
+        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
+          <p>Today</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Internship Spotlight -->
+    <div class="mt-10 mb-10">
+      <h2 class="text-xl mb-2 font-bold">Internship Spotlight</h2>
+      <ul class="list-disc pl-6 text-gray-600 font-medium">
+        <li>Proficient in Designing tools like Adobe XD, Figma, etc.</li>
+        <li>Certification regarding designing courses.</li>
+      </ul>
+    </div>
+
+    <!-- Skills Required -->
+    <div class="mb-10">
+      <h2 class="text-xl font-bold mb-2">Skill(s) Required</h2>
+      <div class="flex flex-wrap pl-3 text-gray-600 gap-4 mt-4 font-medium">
+        <span class="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">Figma</span>
+        <span class="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">UX Research</span>
+        <!-- Add other skills here -->
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <div class="mb-6">
+      <h2 class="text-xl font-bold mb-2">Overview</h2>
+      <p class="text-gray-600 font-medium">Our UI/UX Design Internship program provides a unique opportunity to gain hands-on experience in designing and enhancing digital products. As an intern, you'll collaborate with our seasoned design team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment.</p>
+    </div>
+
+    <!-- Requirements -->
+    <div class="mb-6">
+      <h2 class="text-xl font-bold mb-2">Requirements</h2>
+      <ul class="list-disc pl-6 text-gray-600 font-medium">
+        <li>Should be available for full-time (in-office) internship</li>
+        <li>Basic understanding of design principles and tools</li>
+        <!-- Add other requirements here -->
+      </ul>
+    </div>
+
+    <!-- Responsibilities -->
+    <div class="mb-10">
+      <h2 class="text-xl font-bold mb-2">Responsibilities</h2>
+      <ul class="list-disc pl-6 text-gray-600 font-medium">
+        <li>Develop wireframes, build prototypes, and craft high-fidelity mockups</li>
+        <li>Translate design ideas into interactive experiences</li>
+        <!-- Add other responsibilities here -->
+      </ul>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden z-50">
+      <div class="bg-white p-8 rounded-lg shadow-lg w-80 text-center">
+        <span class="text-5xl text-green-600 mx-auto mb-4">&#x2714;</span>
+        <h3 class="text-lg font-bold mb-2">Application Successful!</h3>
+        <p class="text-gray-600">You have successfully applied for the UI/UX Designer position at Genex Corporate service.</p>
+        <button class="mt-4 bg-green-600 text-white py-2 px-6 rounded-md" id="closePopupButton">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script to handle popup -->
+  <script>
+    // Open the success popup
+    document.getElementById('applyButton').addEventListener('click', function() {
+      document.getElementById('successPopup').classList.remove('hidden');
+    });
+
+    // Close the popup
+    document.getElementById('closePopupButton').addEventListener('click', function() {
+      document.getElementById('successPopup').classList.add('hidden');
+    });
+  </script>
+</body>
+</html>

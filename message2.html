@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 2px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #cbd5e0; /* Gray-400 */
+      border-radius: 10px;
+    }
+
+    /* Hover effect on message list */
+    .hover-highlight:hover {
+      background-color: #edf2f7;
+    }
+
+    /* Chat message bubble shadow */
+    .chat-bubble {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Input focus styles */
+    input:focus {
+      outline: none;
+      border: 2px solid #4299e1; /* Blue-500 */
+    }
+
+    /* Button hover */
+    button:hover {
+      background-color: #2b6cb0; /* Blue-700 */
+    }
+  </style>
+</head>
+<body class="bg-gray-200 font-sans">
+
+  <div class="flex h-screen antialiased  text-gray-900">
+
+    <!-- Left Sidebar (Message List) -->
+    <div class="flex flex-col w-2/6  border-r border-gray-200">
+      <!-- Header -->
+      <div class="py-4 px-6 border-b border-gray-300">
+        <h2 class="text-xl font-semibold text-gray-800">Messages</h2>
+      </div>
+      
+      <!-- Search Bar and Message List -->
+      <div class="flex-grow overflow-y-auto ">
+        <div class="relative w-90px m-4 ">
+            <!-- Search Icon -->
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M15 11a6 6 0 111-11 6 6 0 01-1 11z"></path>
+              </svg>
+            </span>
+          
+            <!-- Input Field -->
+            <input 
+              type="text" 
+              placeholder="Search Messages" 
+              class="w-full pl-10 py-3 pr-4 rounded-full bg-gray-100 text-gray-700 placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-500 transition-all duration-200 ease-in-out"
+            />
+          </div>
+        
+        <h3 class="px-4 py-2 m-4 text-md font-bold uppercase text-black">All Chats</h3>
+        
+        <!-- Message List Items -->
+        <ul>
+          <li class="px-4 py-4 mb-1 mr-10 ml-10 bg-white border-b border-gray-300 hover-highlight transition-all duration-150 ease-in-out">
+            <a href="#" class="flex items-center">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="rounded-full w-10 h-10">
+
+
+              <div class="ml-3">
+                <p class="text-sm font-bold text-black-800">Genex</p>
+                <p class="text-sm text-gray-600 truncate">Congratulations on Your Selecti...</p>
+              </div>
+              <span class="ml-auto -mt-5 text-xs text-gray-500">12:35 PM</span>
+            </a>
+          </li>
+          <li class="px-4 py-4 mb-1   mr-10 ml-10 bg-white border-b border-gray-300 hover-highlight transition-all duration-150 ease-in-out">
+            <a href="#" class="flex items-center">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="rounded-full w-10 h-10">
+
+
+              <div class="ml-3">
+                <p class="text-sm font-bold text-black-800">Genex</p>
+                <p class="text-sm text-gray-600 truncate">Congratulations on Your Selecti...</p>
+              </div>
+              <span class="ml-auto -mt-5 text-xs text-gray-500">12:35 PM</span>
+            </a>
+          </li>
+
+          <li class="px-4 py-4 mb-1   mr-10 ml-10 bg-white border-b border-gray-300 hover-highlight transition-all duration-150 ease-in-out">
+            <a href="#" class="flex items-center">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="rounded-full w-10 h-10">
+
+
+              <div class="ml-3">
+                <p class="text-sm font-bold text-black-800">Genex</p>
+                <p class="text-sm text-gray-600 truncate">Congratulations on Your Selecti...</p>
+              </div>
+              <span class="ml-auto -mt-5 text-xs text-gray-500">12:35 PM</span>
+            </a>
+          </li>
+
+          <li class="px-4 py-4 mb-1   mr-10 ml-10 bg-white border-b border-gray-300 hover-highlight transition-all duration-150 ease-in-out">
+            <a href="#" class="flex items-center">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="rounded-full w-10 h-10">
+
+
+              <div class="ml-3">
+                <p class="text-sm font-bold text-black-800">Genex</p>
+                <p class="text-sm text-gray-600 truncate">Congratulations on Your Selecti...</p>
+              </div>
+              <span class="ml-auto -mt-5 text-xs text-gray-500">12:35 PM</span>
+            </a>
+          </li>
+
+
+          <li class="px-4 py-4 mb-1   mr-10 ml-10 bg-white border-b border-gray-300 hover-highlight transition-all duration-150 ease-in-out">
+            <a href="#" class="flex items-center">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="rounded-full w-10 h-10">
+
+
+              <div class="ml-3">
+                <p class="text-sm font-bold text-black-800">Genex</p>
+                <p class="text-sm text-gray-600 truncate">Congratulations on Your Selecti...</p>
+              </div>
+              <span class="ml-auto -mt-5 text-xs text-gray-500">12:35 PM</span>
+            </a>
+          </li>
+
+         <!-- Repeat similar <li> for other message previews -->
+        </ul>
+      </div>
+    </div>
+
+     <!-- Right Side (Message Details) -->
+     <div class="flex flex-col w-3/5 ml-2 bg-gray-100 mt-20 mb-20 rounded-lg shadow-md"> <!-- Added shadow for depth -->
+    
+        <!-- User Info -->
+        <a href="#" class="flex items-center ml-4 mt-5">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="rounded-full w-10 h-10">
+            <div class="ml-3">
+                <p class="text-md font-bold text-gray-800">Genex Corporate Services</p> <!-- Corrected text color -->
+            </div>
+        </a>
+        
+        <!-- Message Container -->
+        <div class="flex-grow p-6 overflow-y-auto">
+            <div class="flex flex-col-reverse space-y-4 space-y-reverse">
+                <!-- User's Sent Message -->
+                <div class="bg-blue-100 text-gray-800 p-4 rounded-lg shadow-lg self-end mb-4 max-w-lg">
+                    <p class="text-xs font-semibold">Congratulations on Your Selection as UI/UX Design Intern!</p>
+                    <p class="text-xs mt-2">Hi M Charan Teja,</p>
+                    <p class="text-xs mt-2">
+                        Congratulations! We are excited to welcome you to Genex Corporate Services as a UI/UX Design Intern. 
+                        After reviewing your profile and portfolio, we are confident that you will be a great fit for our team. 
+                    </p>
+                    <p class="text-xs mt-4">Best regards,</p>
+                    <p class="text-xs">Hiring Manager,</p>
+                    <p class="text-xs">Genex Corporate Services.</p>
+                </div>
+    
+                <!-- Timestamp for sent message -->
+                <div class="text-right mb-4">
+                    <p class="text-xs text-gray-500">12:25 PM</p>
+                </div>
+    
+                <!-- Received Message -->
+                <div class="bg-gray-200 text-gray-800 p-4 rounded-lg shadow-lg self-start mb-4 max-w-lg">
+                    <p class="text-xs">Thank you for the opportunity 😊</p>
+                </div>
+    
+                <!-- Timestamp for received message -->
+                <div class="text-left mb-4">
+                    <p class="text-xs text-gray-500">12:28 PM</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Input Field -->
+        <div class="border-t border-gray-300 p-4  flex items-center space-x-2 m-4"> <!-- Added space between input and button -->
+            <input 
+                type="text" 
+                placeholder="Type a message..." 
+                class="flex-grow px-4 py-2 rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200 ease-in-out" 
+                style="height: 40px; min-width: 0;"
+            >
+            <button 
+                class="bg-blue-800 text-white font-bold py-2 px-4 rounded-full transition-all duration-200 ease-in-out hover:bg-blue-600" 
+                style="height: 40px; flex-shrink: 0;" 
+            >
+                Send
+            </button>
+        </div>
+        
+        
+    </div>
+    
+    
+
+  </div>
+
+</body>
+</html>
