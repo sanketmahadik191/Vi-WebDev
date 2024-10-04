@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selection - Vorkinsta</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
     <section class="flex flex-col items-center justify-center h-auto bg-gray-100 py-16 px-4">
         <div class="text-center mb-10">
+            <!-- Logo Section -->
+            <img src="/assets/selection/VorkinstaLogo.png" alt="Vorkinsta Logo" class="h-16 mx-auto mb-4">
             <h1 class="text-2xl sm:text-3xl text-[#0D3451] font-medium mb-4">Join our platform</h1>
             <p class="text-gray-600 text-sm sm:text-base max-w-md">
                 Choose your role to get started and discover new opportunities tailored for you.
@@ -16,26 +20,36 @@
         </div>
         <div class="flex flex-col sm:flex-row sm:space-x-8 space-y-6 sm:space-y-0">
             <!-- Employer option -->
-            <div class="h-[160px] sm:h-[220px] w-full sm:w-[260px] flex flex-col items-center justify-center relative border p-6 rounded-lg shadow-md bg-white hover:shadow-lg transition-shadow">
-                <input type="radio" name="role" id="employer" class="absolute mb-4 right-4 top-4 transform scale-125 sm:scale-150">
+            <div
+                class="h-[160px] sm:h-[220px] w-full sm:w-[260px] flex flex-col items-center justify-center relative border p-6 rounded-lg shadow-md bg-white hover:shadow-lg transition-shadow">
+                <input type="radio" name="role" id="employer"
+                    class="absolute mb-4 right-4 top-4 transform scale-125 sm:scale-150">
                 <label for="employer" class="block text-lg font-semibold text-[#0D3451]">EMPLOYER</label>
-                <svg class="text-[3rem] sm:text-[4rem] mt-4 mb-2 text-[#0D3451]" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18.67A8.67 8.67 0 113.33 12 8.68 8.68 0 0112 20.67zm-4.34-6.07L10 13.58l2.34 1.75 2.34-1.75 1.34 1.02-3.68 2.77-3.68-2.77zm0-2.54L10 10.68l2.34 1.75 2.34-1.75 1.34 1.02-3.68 2.77-3.68-2.77z"/></svg>
-                <p class="text-sm text-center sm:text-base font-medium text-gray-700">Seeking interns for your company.</p>
+                <!-- Adjust image size -->
+                <img src="/assets/selection/recruitment.png" alt="Employer" class="h-16 w-16 sm:h-20 sm:w-20 mt-4 mb-2">
+                <p class="text-sm text-center sm:text-base font-medium text-gray-700">Seeking interns for your company.
+                </p>
             </div>
             <!-- Intern option -->
-            <div class="h-[160px] sm:h-[220px] w-full sm:w-[260px] flex flex-col items-center justify-center relative border p-6 rounded-lg shadow-md bg-white hover:shadow-lg transition-shadow">
-                <input type="radio" name="role" id="intern" class="absolute mb-4 right-4 top-4 transform scale-125 sm:scale-150">
+            <div
+                class="h-[160px] sm:h-[220px] w-full sm:w-[260px] flex flex-col items-center justify-center relative border p-6 rounded-lg shadow-md bg-white hover:shadow-lg transition-shadow">
+                <input type="radio" name="role" id="intern"
+                    class="absolute mb-4 right-4 top-4 transform scale-125 sm:scale-150">
                 <label for="intern" class="block text-lg font-semibold text-[#0D3451]">INTERN</label>
-                <svg class="text-[3rem] sm:text-[4rem] mt-4 mb-2 text-[#0D3451]" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2.003 7.998A6.003 6.003 0 118.003 14 6.003 6.003 0 012.003 7.998zm4.914-.95l.12.37a.5.5 0 00.474.34h.322a.5.5 0 00.473-.34l.12-.37a1.003 1.003 0 00-.94-1.28h-.12a1.003 1.003 0 00-.941 1.28z"/></svg>
-                <p class="text-sm text-center sm:text-base font-medium text-gray-700">Looking for internship opportunities.</p>
+                <!-- Adjust image size -->
+                <img src="/assets/selection/internship.png" alt="Intern" class="h-16 w-16 sm:h-20 sm:w-20 mt-4 mb-2">
+                <p class="text-sm text-center sm:text-base font-medium text-gray-700">Looking for internship
+                    opportunities.</p>
             </div>
         </div>
         <div class="mt-10">
-            <button class="bg-[#0D3451] text-white w-full sm:w-auto px-16 py-2 rounded-md font-semibold hover:bg-[#1a5480] transition-colors opacity-50 cursor-not-allowed">Verify</button>
+            <button
+                class="bg-[#0D3451] text-white w-full sm:w-auto px-16 py-2 rounded-md font-semibold hover:bg-[#1a5480] transition-colors opacity-50 cursor-not-allowed">Verify</button>
         </div>
         <div class="mt-6 text-[12px] font-medium">
             Already have an account? <a href="login.html" class="text-blue-500 text-sm hover:underline">Log In</a>
         </div>
     </section>
 </body>
+
 </html>
