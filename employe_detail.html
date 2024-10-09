@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Detail Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-8 mb-8 ">
+        <!-- Share Profile section -->
+        <div class="flex justify-end mb-4 px-4">
+            <i class="fas fa-share-alt text-xl text-blue-500 mr-2"></i>
+            <p class="text-lg font-semibold">Share Profile</p>
+        </div>
+
+        <!-- Flex container for sidebar and main content -->
+        <div class="flex flex-col lg:flex-row gap-8 px-4">
+            <!-- Sidebar -->
+            <div class="flex flex-col lg:flex-row-reverse justify-between">
+                <!-- Right Sidebar (aligned to right on larger screens) -->
+                <aside class="bg-white w-full lg:w-72 text-gray-800 p-4  shadow-lg rounded-lg">
+                    <div class="profile flex items-center mb-6">
+                        <img src="./assets/internHome/Profile.webp" alt="Profile" class="w-16 h-16 rounded-full">
+                        <div class="ml-4">
+                            <h2 class="text-xl font-bold">Sanjay Roy</h2>
+                            <p class="text-sm font-semibold text-gray-700">Manager</p>
+                            <a href="#" class="text-blue-500 hover:underline text-xs">Edit profile</a>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <nav class="space-y-3">
+                        <ul>
+                            <li>
+                                <hr class="border-t border-gray-300 mb-4">
+                                <a href="#"
+                                    class="flex items-center p-2 mx-4  rounded-lg border border-gray-300 hover:bg-gray-200 transition my-4">
+                                    <i class="fas fa-home"></i>
+                                    <span class="ml-4">Dashboard</span>
+                                </a>
+                                <hr class="border-b border-gray-300 mt-4">
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 bg-[#001f3f] text-white hover:bg-[#001a33] transition mx-4 my-4">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span class="ml-4">Overview</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span class="ml-4">Post Internship</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span class="ml-4">Published Internship</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-bookmark"></i>
+                                    <span class="ml-4">Invites</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-inbox"></i>
+                                    <span class="ml-4">Inbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-inbox"></i>
+                                    <span class="ml-4">Received Applications</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+
+            </div>
+
+            <!-- Right section with shadowed divs -->
+            <div class="flex-grow ">
+                <!-- Basic Information Section -->
+                <div class="shadow-lg bg-white rounded-lg p-6 mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Basic Information</h3>
+
+                    <!-- Grid layout for displaying three pieces of information in a row -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div>
+                            <p><strong>Company Name:</strong></p>
+                            <p>Genex Technologies</p>
+                        </div>
+                        <div>
+                            <p><strong>Date of Joining</strong></p>
+                            <p>01-Jan-2023</p>
+                        </div>
+                        <div>
+                            <p><strong>Year Of Experience</strong></p>
+                            <p>Fresher</p>
+                        </div>
+                        <div>
+                            <p><strong>Location</strong></p>
+                            <p>Mumbai</p>
+                        </div>
+                        <div>
+                            <p><strong>Email</strong></p>
+                            <p>xyz@gmail.com</p>
+                        </div>
+                        <div>
+                            <p><strong>Phone Number</strong></p>
+                            <p>+919089643876</p>
+                        </div>
+                        <div class="col-span-full">
+                            <p><strong>Date Of Birth</strong></p>
+                            <p>01-Jan-2001</p>
+                        </div>
+                    </div>
+
+                    <!-- Updated button with email icon -->
+                    <button
+                        class="flex items-center mt-4 py-2 px-4 bg-[#001f3f] text-white rounded-lg hover:bg-[#001a33] transition">
+                        <i class="fas fa-envelope mr-1"></i> Send Email
+                    </button>
+                </div>
+
+                <!-- About the Company Section -->
+                <div class="shadow-lg bg-white rounded-lg p-6  ">
+                    <h3 class="text-2xl font-bold mb-4">About the Company</h3>
+                    <p class="mb-4 text-lg">
+                        <strong class="text-gray-800">Vorkinsta</strong> lets any client connect with any consultant and
+                        collaborate independently on their own terms. We aim at increased collaboration in IT for a
+                        high-tech world. Our objective is to give every member of our platform, big or small, the chance
+                        to realize their dreams of achieving their goals of becoming an entrepreneur.
+                    </p>
+                    <h3 class="text-xl font-semibold">Website</h3>
+                    <a href="https://www.vorkinsta.com" target="_blank"
+                        class="text-blue-500 hover:underline  text-lg">https://www.vorkinsta.com/</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load navbar and footer content
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+</body>
+
+</html>
