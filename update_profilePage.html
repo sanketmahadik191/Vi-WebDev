@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add Certification
+            document.getElementById('add-certification').addEventListener('click', () => {
+                const certList = document.getElementById('certification-list');
+                const newCert = document.createElement('input');
+                newCert.type = 'text';
+                newCert.placeholder = 'Certification';
+                newCert.classList.add('w-full', 'p-2', 'border', 'rounded-md', 'mt-2');
+                certList.appendChild(newCert);
+            });
+
+            // Add Skill
+            document.getElementById('add-skill').addEventListener('click', () => {
+                const skillList = document.getElementById('skill-list');
+                const newSkill = document.createElement('span');
+                newSkill.textContent = 'New Skill';
+                newSkill.classList.add('px-3', 'py-1', 'bg-gray-200', 'rounded-full', 'text-sm', 'mt-2', 'inline-block');
+                skillList.appendChild(newSkill);
+            });
+        });
+    </script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8 space-y-8 border-4 border-gray-300">
+        <!-- Profile Header -->
+        <div class="flex">
+            <button class="bg-blue-900 text-white px-4 py-2 rounded-lg">Edit Profile</button>
+        </div>
+
+        <!-- Profile Form -->
+        <div class="flex bg-neutral-200 p-7 rounded-lg ">
+            <!-- Profile Image -->
+            <div class="flex justify-center md:justify-start items-center mb-28">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Image"
+                    class="rounded-full border-4 border-neutral-400 w-34 h-34   ">
+            </div>
+            
+
+            <!-- Personal Info -->
+            <div class="space-y-4 pl-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-1">
+                    <div>
+                        <label class="shadow-lg font-bold text-gray-900 p-1 rounded-full">Full Name</label>
+                        <input type="text" class="w-full p-2 rounded-lg border-2 border-gray-300"
+                            placeholder="Full Name">
+                    </div>
+                    <div>
+                        <label class="text-gray-700 font-bold p-1">Email</label>
+                        <input type="email" class="w-full p-2 rounded-lg border-2 border-gray-300" placeholder="Email">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 font-bold p-1">Password</label>
+                        <input type="password" class="w-full rounded-lg p-2 border-2 border-gray-300"
+                            placeholder="Password">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold p-1">Phone Number</label>
+                        <input type="tel" class="w-full p-2 rounded-lg border-2 border-gray-300"
+                            placeholder="Phone Number">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 font-bold p-1">Current Address</label>
+                        <input type="text" class="w-full p-2 rounded-lg border-2 border-gray-300"
+                            placeholder="Current Address">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold p-1">State</label>
+                        <input type="text" class="w-full p-2 rounded-lg border-2 border-gray-300" placeholder="State">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience and Skills Section -->
+        <div class="bg-neutral-200 p-7 rounded-lg space-y-4">
+            <!-- Work Experience Section -->
+            <div class="space-y-1">
+                <div class=" justify-between items-center">
+                    <label class="block text-gray-700 font-bold p-1">Work Experience</label>
+                    <select
+                        class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
+                        <option>Total years of experience</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div class="space-y-1">
+                <div class="flex justify-between items-center">
+                    <label class="block text-gray-700 font-bold">Certification</label>
+
+                </div>
+                <div id="certification-list"
+                    class="w-full p-3 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 flex items-center">
+                    <p class="text-gray-500 flex-1">No certificate added</p>
+                    <button id="add-certification" class="text-blue-500 font-medium hover:underline ml-4">
+                        + Add
+                    </button>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="space-y-1">
+                <div class="flex justify-between items-center">
+                    <label class="block text-gray-700 font-bold">Skills</label>
+                </div>
+                <div id="skill-list"
+                    class="flex flex-wrap gap-2 w-full p-3 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
+                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">HTML</span>
+                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">CSS</span>
+                    <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">Python</span>
+                    <div class="flex items-center ml-auto">
+                        <button id="add-skill" class="text-blue-500 font-medium hover:underline">
+                            + Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Education and Resume Section -->
+        <div class="bg-neutral-200 p-7 rounded-lg space-y-4">
+            <!-- Education Section -->
+            <div class="space-y-1">
+                <div class="flex justify-between items-center">
+                    <label class=" text-gray-700 font-bold">Education</label>
+                    <button class="bg-blue-900 text-white px-2 py-1  rounded-lg">Add More</button>
+                </div>
+                <select class="w-full p-3 border rounded-md">
+                    <option>Highest Education</option>
+                </select>
+            </div>
+
+            <!-- Resume Section -->
+            <div class="space-y-2">
+                <div class="flex justify-between items-center">
+                    <label class="block text-gray-700 font-bold">Resume</label>
+                </div>
+                <div id="certification-list" class="w-full p-3 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 flex items-center">
+                    <p class="text-gray-500 flex-1">No Resume added</p>
+                    <button id="add-certification" class="text-blue-500 font-medium hover:underline ml-4" onclick="document.getElementById('file-input').click()">
+                        + Add
+                    </button>
+                </div>
+                <input type="file" id="file-input" class="hidden" accept=".pdf, .doc, .docx" onchange="handleFileUpload(event)" />
+            </div>
+        </div>
+
+        <!-- Portfolio Link Section -->
+        <div class="bg-neutral-200 p-7 rounded-lg space-y-4">
+            <div class="flex justify-between items-center">
+                <label class="block text-gray-700 font-bold">Portfolio link</label>
+                <button class="bg-blue-900 text-white px-3 py-1  rounded-lg">Add More</button>
+            </div>
+            <input type="url" class="w-full p-2 border rounded-md" placeholder="https://www.linkedin.com/in/username/">
+        </div>
+    </div>
+</body>
+
+</html>
