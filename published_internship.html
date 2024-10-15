@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Published internship page</title>
+    <title>Published Internship Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +15,7 @@
     <div id="navbar-placeholder"></div>
 
     <!-- Main Container -->
-    <div class="container mx-auto p-8 mb-8 ">
+    <div class="container mx-auto p-4 sm:p-8 mb-8">
         <!-- Share Profile section -->
         <div class="flex justify-end mb-4 px-4">
             <i class="fas fa-share-alt text-xl text-blue-500 mr-2"></i>
@@ -26,12 +26,12 @@
         <div class="flex flex-col lg:flex-row gap-8 px-4">
             <!-- Sidebar -->
             <div class="flex flex-col lg:flex-row-reverse justify-between">
-                <!-- Right Sidebar (aligned to right on larger screens) -->
-                <aside class="bg-white w-full lg:w-72 text-gray-800 p-4  shadow-lg rounded-lg">
+                <!-- Right Sidebar -->
+                <aside class="bg-white w-full lg:w-72 text-gray-800 p-4 border-2 shadow-2xl rounded-lg">
                     <div class="profile flex items-center mb-6">
                         <img src="./assets/internHome/Profile.webp" alt="Profile" class="w-16 h-16 rounded-full">
                         <div class="ml-4">
-                            <h2 class="text-xl font-bold">Sanjay Roy</h2>
+                            <h2 class="text-2xl font-bold">Sanjay Roy</h2>
                             <p class="text-sm font-semibold text-gray-700">Manager</p>
                             <a href="#" class="text-blue-500 hover:underline text-xs">Edit profile</a>
                         </div>
@@ -43,15 +43,16 @@
                             <li>
                                 <hr class="border-t border-gray-300 mb-4">
                                 <a href="#"
-                                    class="flex items-center p-2 mx-4  rounded-lg border border-gray-300 hover:bg-gray-200 transition my-4">
+                                    class="flex items-center p-2 mx-4 rounded-lg border border-gray-300 hover:bg-gray-200 transition my-4">
                                     <i class="fas fa-home"></i>
                                     <span class="ml-4">Dashboard</span>
                                 </a>
                                 <hr class="border-b border-gray-300 mt-4">
                             </li>
+                            <!-- Other navigation items -->
                             <li>
                                 <a href="#"
-                                    class="flex items-center p-2 rounded-lg border border-gray-300 transition mx-4 my-4">
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
                                     <i class="fas fa-briefcase"></i>
                                     <span class="ml-4">Overview</span>
                                 </a>
@@ -65,7 +66,7 @@
                             </li>
                             <li>
                                 <a href="#"
-                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4 bg-[#001f3f] text-white hover:bg-[#001a33] ">
+                                    class="flex items-center p-2 shadow-md rounded-lg border border-gray-300 bg-[#001f3f] text-white hover:bg-[#001a33] transition mx-4 my-4">
                                     <i class="fas fa-user-plus"></i>
                                     <span class="ml-4">Published Internship</span>
                                 </a>
@@ -94,227 +95,220 @@
                         </ul>
                     </nav>
                 </aside>
-
-
             </div>
 
-            <!-- Right section with shadowed divs -->
-            <div class="flex-grow ">
+            <!-- Main Content Section -->
+            <div class="flex-grow">
                 <!-- Basic Information Section -->
-                <div class="shadow-lg bg-white rounded-lg p-6 mb-8">
+                <div class="shadow-2xl border-2 bg-white rounded-2xl p-6 mb-8">
                     <h3 class="text-2xl font-bold mb-4">Overview</h3>
 
-                    <!-- Grid layout for displaying three pieces of information in a row -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Content like Hiring Since, etc. -->
                         <div>
                             <p><strong>Hiring Since</strong></p>
-                            <p>2023</p>
+                            <p class="text-gray-600">2023</p>
                         </div>
                         <div>
                             <p><strong>Emplpoy Count</strong></p>
-                            <p>20-50</p>
+                            <p class="text-gray-600">20-50</p>
                         </div>
                         <div>
                             <p><strong>Oppotunities Posted</strong></p>
-                            <p>4</p>
+                            <p class="text-gray-600">4</p>
                         </div>
                         <div>
                             <p><strong>Location</strong></p>
-                            <p>Mumbai</p>
+                            <p class="text-gray-600">Mumbai</p>
                         </div>
                         <div>
                             <p><strong>Candidate Hired</strong></p>
-                            <p>10</p>
+                            <p class="text-gray-600">10</p>
                         </div>
-
                     </div>
 
-                    <!-- Updated button with email icon -->
                     <button
-                        class="flex items-center mt-4 py-2 px-4 bg-[#001f3f] text-white rounded-lg hover:bg-[#001a33] transition">
+                        class="flex items-center mt-4 py-1 px-4 bg-[#001f3f] text-white shadow-lg rounded-lg hover:bg-[#001a33] transition">
                         <i class="fas fa-envelope mr-1"></i> Send Email
                     </button>
                 </div>
 
-                <!-- About the Company Section -->
-                <div class="shadow-lg bg-white rounded-lg p-6">
+                <!-- Published Internship Section -->
+                <div class="shadow-2xl border-2 bg-white rounded-lg p-6">
                     <h3 class="text-2xl font-bold mb-4">Published Internship</h3>
 
-                    <!-- Flex container to manage 2 cards per row -->
-                    <div class="flex flex-wrap justify-center gap-6 gap-x-10">
-
-                        <!-- Card 1 (Repeat structure for the next card) -->
-                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6  w-full md:w-[36%] mb-4">
-                            <div class="border-2 px-2 md:px-8 py-2 rounded-xl mb-2 ">
-                                <h3 class="text-lg md:text-xl font-bold mb-2">UI/UX Designer</h3>
-
-                                <!-- Location with icon -->
+                    <!-- Cards Layout -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Card 1 -->
+                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
                                 <div class="flex items-center text-gray-600 mb-2">
-                                    <i class="ri-map-pin-line text-lg mr-2"></i> <!-- Location Icon -->
-                                    <span>Mumbai</span>
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
                                 </div>
-
-                                <!-- Duration with icon -->
                                 <div class="flex items-center text-gray-600 mb-2">
-                                    <i class="ri-timer-line text-lg mr-2"></i> <!-- Duration Icon -->
+                                    <i class="ri-timer-line text-lg mr-2"></i>
                                     <span class="pr-4 border-r-2">0-1 year</span>
-
-                                    <!-- Price with icon on the right -->
-                                    <div class="flex items-center pl-4">
-                                        <span>₹10,000</span>
-                                    </div>
+                                    <span class="pl-4">₹10,000</span>
                                 </div>
                             </div>
 
-                            <!-- Company with icon and blue tick -->
-                            <div class="flex items-center text-gray-600 mb-2 mx-0 md:mx-4">
-                                <i class="ri-building-line text-xl mr-2"></i> <!-- Company Icon -->
-                                <span>Genex Technologies</span>
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
                                 <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
-                                <!-- Verified Icon -->
                             </div>
 
-                            <!-- Upload time -->
-                            <div class="text-gray-400 text-sm mb-2 mx-4">1 hour ago</div>
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
 
-                            <!-- View details button -->
-                            <div class="text-right ">
+                            <div class="text-right">
                                 <button
-                                    class="bg-[#001f3f] text-white p-2 rounded-lg text-xs hover:bg-[#001a33] transition duration-200">
-                                    View Details
-                                </button>
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
                             </div>
                         </div>
-                        <!-- Card 2 (Repeat structure for the next card) -->
-                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6  w-full md:w-[36%] mb-4">
-                            <div class="border-2 px-2 md:px-8 py-2 rounded-xl mb-2 ">
-                                <h3 class="text-lg md:text-xl font-bold mb-2">UI/UX Designer</h3>
 
-                                <!-- Location with icon -->
+                        <!-- Card 2 -->
+                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
                                 <div class="flex items-center text-gray-600 mb-2">
-                                    <i class="ri-map-pin-line text-lg mr-2"></i> <!-- Location Icon -->
-                                    <span>Mumbai</span>
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
                                 </div>
-
-                                <!-- Duration with icon -->
                                 <div class="flex items-center text-gray-600 mb-2">
-                                    <i class="ri-timer-line text-lg mr-2"></i> <!-- Duration Icon -->
+                                    <i class="ri-timer-line text-lg mr-2"></i>
                                     <span class="pr-4 border-r-2">0-1 year</span>
-
-                                    <!-- Price with icon on the right -->
-                                    <div class="flex items-center pl-4">
-                                        <span>₹10,000</span>
-                                    </div>
+                                    <span class="pl-4">₹10,000</span>
                                 </div>
                             </div>
 
-                            <!-- Company with icon and blue tick -->
-                            <div class="flex items-center text-gray-600 mb-2 mx-0 md:mx-4">
-                                <i class="ri-building-line text-xl mr-2"></i> <!-- Company Icon -->
-                                <span>Genex Technologies</span>
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
                                 <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
-                                <!-- Verified Icon -->
                             </div>
 
-                            <!-- Upload time -->
-                            <div class="text-gray-400 text-sm mb-2 mx-4">1 hour ago</div>
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
 
-                            <!-- View details button -->
-                            <div class="text-right ">
+                            <div class="text-right">
                                 <button
-                                    class="bg-[#001f3f] text-white p-2 rounded-lg text-xs hover:bg-[#001a33] transition duration-200">
-                                    View Details
-                                </button>
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
                             </div>
                         </div>
-                        <!-- Card 3 (Repeat structure for the next card) -->
-                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6  w-full md:w-[36%] mb-4">
-                            <div class="border-2 px-2 md:px-8 py-2 rounded-xl mb-2 ">
-                                <h3 class="text-lg md:text-xl font-bold mb-2">UI/UX Designer</h3>
 
-                                <!-- Location with icon -->
+                        <!-- Card 3 -->
+                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
                                 <div class="flex items-center text-gray-600 mb-2">
-                                    <i class="ri-map-pin-line text-lg mr-2"></i> <!-- Location Icon -->
-                                    <span>Mumbai</span>
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
                                 </div>
-
-                                <!-- Duration with icon -->
                                 <div class="flex items-center text-gray-600 mb-2">
-                                    <i class="ri-timer-line text-lg mr-2"></i> <!-- Duration Icon -->
+                                    <i class="ri-timer-line text-lg mr-2"></i>
                                     <span class="pr-4 border-r-2">0-1 year</span>
-
-                                    <!-- Price with icon on the right -->
-                                    <div class="flex items-center pl-4">
-                                        <span>₹10,000</span>
-                                    </div>
+                                    <span class="pl-4">₹10,000</span>
                                 </div>
                             </div>
 
-                            <!-- Company with icon and blue tick -->
-                            <div class="flex items-center text-gray-600 mb-2 mx-0 md:mx-4">
-                                <i class="ri-building-line text-xl mr-2"></i> <!-- Company Icon -->
-                                <span>Genex Technologies</span>
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
                                 <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
-                                <!-- Verified Icon -->
                             </div>
 
-                            <!-- Upload time -->
-                            <div class="text-gray-400 text-sm mb-2 mx-4">1 hour ago</div>
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
 
-                            <!-- View details button -->
-                            <div class="text-right ">
+                            <div class="text-right">
                                 <button
-                                    class="bg-[#001f3f] text-white p-2 rounded-lg text-xs hover:bg-[#001a33] transition duration-200">
-                                    View Details
-                                </button>
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
                             </div>
                         </div>
-                        <!-- Card 4 (Repeat structure for the next card) -->
-                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6  w-full md:w-[36%] mb-4">
-                            <div class="border-2 px-2 md:px-8 py-2 rounded-xl mb-2 ">
-                                <h3 class="text-lg md:text-xl font-bold mb-2">UI/UX Designer</h3>
 
-                                <!-- Location with icon -->
+                        <!-- Card 4 -->
+                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
                                 <div class="flex items-center text-gray-600 mb-2">
-                                    <i class="ri-map-pin-line text-lg mr-2"></i> <!-- Location Icon -->
-                                    <span>Mumbai</span>
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
                                 </div>
-
-                                <!-- Duration with icon -->
                                 <div class="flex items-center text-gray-600 mb-2">
-                                    <i class="ri-timer-line text-lg mr-2"></i> <!-- Duration Icon -->
+                                    <i class="ri-timer-line text-lg mr-2"></i>
                                     <span class="pr-4 border-r-2">0-1 year</span>
-
-                                    <!-- Price with icon on the right -->
-                                    <div class="flex items-center pl-4">
-                                        <span>₹10,000</span>
-                                    </div>
+                                    <span class="pl-4">₹10,000</span>
                                 </div>
                             </div>
 
-                            <!-- Company with icon and blue tick -->
-                            <div class="flex items-center text-gray-600 mb-2 mx-0 md:mx-4">
-                                <i class="ri-building-line text-xl mr-2"></i> <!-- Company Icon -->
-                                <span>Genex Technologies</span>
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
                                 <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
-                                <!-- Verified Icon -->
                             </div>
 
-                            <!-- Upload time -->
-                            <div class="text-gray-400 text-sm mb-2 mx-4">1 hour ago</div>
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
 
-                            <!-- View details button -->
-                            <div class="text-right ">
+                            <div class="text-right">
                                 <button
-                                    class="bg-[#001f3f] text-white p-2 rounded-lg text-xs hover:bg-[#001a33] transition duration-200">
-                                    View Details
-                                </button>
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
                             </div>
                         </div>
+
+                        <!-- Card 5 -->
+                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-timer-line text-lg mr-2"></i>
+                                    <span class="pr-4 border-r-2">0-1 year</span>
+                                    <span class="pl-4">₹10,000</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
+                                <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
+                            </div>
+
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
+
+                            <div class="text-right">
+                                <button
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="shadow-lg bg-white border-2 border-gray-800 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-timer-line text-lg mr-2"></i>
+                                    <span class="pr-4 border-r-2">0-1 year</span>
+                                    <span class="pl-4">₹10,000</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
+                                <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
+                            </div>
+
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
+
+                            <div class="text-right">
+                                <button
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
@@ -324,21 +318,14 @@
 
     <script>
         // Load navbar and footer content
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
+        fetch('navbar.html').then(response => response.text()).then(html => {
+            document.getElementById('navbar-placeholder').innerHTML = html;
+        });
 
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
+        fetch('footer.html').then(response => response.text()).then(html => {
+            document.getElementById('footer-placeholder').innerHTML = html;
+        });
     </script>
-
 </body>
 
 </html>
