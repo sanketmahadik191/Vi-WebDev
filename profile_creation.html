@@ -6,8 +6,12 @@
     <title>Profile Creation - Page 1</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<body>
 
+     <!-- Navbar Placeholder -->
+     <div id="navbar-placeholder"></div>
+
+    <!-- Main Container -->
     <div class="min-h-screen flex w-full items-center justify-center bg-cover bg-center mt-8 mb-8 px-4 sm:px-6 lg:px-8">
         <form class="bg-white p-6 sm:p-10 rounded-2xl shadow-lg w-full max-w-xl sm:max-w-2xl lg:max-w-4xl border border-gray-300">
             <h2 class="text-2xl font-bold mb-6 sm:mb-1 text-start text-gray-900 tracking-wide">
@@ -112,5 +116,24 @@
         </form>
     </div>
 
+        <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load navbar and footer content
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
 </body>
 </html>
