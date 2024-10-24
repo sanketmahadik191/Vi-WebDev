@@ -14,11 +14,11 @@
 
 <body class="bg-gray-200 font-sans" x-data="chatApp()">
 
-  <div class="flex flex-col md:flex-row h-screen antialiased text-gray-900">
+  <div class="flex flex-col md:flex-row h-screen antialiased text-gray-900 m-10 ">
     <!-- Left Sidebar (Message List) -->
-    <div class="flex flex-col w-full md:w-2/6">
-      <div class="flex items-center justify-between py-4 px-6 border-b border-gray-300">
-        <template x-if="isMobile">
+    <div class="flex flex-col w-full md:w-2/6 bg-white shadow-md">
+      <div class="flex items-center justify-between py-4 px-6 border-b border-gray-300 bg-gray-100">
+        <template x-if="isMobile && selectedMessage">
           <button @click="backToChatList" class="text-gray-700 font-semibold rounded px-2 py-1 transition duration-200">← Back</button>
         </template>
         <h2 class="text-xl font-semibold text-gray-800">Messages</h2>
@@ -35,11 +35,11 @@
           <input type="text" placeholder="Search Messages" class="w-full pl-10 py-3 pr-4 rounded-full bg-gray-100 text-gray-700 placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-500 transition duration-200" />
         </div>
 
-        <div class="flex-grow overflow-y-auto max-h-[70vh] bg-gray-200">
-          <h3 class="px-4 py-2 m-4 text-md font-bold uppercase text-black">All Chats</h3>
+        <div class="flex-grow overflow-y-auto max-h-[70vh] bg-white">
+          <h3 class="px-4 py-2 text-md font-bold uppercase text-black">All Chats</h3>
           <ul class="m-0 p-0">
             <template x-for="message in messages" :key="message.id">
-              <li @click="selectMessage(message)" class="px-4 py-3 mb-1 mx-2 bg-white border-b border-gray-300 hover:bg-gray-100 transition duration-150 cursor-pointer">
+              <li @click="selectMessage(message)" class="px-4 py-3 mb-1 mx-2 bg-gray-100 border-b border-gray-300 hover:bg-gray-200 transition duration-150 cursor-pointer">
                 <a href="#" class="flex items-center">
                   <img :src="message.avatar" alt="User Avatar" class="rounded-full w-10 h-10">
                   <div class="ml-3">
@@ -56,53 +56,22 @@
     </div>
 
     <!-- Right Side (Message Details) -->
-    <div class="flex flex-col w-full md:w-3/5 ml-2 bg-gray-100  md:rounded-lg shadow-md  mt-20 mb-20">
+    <div :class="{'hidden': !selectedMessage && isMobile, 'block': true}" class="flex flex-col m-10 w-full md:w-4/6 bg-gray-100 shadow-md">
       <!-- User Info -->
-      <a href="#" class="flex items-center ml-4 mt-5">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="rounded-full w-10 h-10">
-        <div class="ml-3">
-          <p class="text-md font-bold text-gray-800" id="chat-user-name">Genex Corporate Services</p>
+      <template x-if="selectedMessage">
+        <div class="flex items-center p-4 border-b border-gray-300 bg-gray-100">
+          <img :src="selectedMessage.avatar" alt="User Avatar" class="rounded-full w-10 h-10">
+          <div class="ml-3">
+            <p class="text-lg font-bold text-gray-800" x-text="selectedMessage.sender"></p>
+          </div>
         </div>
-      </a>
+      </template>
 
       <!-- Message Container -->
-      <div class="flex-grow p-6 overflow-y-auto" id="chat-messages">
-        <div class="flex flex-col-reverse space-y-4 space-y-reverse" id="message-container">
-          <div class="bg-blue-100 text-gray-800 p-4 rounded-lg shadow-lg self-end mb-4 max-w-lg">
-            <p class="text-xs font-semibold">Congratulations on Your Selection as UI/UX Design Intern!</p>
-            <p class="text-xs mt-2">Hi M Charan Teja,</p>
-            <p class="text-xs mt-2">We are confident that you will be a great fit for our team.</p>
-            <p class="text-xs mt-4">Best regards,</p>
-            <p class="text-xs">Hiring Manager</p>
-          </div>
-
-          <div class="bg-gray-200 text-gray-800 p-4 rounded-lg shadow-lg self-start mb-4 max-w-lg">
-            <p class="text-xs">Thank you for the opportunity 😊</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Input Field -->
-      <div class="border-t border-gray-300 p-4 flex items-center space-x-2 m-4">
-        <input type="text" id="message-input" placeholder="Type a message..."
-          class="flex-grow px-4 py-2 rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-200 ease-in-out">
-        <button id="send-button"
-          class="bg-blue-800 text-white font-bold py-2 px-4 rounded-full transition-all duration-200 ease-in-out hover:bg-blue-600">Send</button>
-    <div :class="{'block': selectedMessage, 'hidden': !selectedMessage}" class="flex flex-col w-full md:w-3/5 ml-2 bg-gray-100 mt-20 mb-20 rounded-lg shadow-md">
-      <div class="flex items-center p-4 border-b border-gray-300">
-        <h2 class="ml-4 text-lg font-semibold" x-text="selectedMessage?.sender"></h2>
-      </div>
-      <a href="#" class="flex items-center ml-4 mt-5">
-        <img :src="selectedMessage?.avatar" alt="User Avatar" class="rounded-full w-10 h-10">
-        <div class="ml-3">
-          <p class="text-md font-bold text-gray-800" x-text="selectedMessage?.sender"></p>
-        </div>
-      </a>
-
       <div class="flex-grow p-6 overflow-y-auto">
         <div class="flex flex-col space-y-4">
           <template x-for="chat in chatMessages" :key="chat.id">
-            <div :class="{'self-end': chat.sentByUser, 'self-start': !chat.sentByUser}">
+            <div :class="chat.sentByUser ? 'self-end' : 'self-start'">
               <div :class="chat.sentByUser ? 'bg-blue-100' : 'bg-gray-200'" class="p-4 rounded-lg shadow-lg max-w-lg">
                 <p class="text-xs" x-text="chat.message"></p>
               </div>
@@ -114,82 +83,15 @@
         </div>
       </div>
 
-      <div class="border-t border-gray-300 p-4 flex items-center space-x-2 m-4">
-        <input type="text" x-model="newMessage" placeholder="Type a message..." class="flex-grow px-4 py-2 rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
-        <button @click="sendMessage" class="bg-[#001f3f] text-white font-bold py-2 px-4 rounded-full transition hover:bg-blue-900">Send</button>
+      <!-- Input Field -->
+      <div class="border-t border-gray-300 p-4 flex items-center space-x-2">
+        <input type="text" x-model="newMessage" placeholder="Type a message..." class="flex-grow px-4 py-2 rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 ease-in-out">
+        <button @click="sendMessage" class="bg-blue-800 text-white font-bold py-2 px-4 rounded-full transition duration-200 hover:bg-blue-600">Send</button>
       </div>
     </div>
   </div>
 
   <script>
-    // Simulated chat data
-    const chatData = {
-      genex: [
-        {
-          message: "Hi M Charan Teja, Congratulations on Your Selection as UI/UX Design Intern!",
-          time: "12:35 PM"
-        },
-        {
-          message: "We are confident that you will be a great fit for our team.",
-          time: "12:40 PM"
-        }
-      ],
-      techCorp: [
-        {
-          message: "New Project Alert! Check your inbox for more details.",
-          time: "10:30 AM"
-        }
-      ],
-      innovate: [
-        {
-          message: "Your design submission is being reviewed. We will get back to you shortly.",
-          time: "Yesterday"
-        }
-      ],
-      creativeLabs: [
-        {
-          message: "Client feedback is here, review the document and update the designs.",
-          time: "2 Days Ago"
-        }
-      ]
-    };
-
-    // Function to load chat data
-    function loadChat(user) {
-      const messageContainer = document.getElementById("message-container");
-      messageContainer.innerHTML = ""; // Clear previous messages
-      chatData[user].forEach(chat => {
-        const messageBubble = document.createElement("div");
-        messageBubble.classList.add("bg-blue-100", "text-gray-800", "p-4", "rounded-lg", "shadow-lg", "self-end", "mb-4", "max-w-lg");
-        messageBubble.innerHTML = `<p class="text-xs">${chat.message}</p><span class="text-xs text-gray-500">${chat.time}</span>`;
-        messageContainer.appendChild(messageBubble);
-      });
-    }
-
-    // Send message functionality
-    const messageInput = document.getElementById("message-input");
-    const sendButton = document.getElementById("send-button");
-
-    sendButton.addEventListener("click", sendMessage);
-    messageInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") sendMessage();
-    });
-
-    function sendMessage() {
-      const messageContainer = document.getElementById("message-container");
-      const message = messageInput.value.trim();
-
-      if (message) {
-        const messageBubble = document.createElement("div");
-        messageBubble.classList.add("bg-gray-200", "text-gray-800", "p-4", "rounded-lg", "shadow-lg", "self-start", "mb-4", "max-w-lg");
-        messageBubble.innerHTML = `<p class="text-xs">${message}</p>`;
-        messageContainer.appendChild(messageBubble);
-
-        // Clear input after sending
-        messageInput.value = "";
-      }
-    }
-  </script>
     function chatApp() {
       return {
         selectedMessage: null,
@@ -204,10 +106,14 @@
         newMessage: '',
         isMobile: window.innerWidth < 768, // Check if the screen width is less than 768px
         selectMessage(message) {
-          this.selectedMessage = message; // Set selected message when a message is clicked
+          this.selectedMessage = message;
+          if (this.isMobile) {
+            // Scroll to top for better mobile view
+            window.scrollTo(0, 0);
+          }
         },
         backToChatList() {
-          this.selectedMessage = null; // Clear selected message when back is clicked
+          this.selectedMessage = null; // Reset selected message on back
         },
         sendMessage() {
           if (this.newMessage.trim() !== '') {
@@ -217,13 +123,13 @@
               time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
               sentByUser: true
             });
-            this.newMessage = '';
+            this.newMessage = ''; // Clear the message input
           }
         },
       };
     }
   </script>
-
 </body>
 
 </html>
+  
