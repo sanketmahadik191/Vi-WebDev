@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Published Internship Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-4 sm:p-8 mb-8">
+        <!-- Share Profile section -->
+        <div class="flex justify-end mb-4 px-4">
+            <i class="fas fa-share-alt text-xl text-blue-500 mr-2"></i>
+            <p class="text-lg font-semibold">Share Profile</p>
+        </div>
+
+        <!-- Flex container for sidebar and main content -->
+        <div class="flex flex-col lg:flex-row gap-8 px-4">
+            <!-- Sidebar -->
+            <div class="flex flex-col lg:flex-row-reverse justify-between">
+                <!-- Right Sidebar -->
+                <aside class="bg-white w-full lg:w-72 text-gray-800 p-4 border-2 shadow-2xl rounded-lg">
+                    <div class="profile flex items-center mb-6">
+                        <img src="./assets/internHome/Profile.webp" alt="Profile" class="w-16 h-16 rounded-full">
+                        <div class="ml-4">
+                            <h2 class="text-2xl font-bold">Sanjay Roy</h2>
+                            <p class="text-sm font-semibold text-gray-700">Manager</p>
+                            <a href="#" class="text-blue-500 hover:underline text-xs">Edit profile</a>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <nav class="space-y-3">
+                        <ul>
+                            <li>
+                                <hr class="border-t border-gray-300 mb-4">
+                                <a href="#"
+                                    class="flex items-center p-2 mx-4 rounded-lg border border-gray-300 hover:bg-gray-200 transition my-4">
+                                    <i class="fas fa-home"></i>
+                                    <span class="ml-4">Dashboard</span>
+                                </a>
+                                <hr class="border-b border-gray-300 mt-4">
+                            </li>
+                            <!-- Other navigation items -->
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span class="ml-4">Overview</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span class="ml-4">Post Internship</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 shadow-md rounded-lg border border-gray-300 bg-[#001f3f] text-white hover:bg-[#001a33] transition mx-4 my-4">
+                                    <i class="fas fa-user-plus"></i>
+                                    <span class="ml-4">Published Internship</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-bookmark"></i>
+                                    <span class="ml-4">Invites</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-inbox"></i>
+                                    <span class="ml-4">Inbox</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center p-2 rounded-lg border border-gray-300 hover:bg-gray-200 transition mx-4 my-4">
+                                    <i class="fas fa-inbox"></i>
+                                    <span class="ml-4">Received Applications</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+            </div>
+
+            <!-- Main Content Section -->
+            <div class="flex-grow">
+                <!-- Basic Information Section -->
+                <div class="shadow-2xl border-2 bg-white rounded-2xl p-6 mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Overview</h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Content like Hiring Since, etc. -->
+                        <div>
+                            <p><strong>Hiring Since</strong></p>
+                            <p class="text-gray-600">2023</p>
+                        </div>
+                        <div>
+                            <p><strong>Emplpoy Count</strong></p>
+                            <p class="text-gray-600">20-50</p>
+                        </div>
+                        <div>
+                            <p><strong>Oppotunities Posted</strong></p>
+                            <p class="text-gray-600">4</p>
+                        </div>
+                        <div>
+                            <p><strong>Location</strong></p>
+                            <p class="text-gray-600">Mumbai</p>
+                        </div>
+                        <div>
+                            <p><strong>Candidate Hired</strong></p>
+                            <p class="text-gray-600">10</p>
+                        </div>
+                    </div>
+
+                    <button
+                        class="flex items-center mt-4 py-1 px-4 bg-[#001f3f] text-white shadow-lg rounded-lg hover:bg-[#001a33] transition">
+                        <i class="fas fa-envelope mr-1"></i> Send Email
+                    </button>
+                </div>
+
+                <!-- Published Internship Section -->
+                <div class="shadow-2xl border-2 bg-white rounded-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4">Published Internship</h3>
+
+                    <!-- Cards Layout -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Card 1 -->
+                        <div class="shadow-xl bg-white border-2 border-gray-400 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-timer-line text-lg mr-2"></i>
+                                    <span class="pr-4 border-r-2">0-1 year</span>
+                                    <span class="pl-4">₹10,000</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
+                                <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
+                            </div>
+
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
+
+                            <div class="text-right">
+                                <button
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="shadow-xl bg-white border-2 border-gray-400 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-timer-line text-lg mr-2"></i>
+                                    <span class="pr-4 border-r-2">0-1 year</span>
+                                    <span class="pl-4">₹10,000</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
+                                <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
+                            </div>
+
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
+
+                            <div class="text-right">
+                                <button
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="shadow-xl bg-white border-2 border-gray-400 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-timer-line text-lg mr-2"></i>
+                                    <span class="pr-4 border-r-2">0-1 year</span>
+                                    <span class="pl-4">₹10,000</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
+                                <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
+                            </div>
+
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
+
+                            <div class="text-right">
+                                <button
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="shadow-xl bg-white border-2 border-gray-400 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-timer-line text-lg mr-2"></i>
+                                    <span class="pr-4 border-r-2">0-1 year</span>
+                                    <span class="pl-4">₹10,000</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
+                                <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
+                            </div>
+
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
+
+                            <div class="text-right">
+                                <button
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="shadow-xl bg-white border-2 border-gray-400 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-timer-line text-lg mr-2"></i>
+                                    <span class="pr-4 border-r-2">0-1 year</span>
+                                    <span class="pl-4">₹10,000</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
+                                <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
+                            </div>
+
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
+
+                            <div class="text-right">
+                                <button
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="shadow-xl bg-white border-2 border-gray-400 rounded-xl p-6">
+                            <div class="border-2 px-4 py-2 rounded-xl mb-2">
+                                <h3 class="text-xl font-bold mb-2">UI/UX Designer</h3>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-map-pin-line text-lg mr-2"></i> Mumbai
+                                </div>
+                                <div class="flex items-center text-gray-600 mb-2">
+                                    <i class="ri-timer-line text-lg mr-2"></i>
+                                    <span class="pr-4 border-r-2">0-1 year</span>
+                                    <span class="pl-4">₹10,000</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center text-gray-600 mb-2">
+                                <i class="ri-building-line text-xl mr-2"></i> Genex Technologies
+                                <i class="ri-checkbox-circle-fill text-xl text-blue-500 ml-2"></i>
+                            </div>
+
+                            <div class="text-gray-400 text-sm mb-2">1 hour ago</div>
+
+                            <div class="text-right">
+                                <button
+                                    class="bg-[#001f3f] text-white px-3 py-1 shadow-lg rounded-lg text-xs hover:bg-[#001a33] transition">View
+                                    Details</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load navbar and footer content
+        fetch('navbar.html').then(response => response.text()).then(html => {
+            document.getElementById('navbar-placeholder').innerHTML = html;
+        });
+
+        fetch('footer.html').then(response => response.text()).then(html => {
+            document.getElementById('footer-placeholder').innerHTML = html;
+        });
+    </script>
+</body>
+
+</html>
