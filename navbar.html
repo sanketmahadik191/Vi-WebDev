@@ -29,9 +29,15 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden-menu md:hidden absolute top-[13vh] right-0 w-full bg-[#0D3451] z-10">
+    <div id="mobile-menu" class="hidden-menu md:hidden absolute top-[1vh] right-0 w-full bg-[#0D3451] z-20">
+      <!-- Close Icon -->
+      <div class="flex justify-end px-4 pt-2">
+        <svg id="mobile-menu-close" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
       <ul class="flex flex-col items-center gap-6 py-4">
-        <li><a href="/" class="text-white hover:text-gray-200 text-2xl font-bold">HOME</a></li>
+        <li><a href="/" class="text-white hover:text-gray-200  ">HOME</a></li>
         <li><a href="/about.html" class="text-white hover:text-gray-200">About Us</a></li>
         <li><a href="/faq.html" class="text-white hover:text-gray-200">FAQ</a></li>
         <li><a href="/login.html" class="text-white hover:text-gray-200">Login</a></li>
@@ -54,14 +60,17 @@
   <script>
     // Handle Mobile Menu Toggle
     const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenuClose = document.getElementById("mobile-menu-close");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    mobileMenuButton.addEventListener("click", function() {
-      if (mobileMenu.classList.contains("hidden-menu")) {
-        mobileMenu.classList.remove("hidden-menu");
-      } else {
-        mobileMenu.classList.add("hidden-menu");
-      }
+    // Show mobile menu
+    mobileMenuButton.addEventListener("click", function () {
+      mobileMenu.classList.remove("hidden-menu");
+    });
+
+    // Hide mobile menu
+    mobileMenuClose.addEventListener("click", function () {
+      mobileMenu.classList.add("hidden-menu");
     });
   </script>
 </body>

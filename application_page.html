@@ -236,12 +236,26 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading navbar:', error));
+         fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+
+            // Reinitialize navbar script
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenuClose = document.getElementById("mobile-menu-close");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+                // Show mobile menu
+                mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+
+                // Hide mobile menu
+                mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
+            }
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+            
         // footer
         fetch('footer.html')
             .then(response => response.text())
