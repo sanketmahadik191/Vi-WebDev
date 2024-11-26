@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,16 @@
     }
   </style>
 </head>
+
 <body>
+  <!-- Navbar Section -->
+  <div id="navbar-placeholder"></div>
+
   <div class="max-w-4xl mx-auto p-4 sm:p-6">
     <!-- Back Button -->
     <a href="/intern2.html">
-      <button class="border border-gray-600 text-gray-600 font-semibold px-4 py-1 rounded-md mb-4 sm:mb-6">&larr; Back</button>
+      <button class="border border-gray-600 text-gray-600 font-semibold px-4 py-1 rounded-md mb-4 sm:mb-6">&larr;
+        Back</button>
     </a>
 
     <!-- Job Header -->
@@ -110,14 +116,18 @@
       <h2 class="text-xl font-bold mb-2">Skill(s) Required</h2>
       <div class="flex flex-wrap pl-3 text-gray-600 gap-4 mt-4 font-medium">
         <span class="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">Figma</span>
-        <span class="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">UX Research</span>
+        <span class="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">UX
+          Research</span>
       </div>
     </div>
 
     <!-- Overview -->
     <div class="mb-6">
       <h2 class="text-xl font-bold mb-2">Overview</h2>
-      <p class="text-gray-600 font-medium">Our UI/UX Design Internship program provides a unique opportunity to gain hands-on experience in designing and enhancing digital products. As an intern, you'll collaborate with our seasoned design team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment.</p>
+      <p class="text-gray-600 font-medium">Our UI/UX Design Internship program provides a unique opportunity to gain
+        hands-on experience in designing and enhancing digital products. As an intern, you'll collaborate with our
+        seasoned design team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented
+        environment.</p>
     </div>
 
     <!-- Requirements -->
@@ -143,23 +153,57 @@
       <div class="bg-white p-8 rounded-lg shadow-lg w-80 text-center">
         <span class="text-5xl text-green-600 mx-auto mb-4">&#x2714;</span>
         <h3 class="text-lg font-bold mb-2">Application Successful!</h3>
-        <p class="text-gray-600">You have successfully applied for the UI/UX Designer position at Genex Corporate service.</p>
+        <p class="text-gray-600">You have successfully applied for the UI/UX Designer position at Genex Corporate
+          service.</p>
         <button class="mt-4 bg-green-600 text-white py-2 px-6 rounded-md" id="closePopupButton">OK</button>
       </div>
     </div>
   </div>
 
-  <!-- Script to handle popup -->
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+
   <script>
+    // Navbar
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+
+        // Reinitialize navbar script
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenuClose = document.getElementById("mobile-menu-close");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+          // Show mobile menu
+          mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+
+          // Hide mobile menu
+          mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
+        }
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+
+    // Footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+
     // Open the success popup
-    document.getElementById('applyButton').addEventListener('click', function() {
+    document.getElementById('applyButton').addEventListener('click', function () {
       document.getElementById('successPopup').classList.remove('hidden');
     });
 
     // Close the popup
-    document.getElementById('closePopupButton').addEventListener('click', function() {
+    document.getElementById('closePopupButton').addEventListener('click', function () {
       document.getElementById('successPopup').classList.add('hidden');
     });
   </script>
 </body>
+
 </html>

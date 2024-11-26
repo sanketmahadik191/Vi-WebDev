@@ -10,6 +10,9 @@
   </style>
 </head>
 <body>
+<!-- Navbar Section -->
+<div id="navbar-placeholder"></div>
+
   <div class="min-h-screen pb-12 bg-gray-100 flex flex-col justify-center p-2 space-y-6">
     <!-- Profile Details Header -->
     <div class="w-full max-w-6xl mx-auto py-2 md:py-6">
@@ -112,7 +115,38 @@
     </div>
   </div>
 
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
   <script>
+    // Navbar
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+
+            // Reinitialize navbar script
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenuClose = document.getElementById("mobile-menu-close");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+                // Show mobile menu
+                mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+
+                // Hide mobile menu
+                mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
+            }
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+
+        // Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
     // Handle file upload
     document.getElementById('logo-upload').addEventListener('change', function() {
       const file = this.files[0];
