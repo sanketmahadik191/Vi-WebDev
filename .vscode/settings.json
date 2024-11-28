@@ -1,3 +1,4 @@
 {
-    "CodeGPT.Autocomplete.enabled": true
+    "CodeGPT.Autocomplete.enabled": true,
+    "liveServer.settings.port": 5501
 }

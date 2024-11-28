@@ -6,10 +6,14 @@
   <title>Navbar</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/heroicons@2.0.13/solid/esm/index.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* For mobile menu toggle */
     .hidden-menu {
       display: none;
+    }
+    .font-poppins {
+      font-family: 'Poppins',sans-serif;
     }
   </style>
 </head>
@@ -46,9 +50,9 @@
     </div>
 
     <!-- Desktop Links -->
-    <div class="hidden md:flex items-center mr-6 lg:mr-20 text-xl font-normal">
+    <div class="hidden md:flex items-center mr-6 lg:mr-20 text-xl font-normal font-poppins">
       <ul class="flex gap-6 lg:gap-12">
-        <li><a href="/" class="text-white hover:text-gray-200 border-b-2 md:border-none text-2xl font-bold">HOME</a></li>
+        <li><a href="/" class="text-white hover:text-gray-200">Home</a></li>
         <li><a href="./aboutus_page.html" class="text-white hover:text-gray-200">About Us</a></li>
         <li><a href="/faq.html" class="text-white hover:text-gray-200">FAQ</a></li>
       </ul>
