@@ -47,7 +47,7 @@
     </section>
 
     <!-- Feedback Form Section -->
-    <section class="bg-white py-10">
+    <section class="bg-white py-10 mt-10">
         <div class="container mx-auto text-center mb-10">
             <h2 class="text-4xl md:text-6xl font-bold mb-4">GET IN TOUCH</h2>
             <p class="text-lg md:text-xl text-gray-600 px-4 md:px-56 md:mb-20">
@@ -56,24 +56,36 @@
             </p>
         </div>
         <div class="container mx-auto">
-            <form class="bg-[#ededeb] p-6 md:p-16 max-w-6xl mx-auto rounded-3xl">
-                <div class="grid grid-cols-1 md:grid-cols-4 md:gap-14 gap-4 mb-6">
+            <form class="bg-[#ededeb] p-6 md:p-16 max-w-6xl mx-auto md:rounded-3xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-14 gap-6">
                     <!-- Left Column: Name, Email, Phone Number -->
-                    <div class="grid grid-cols-1 gap-4 md:col-span-2">
-                        <input type="text" placeholder="Enter your name"
-                            class="p-5 md:p-7 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 md:mb-7 text-xl" />
-                        <input type="email" placeholder="Enter your email"
-                            class="p-5 md:p-7 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 md:mb-7 text-xl" />
-                        <input type="text" placeholder="Enter your phone number"
-                            class="p-5 md:p-7 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-xl" />
+                    <div class="grid grid-cols-1 gap-6 ">
+                      <input
+                        type="text"
+                        placeholder="Enter your name"
+                        class="p-4 md:p-5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-lg md:text-xl transition-all"
+                      />
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="p-4 md:p-5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-lg md:text-xl transition-all"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Enter your phone number"
+                        class="p-4 md:p-5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-lg md:text-xl transition-all"
+                      />
                     </div>
                     <!-- Right Column: Message Field -->
-                    <div class="md:col-span-2">
-                        <textarea placeholder="Your message"
-                            class="p-5 px-12 md:px-36 md:p-7 h-full border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-xl"
-                            rows="6"></textarea>
+                    <div>
+                      <textarea
+                        placeholder="Your message"
+                        class="p-4 md:p-5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-lg md:text-xl h-full w-full transition-all"
+                        rows="6"
+                      ></textarea>
                     </div>
-                </div>
+                  </div>
+                  
                 <div class="text-center mt-8 md:mt-20">
                     <button type="submit"
                         class="px-14 py-4 md:text-xl bg-black font-bold text-white rounded-lg hover:bg-gray-700">
