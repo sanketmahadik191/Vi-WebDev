@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VorkInsta - Frequently Asked Questions</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      .font-poppins {
+      font-family: 'Poppins',sans-serif;
+    }
+    .font-playfair-display {
+      font-family: 'Playfair display', sans-serif;
+    }
+    </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col">
     <div id="navbar-placeholder"></div>
@@ -13,17 +23,17 @@
     <main class="container mx-auto px-4 py-8 flex-grow">
         <!-- About VorkInsta Section -->
         <section class="bg-white shadow-md rounded-lg p-6 mb-8">
-            <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-600 pb-3 mb-6">About VorkInsta</h2>
+            <h2 class="text-4xl font-semibold text-center text-[#0D3451] border-b-2 font-playfair-display border-[#0D3451] pb-3 mb-6">About VorkInsta</h2>
             
             <div class="mb-6">
-                <h3 class="text-xl font-bold text-gray-800 mb-3">What is VorkInsta?</h3>
+                <h3 class="text-xl font-bold font-poppins text-gray-800 mb-3">What is VorkInsta?</h3>
                 <p class="text-gray-700">
                     VorkInsta is an innovative platform designed to connect talented individuals with meaningful internship opportunities. We provide a unique ecosystem that balances learning, networking, and career growth, empowering both consultants and clients to collaborate independently.
                 </p>
             </div>
 
             <div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">How is VorkInsta different from other internship platforms?</h3>
+                <h3 class="text-xl font-bold font-poppins text-gray-800 mb-3">How is VorkInsta different from other internship platforms?</h3>
                 <p class="text-gray-700 mb-3">
                     Unlike traditional internship platforms, VorkInsta:
                 </p>
@@ -38,10 +48,10 @@
 
         <!-- For Consultants Section -->
         <section class="bg-white shadow-md rounded-lg p-6 mb-8">
-            <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-600 pb-3 mb-6">For Consultants (Interns)</h2>
+            <h2 class="text-4xl text-center font-playfair-display text-[#0D3451] border-b-2 border-[#0D3451] pb-3 mb-6">For Consultants (Interns)</h2>
             
             <div>
-                <h3 class="text-xl font-bold text-gray-800 mb-3">Who can join VorkInsta as a consultant?</h3>
+                <h3 class="text-xl font-bold font-poppins text-gray-800 mb-3">Who can join VorkInsta as a consultant?</h3>
                 <p class="text-gray-700 mb-3">
                     Any individual passionate about IT and professional growth can join VorkInsta, including:
                 </p>
@@ -54,9 +64,95 @@
             </div>
         </section>
 
+        <section class="bg-white shadow-md rounded-lg p-6 mb-8">
+          <h2 class="text-4xl font-playfair-display text-center text-[#0D3451] border-b-2 border-[#0D3451] pb-3 mb-6">Help Center</h2>
+          
+          <!-- Frequently Asked Questions Accordion -->
+          <div class="space-y-4">
+              <!-- Consultant Questions -->
+              <div class="border border-gray-200 rounded-lg">
+                  <div class="p-4 bg-gray-100 font-bold text-gray-800 flex justify-between items-center cursor-pointer" onclick="toggleAccordion(this)">
+                      <h3 class="text-lg font-poppins">How do I get started as a consultant on VorkInsta?</h3>
+                      <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                  </div>
+                  <div class="hidden p-4 text-gray-700">
+                      <p>To get started as a consultant on VorkInsta:</p>
+                      <ol class="list-decimal list-inside space-y-2 mt-2">
+                          <li>Create a detailed profile highlighting your skills and experience</li>
+                          <li>Upload your portfolio or relevant work samples</li>
+                          <li>Complete your professional background information</li>
+                          <li>Browse available projects and submit proposals</li>
+                      </ol>
+                  </div>
+              </div>
+      
+              <!-- Client Questions -->
+              <div class="border border-gray-200 rounded-lg">
+                  <div class="p-4 bg-gray-100 font-bold text-gray-800 flex justify-between items-center cursor-pointer" onclick="toggleAccordion(this)">
+                      <h3 class="text-lg font-poppins">How do I post a project on VorkInsta?</h3>
+                      <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                  </div>
+                  <div class="hidden p-4 text-gray-700">
+                      <p>Posting a project on VorkInsta is simple:</p>
+                      <ol class="list-decimal list-inside space-y-2 mt-2">
+                          <li>Sign up or log in to your VorkInsta account</li>
+                          <li>Navigate to the "Post a Project" section</li>
+                          <li>Provide detailed project requirements</li>
+                          <li>Set your budget and timeline</li>
+                          <li>Review and publish your project</li>
+                      </ol>
+                  </div>
+              </div>
+      
+              <!-- Payment Questions -->
+              <div class="border border-gray-200 rounded-lg">
+                  <div class="p-4 bg-gray-100 font-bold text-gray-800 flex justify-between items-center cursor-pointer" onclick="toggleAccordion(this)">
+                      <h3 class="text-lg font-poppins">How does payment work on VorkInsta?</h3>
+                      <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                  </div>
+                  <div class="hidden p-4 text-gray-700">
+                      <p>VorkInsta ensures secure and transparent payments:</p>
+                      <ul class="list-disc list-inside space-y-2 mt-2">
+                          <li>Escrow system protects both clients and consultants</li>
+                          <li>Payments are released upon project milestone completion</li>
+                          <li>Multiple payment methods supported</li>
+                          <li>Transparent fee structure with no hidden charges</li>
+                      </ul>
+                  </div>
+              </div>
+      
+              <!-- Platform Safety Questions -->
+              <div class="border border-gray-200 rounded-lg">
+                  <div class="p-4 bg-gray-100 font-bold text-gray-800 flex justify-between items-center cursor-pointer" onclick="toggleAccordion(this)">
+                      <h3 class="text-lg font-poppins">How does VorkInsta ensure platform safety?</h3>
+                      <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                      </svg>
+                  </div>
+                  <div class="hidden p-4 text-gray-700">
+                      <p>We prioritize platform safety through:</p>
+                      <ul class="list-disc list-inside space-y-2 mt-2">
+                          <li>Comprehensive user verification process</li>
+                          <li>Secure communication channels</li>
+                          <li>User rating and review system</li>
+                          <li>24/7 customer support</li>
+                          <li>Data protection and privacy measures</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </section>
+    
+
         <!-- Contact Information Section -->
         <section class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-600 pb-3 mb-6">Contact Information</h2>
+            <h2 class="text-4xl font-playfair-display text-center text-[#0D3451] border-b-2 border-[#0D3451] pb-3 mb-6">Contact Information</h2>
             
             <div>
                 <h3 class="text-xl font-bold text-gray-800 mb-3">Need more help?</h3>
@@ -154,6 +250,16 @@
             document.getElementById('footer-placeholder').innerHTML = data;
         })
         .catch(error => console.error('Error loading footer:', error));
+
+        // Accordion JavaScript
+
+          function toggleAccordion(element) {
+              const content = element.nextElementSibling;
+              const svg = element.querySelector('svg');
+              
+              content.classList.toggle('hidden');
+              svg.classList.toggle('rotate-180');
+          }
 </script>
 </body>
 </html>

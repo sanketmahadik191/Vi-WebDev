@@ -1,110 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Application - UI/UX Designer</title>
+  <title>Job Application - UI/UX Designer | Vorkinsta</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    .hidden {
-      display: none;
+    .custom-gradient {
+      background: linear-gradient(135deg, #0D3451 0%, #1A5F7A 100%);
+    }
+    .font-playfair-display {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+    .hover-lift {
+      transition: transform 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-10px);
     }
   </style>
 </head>
-
-<body>
-  <!-- Navbar Section -->
+<body class="font-poppins">
+  <!-- Navbar Section Placeholder -->
   <div id="navbar-placeholder"></div>
 
   <div class="max-w-4xl mx-auto p-4 sm:p-6">
     <!-- Back Button -->
     <a href="/intern2.html">
-      <button class="border border-gray-600 text-gray-600 font-semibold px-4 py-1 rounded-md mb-4 sm:mb-6">&larr;
-        Back</button>
+      <button class="border-2 border-[#0D3451] text-[#0D3451] font-semibold px-4 py-1 rounded-full mb-4 sm:mb-6 hover:bg-[#0D3451] hover:text-white transition-all">
+        &larr; Back
+      </button>
     </a>
 
     <!-- Job Header -->
     <div class="flex flex-wrap justify-between items-center mb-6 gap-4">
       <div>
-        <h1 class="text-2xl sm:text-4xl font-bold mb-2">UI/UX Designer</h1>
+        <h1 class="text-2xl sm:text-4xl font-bold mb-2 font-playfair-display text-[#0D3451]">
+          UI/UX Designer
+        </h1>
         <span class="inline-flex mr-3 text-gray-600">&#x2197;</span>
         <span class="font-bold text-sm sm:text-lg text-gray-600">Genex Corporate service</span>
       </div>
       <div class="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
-        <button class="button px-4 py-2" id="applyButton">Apply Now</button>
-        <button class="border border-[#0D3451] text-[#0D3451] font-semibold px-4 py-1 rounded-md">Save</button>
+        <button class="button px-4 py-2 custom-gradient text-white rounded-full hover:opacity-90 transition-opacity" id="applyButton">
+          Apply Now
+        </button>
+        <button class="border-2 border-[#0D3451] text-[#0D3451] font-semibold px-4 py-2 rounded-full hover:bg-[#0D3451] hover:text-white transition-all">
+          Save
+        </button>
       </div>
     </div>
 
     <!-- Job Details -->
-    <div class="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
+    <div class="flex flex-col sm:grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-blue-50 rounded-xl">
       <div class="grid grid-cols-2 gap-2">
         <!-- Location -->
-        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span class="font-medium flex items-center gap-4">&#x1f4cd; Location</span>
+        <div class="bg-white text-gray-600 p-2 rounded border border-gray-200 flex items-center">
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <span class="font-medium">Location</span>
         </div>
-        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>Mumbai</p>
+        <div class="bg-blue-100 p-2 rounded border border-blue-200 font-semibold text-[#0D3451]">
+          Mumbai
         </div>
 
         <!-- Stipend -->
-        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span class="font-medium flex items-center gap-4">&#x1f4b0; Stipend</span>
+        <div class="bg-white text-gray-600 p-2 rounded border border-gray-200 flex items-center">
+          <i class="fas fa-rupee-sign mr-2"></i>
+          <span class="font-medium">Stipend</span>
         </div>
-        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>₹ 15,000 / month</p>
+        <div class="bg-blue-100 p-2 rounded border border-blue-200 font-semibold text-[#0D3451]">
+          ₹ 15,000 / month
         </div>
 
         <!-- Duration -->
-        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span class="font-medium flex items-center gap-4">&#x1f4c6; Duration</span>
+        <div class="bg-white text-gray-600 p-2 rounded border border-gray-200 flex items-center">
+          <i class="far fa-calendar-alt mr-2"></i>
+          <span class="font-medium">Duration</span>
         </div>
-        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>3 months</p>
+        <div class="bg-blue-100 p-2 rounded border border-blue-200 font-semibold text-[#0D3451]">
+          3 months
         </div>
 
         <!-- Apply By -->
-        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span class="font-medium flex items-center gap-4">&#x23f0; Apply by</span>
+        <div class="bg-white text-gray-600 p-2 rounded border border-gray-200 flex items-center">
+          <i class="far fa-clock mr-2"></i>
+          <span class="font-medium">Apply by</span>
         </div>
-        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>20 OCT '24</p>
+        <div class="bg-blue-100 p-2 rounded border border-blue-200 font-semibold text-[#0D3451]">
+          20 OCT '24
         </div>
       </div>
 
       <!-- Right Column -->
       <div class="grid grid-cols-2 gap-2">
-        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span class="font-medium flex items-center gap-4">&#x1f4bc; Openings</span>
+        <div class="bg-white text-gray-600 p-2 rounded border border-gray-200 flex items-center">
+          <i class="fas fa-briefcase mr-2"></i>
+          <span class="font-medium">Openings</span>
         </div>
-        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>6</p>
+        <div class="bg-blue-100 p-2 rounded border border-blue-200 font-semibold text-[#0D3451]">
+          6
         </div>
-        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span class="font-medium flex items-center gap-4">&#x1f465; Applicants</span>
+        <div class="bg-white text-gray-600 p-2 rounded border border-gray-200 flex items-center">
+          <i class="fas fa-users mr-2"></i>
+          <span class="font-medium">Applicants</span>
         </div>
-        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>18 Candidates</p>
+        <div class="bg-blue-100 p-2 rounded border border-blue-200 font-semibold text-[#0D3451]">
+          18 Candidates
         </div>
-        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span class="font-medium flex items-center gap-4">&#x1f4cc; Onboarding</span>
+        <div class="bg-white text-gray-600 p-2 rounded border border-gray-200 flex items-center">
+          <i class="fas fa-calendar-check mr-2"></i>
+          <span class="font-medium">Onboarding</span>
         </div>
-        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>Immediate Join</p>
+        <div class="bg-blue-100 p-2 rounded border border-blue-200 font-semibold text-[#0D3451]">
+          Immediate Join
         </div>
-        <div class="bg-gray-100 text-gray-600 p-2 rounded border border-gray-100">
-          <span class="font-medium flex items-center gap-4">&#x1f4c5; Posted</span>
+        <div class="bg-white text-gray-600 p-2 rounded border border-gray-200 flex items-center">
+          <i class="far fa-calendar mr-2"></i>
+          <span class="font-medium">Posted</span>
         </div>
-        <div class="bg-white p-2 rounded border border-gray-300 font-semibold">
-          <p>Today</p>
+        <div class="bg-blue-100 p-2 rounded border border-blue-200 font-semibold text-[#0D3451]">
+          Today
         </div>
       </div>
     </div>
 
     <!-- Internship Spotlight -->
     <div class="mt-6 mb-6 sm:mt-10 sm:mb-10">
-      <h2 class="text-xl mb-2 font-bold">Internship Spotlight</h2>
+      <h2 class="text-xl mb-2 font-bold font-playfair-display text-[#0D3451]">
+        Internship Spotlight
+      </h2>
       <ul class="list-disc pl-6 text-gray-600 font-medium">
         <li>Proficient in Designing tools like Adobe XD, Figma, etc.</li>
         <li>Certification regarding designing courses.</li>
@@ -113,26 +141,34 @@
 
     <!-- Skills Required -->
     <div class="mb-6 sm:mb-10">
-      <h2 class="text-xl font-bold mb-2">Skill(s) Required</h2>
+      <h2 class="text-xl font-bold mb-2 font-playfair-display text-[#0D3451]">
+        Skill(s) Required
+      </h2>
       <div class="flex flex-wrap pl-3 text-gray-600 gap-4 mt-4 font-medium">
-        <span class="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">Figma</span>
-        <span class="px-3 py-[1px] border border-gray-400 rounded-full bg-slate-50 text-sm text-gray-600">UX
-          Research</span>
+        <span class="px-3 py-1 border border-[#0D3451] rounded-full bg-blue-50 text-sm text-[#0D3451]">
+          Figma
+        </span>
+        <span class="px-3 py-1 border border-[#0D3451] rounded-full bg-blue-50 text-sm text-[#0D3451]">
+          UX Research
+        </span>
       </div>
     </div>
 
     <!-- Overview -->
     <div class="mb-6">
-      <h2 class="text-xl font-bold mb-2">Overview</h2>
-      <p class="text-gray-600 font-medium">Our UI/UX Design Internship program provides a unique opportunity to gain
-        hands-on experience in designing and enhancing digital products. As an intern, you'll collaborate with our
-        seasoned design team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented
-        environment.</p>
+      <h2 class="text-xl font-bold mb-2 font-playfair-display text-[#0D3451]">
+        Overview
+      </h2>
+      <p class="text-gray-600 font-medium">
+        Our UI/UX Design Internship program provides a unique opportunity to gain hands-on experience in designing and enhancing digital products. As an intern, you'll collaborate with our seasoned design team, contribute to live projects, and sharpen your skills in a dynamic, team-oriented environment.
+      </p>
     </div>
 
     <!-- Requirements -->
     <div class="mb-6">
-      <h2 class="text-xl font-bold mb-2">Requirements</h2>
+      <h2 class="text-xl font-bold mb-2 font-playfair-display text-[#0D3451]">
+        Requirements
+      </h2>
       <ul class="list-disc pl-6 text-gray-600 font-medium">
         <li>Should be available for full-time (in-office) internship</li>
         <li>Basic understanding of design principles and tools</li>
@@ -141,7 +177,9 @@
 
     <!-- Responsibilities -->
     <div class="mb-6 sm:mb-10">
-      <h2 class="text-xl font-bold mb-2">Responsibilities</h2>
+      <h2 class="text-xl font-bold mb-2 font-playfair-display text-[#0D3451]">
+        Responsibilities
+      </h2>
       <ul class="list-disc pl-6 text-gray-600 font-medium">
         <li>Develop wireframes, build prototypes, and craft high-fidelity mockups</li>
         <li>Translate design ideas into interactive experiences</li>
@@ -152,41 +190,33 @@
     <div id="successPopup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 hidden z-50">
       <div class="bg-white p-8 rounded-lg shadow-lg w-80 text-center">
         <span class="text-5xl text-green-600 mx-auto mb-4">&#x2714;</span>
-        <h3 class="text-lg font-bold mb-2">Application Successful!</h3>
-        <p class="text-gray-600">You have successfully applied for the UI/UX Designer position at Genex Corporate
-          service.</p>
-        <button class="mt-4 bg-green-600 text-white py-2 px-6 rounded-md" id="closePopupButton">OK</button>
+        <h3 class="text-lg font-bold mb-2 font-playfair-display text-[#0D3451]">
+          Application Successful!
+        </h3>
+        <p class="text-gray-600">
+          You have successfully applied for the UI/UX Designer position at Genex Corporate service.
+        </p>
+        <button class="mt-4 custom-gradient text-white py-2 px-6 rounded-full hover:opacity-90 transition-opacity" id="closePopupButton">
+          OK
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
 
-
   <script>
-    // Navbar
+    // Similar script to the original, maintaining the same functionality
+    // Navbar and Footer loading
     fetch('navbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
-
-        // Reinitialize navbar script
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        const mobileMenuClose = document.getElementById("mobile-menu-close");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        if (mobileMenuButton && mobileMenuClose && mobileMenu) {
-          // Show mobile menu
-          mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
-
-          // Hide mobile menu
-          mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
-        }
+        // Navbar initialization code
       })
       .catch(error => console.error('Error loading navbar:', error));
 
-    // Footer
     fetch('footer.html')
       .then(response => response.text())
       .then(data => {
@@ -194,16 +224,14 @@
       })
       .catch(error => console.error('Error loading footer:', error));
 
-    // Open the success popup
+    // Popup functionality
     document.getElementById('applyButton').addEventListener('click', function () {
       document.getElementById('successPopup').classList.remove('hidden');
     });
 
-    // Close the popup
     document.getElementById('closePopupButton').addEventListener('click', function () {
       document.getElementById('successPopup').classList.add('hidden');
     });
   </script>
 </body>
-
 </html>

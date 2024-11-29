@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selection - Vorkinsta</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-poppins {
+      font-family: 'Poppins',sans-serif;
+    }
+    .font-playfair-display {
+      font-family: 'Playfair display', sans-serif;
+    }
+    </style>
 </head>
 
 <body>
@@ -17,8 +27,8 @@
     <section class="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-16 px-4">
         <!-- Header -->
         <div class="text-center mb-10">
-            <h1 class="text-2xl sm:text-3xl text-[#0D3451] font-medium mb-4">Join our platform</h1>
-            <p class="text-gray-600 text-sm sm:text-base max-w-md mx-auto">
+            <h1 class="text-4xl sm:text-3xl text-[#0D3451] font-semibold font-playfair-display mb-4">Join our platform</h1>
+            <p class="text-gray-600 text-sm font-poppins sm:text-base max-w-md mx-auto">
                 Choose your role to get started and discover new opportunities tailored for you.
             </p>
         </div>
@@ -34,7 +44,7 @@
                 <label for="employer" class="flex flex-col items-center justify-center cursor-pointer">
                     <img src="/assets/selection/recruitment.png" alt="Employer"
                         class="h-16 w-16 sm:h-20 sm:w-20 mt-4 mb-2">
-                    <span class="block text-lg font-semibold text-[#0D3451]">EMPLOYER</span>
+                    <span class="block text-lg font-semibold font-poppins text-[#0D3451]">EMPLOYER</span>
                     <p class="text-sm text-center sm:text-base font-medium text-gray-700">Seeking interns for your
                         company.</p>
                 </label>
@@ -49,7 +59,7 @@
                 <label for="intern" class="flex flex-col items-center justify-center cursor-pointer">
                     <img src="/assets/selection/internship.png" alt="Intern"
                         class="h-16 w-16 sm:h-20 sm:w-20 mt-4 mb-2">
-                    <span class="block text-lg font-semibold text-[#0D3451]">INTERN</span>
+                    <span class="block text-lg font-semibold font-poppins text-[#0D3451]">INTERN</span>
                     <p class="text-sm text-center sm:text-base font-medium text-gray-700">Looking for internship
                         opportunities.</p>
                 </label>
@@ -59,12 +69,12 @@
         <!-- Verify Button -->
         <div class="mt-10">
             <button id="verify-btn"
-                class="bg-[#0D3451] text-white w-full sm:w-auto px-16 py-2 rounded-md font-semibold transition-colors opacity-50 cursor-not-allowed"
+                class="bg-[#0D3451] text-white w-full sm:w-auto px-16 py-2 rounded-md font-semibold font-poppins transition-colors opacity-50 cursor-not-allowed"
                 disabled onclick="navigateToSignup()">Verify</button>
         </div>
 
         <!-- Login Link -->
-        <div class="mt-6 text-[12px] font-medium">
+        <div class="mt-6 text-[12px] font-medium font-poppins">
             Already have an account? <a href="login.html" class="text-blue-500 text-sm hover:underline">Log In</a>
         </div>
     </section>

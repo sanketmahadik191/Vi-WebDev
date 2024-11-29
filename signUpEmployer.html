@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Employer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .font-poppins {
+      font-family: 'Poppins',sans-serif;
+    }
+    .font-playfair-display {
+      font-family: 'Playfair display', sans-serif;
+    }
+  </style>
     <style>
         body {
             background-color: #f7fafc;
@@ -20,12 +30,12 @@
   <div  class="flex items-center justify-center min-h-screen bg-gray-100 mt-6">
     <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6 sm:p-8">
         <!-- Main Header -->
-        <h1 class="text-3xl sm:text-4xl font-bold text-center text-blue-900 mb-6">Welcome to Vorkinsta Team</h1>
-        <h2 class="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-6">Sign up as an Employer</h2>
+        <h1 class="text-3xl sm:text-4xl font-bold font-playfair-display text-center text-blue-900 mb-6">Welcome to Vorkinsta Team</h1>
+        <h2 class="text-xl sm:text-2xl font-bold font-playfair-display text-center text-blue-gray-800 mb-6">Sign up as an Employer</h2>
 
         <!-- Google Sign-In Button -->
         <button
-            class="w-full py-3 flex items-center justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition duration-150 mb-4">
+            class="w-full py-3 flex items-center font-poppins justify-center bg-white border border-gray-300 rounded-md hover:bg-gray-50 transition duration-150 mb-4">
             <!-- Embedded Google logo as SVG -->
             <img src="/assets/google logo/google.png" alt="Google" class="w-8 h-8 mr-2">
             Continue with Google
@@ -39,7 +49,7 @@
         </div>
 
         <!-- Sign-up Form -->
-        <form class="space-y-4">
+        <form class="space-y-4 font-poppins">
             <input type="text" name="companyName" placeholder="Company Name"
                 class="block w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
             <input type="text" name="contactPerson" placeholder="Contact Person"
