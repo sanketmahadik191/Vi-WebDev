@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <div id="navbar-placeholder"></div>
+    <!-- Contact Section -->
+    <section class="bg-gradient-to-r from-[#4294b8] via-[#81a7b8] to-[#5d9eba] pt-10">
+        <div class="container ml-0 mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1">
+                <img src="/assets/contact_us/phone.png" alt="Phone illustration" class="rounded-lg" />
+            </div>
+            <div class="flex-1 text-white m-10">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">LET US CONNECT</h2>
+                <p class="md:text-xl mb-6">
+                    We're here to help you transform your IT strategies and achieve your business goals.
+                    Whether you're looking for expert consultations, corporate training, or tailored IT solutions,
+                    our team is just a message away.
+                </p>
+                <a href="#" class="inline-block px-6 py-3 font-bold bg-white text-black hover:bg-gray-200">CONTACT
+                    US</a>
+                <ul class="mt-6">
+                    <li class="flex md:text-lg items-center mb-2">
+                        <i class="fas fa-phone md:text-lg mr-2"></i>
+                        <span class="font-bold">Phone:</span>&nbsp;9876543210
+                    </li>
+                    <li class="flex md:text-lg items-center mb-2">
+                        <i class="fas fa-envelope md:text-lg mr-2"></i>
+                        <span class="font-bold">Email:</span>&nbsp;hr@genexcorp.com
+                    </li>
+                    <li class="md:text-lg">
+                        <i class="fas fa-map-marker-alt md:text-lg mr-2"></i>
+                        <span class="font-bold">Address:</span> VT Plaza, 4th floor, KPHB colony, Kukatpally,
+                        Hyderabad-500085, Telangana, India
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section class="bg-white py-10 mt-10">
+        <div class="container mx-auto text-center mb-10">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">GET IN TOUCH</h2>
+            <p class="text-lg md:text-xl text-gray-600 px-4 md:px-56 md:mb-20">
+                "Your feedback and questions are important to us. Reach out using the form below,
+                and we'll respond as soon as possible."
+            </p>
+        </div>
+        <div class="container mx-auto">
+            <form class="bg-[#ededeb] p-6 md:p-16 max-w-6xl mx-auto md:rounded-3xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-14 gap-6">
+                    <!-- Left Column: Name, Email, Phone Number -->
+                    <div class="grid grid-cols-1 gap-6 ">
+                      <input
+                        type="text"
+                        placeholder="Enter your name"
+                        class="p-4 md:p-5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-lg md:text-xl transition-all"
+                      />
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="p-4 md:p-5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-lg md:text-xl transition-all"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Enter your phone number"
+                        class="p-4 md:p-5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-lg md:text-xl transition-all"
+                      />
+                    </div>
+                    <!-- Right Column: Message Field -->
+                    <div>
+                      <textarea
+                        placeholder="Your message"
+                        class="p-4 md:p-5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 text-lg md:text-xl h-full w-full transition-all"
+                        rows="6"
+                      ></textarea>
+                    </div>
+                  </div>
+                  
+                <div class="text-center mt-8 md:mt-20">
+                    <button type="submit"
+                        class="px-14 py-4 md:text-xl bg-black font-bold text-white rounded-lg hover:bg-gray-700">
+                        SUBMIT
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        // Navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+
+                // Reinitialize navbar script
+                const mobileMenuButton = document.getElementById("mobile-menu-button");
+                const mobileMenuClose = document.getElementById("mobile-menu-close");
+                const mobileMenu = document.getElementById("mobile-menu");
+
+                if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+                    // Show mobile menu
+                    mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+
+                    // Hide mobile menu
+                    mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+
+        // Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+
+</html>
