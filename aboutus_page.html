@@ -37,12 +37,18 @@
             background-position: center;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .font-poppins {
-      font-family: 'Poppins',sans-serif;
-    }
-    .font-playfair-display {
-      font-family: 'Playfair display', sans-serif;
-    }
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-playfair-display {
+            font-family: 'Playfair Display', sans-serif;
+        }
     </style>
 </head>
 
@@ -77,13 +83,13 @@
                 </p>
 
                 <!-- Cards Section -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mt-10">
                     <!-- Internship Card -->
-                    <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-2xl shadow-lg mx-auto w-full md:w-[28rem]">
-                        <img src="https://via.placeholder.com/150" alt="Internships" class="w-28 h-44 mb-4 md:mb-0 mr-4 object-cover">
+                    <div class="flex items-center bg-gray-50 p-6 rounded-2xl shadow-lg w-full">
+                        <img src="assets/icons/internship.png" alt="Internships" class="w-28 h-44 object-cover mr-6">
                         <div>
-                            <h3 class="text-2xl md:text-3xl font-bold font-poppins text-gray-800 mb-2">Internships</h3>
-                            <p class="text-gray-600 text-left">
+                            <h3 class="text-2xl sm:text-3xl font-bold font-poppins text-gray-800 mb-2">Internships</h3>
+                            <p class="text-gray-600">
                                 Find 1000+ internships from top companies to give a kickstart to your career.
                             </p>
                             <a href="#" class="mt-4 inline-block text-blue-900 px-4 py-2 rounded-lg hover:text-blue-600">
@@ -93,99 +99,134 @@
                     </div>
 
                     <!-- Freshers Job Card -->
-                    <div class="flex flex-col md:flex-row items-center bg-gray-50 p-6 rounded-2xl shadow-lg mx-auto w-full md:w-[28rem]">
-                        <img src="https://via.placeholder.com/150" alt="Freshers Job" class="w-28 h-44 mb-4 md:mb-0 mr-4 object-cover">
+                    <div class="flex items-center bg-gray-50 p-6 rounded-2xl shadow-lg w-full">
+                        <img src="assets/icons/freshers_job.png" alt="Freshers Job" class="w-28 h-44 object-cover mr-6">
                         <div>
-                            <h3 class="text-2xl md:text-3xl font-bold font-poppins text-gray-800 mb-2">Freshers Job</h3>
-                            <p class="text-gray-600 text-left">
+                            <h3 class="text-2xl sm:text-3xl font-bold font-poppins text-gray-800 mb-2">Freshers Job</h3>
+                            <p class="text-gray-600">
                                 Get a job as a fresher with a minimum CTC of 2LPA at your fingertips.
                             </p>
                             <a href="#" class="mt-4 inline-block text-blue-900 px-4 py-2 rounded-lg hover:text-blue-600">
-                                Explore →
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                  Explore →
+                </a>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Section -->
+      <div
+        class="bg-neutral-200 py-12 rounded-lg shadow-lg mt-10 mx-4 md:mx-10"
+      >
+        <h2
+          class="text-3xl md:text-4xl lg:text-4.5xl font-bold font-playfair-display text-[#0D3451] text-center mb-10"
+        >
+          Meet Our Team
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 font-poppins gap-6 justify-center"
+        >
+          <!-- Team Member 1 -->
+          <div
+            class="bg-white p-6 rounded-3xl shadow-lg text-center w-full sm:w-64 mx-auto"
+          >
+            <img
+              src="assets/team/john.jpg"
+              alt="John"
+              class="mx-auto rounded-full w-28 h-28 mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-800">John</h3>
+            <p class="text-sm text-black mb-4">CEO Vorkinsta</p>
+            <p class="text-gray-600 text-sm">
+              The one who started it all. It takes a lot of guts to create a
+              start-up, and he's the one with all of it.
+            </p>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div
+            class="bg-white p-6 rounded-3xl shadow-lg text-center w-full sm:w-64 mx-auto"
+          >
+            <img
+              src="assets/team/mike.jpg"
+              alt="Mike"
+              class="mx-auto rounded-full w-28 h-28 mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-800">Mike</h3>
+            <p class="text-sm text-black mb-4">Manager</p>
+            <p class="text-gray-600 text-sm">
+              Meet the manager. He's got loads of patience and humility, keeping
+              the team and vision on track.
+            </p>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div
+            class="bg-white p-6 rounded-3xl shadow-lg text-center w-full sm:w-64 mx-auto"
+          >
+            <img
+              src="assets/team/mary.jpg"
+              alt="Mary"
+              class="mx-auto rounded-full w-28 h-28 mb-4"
+            />
+            <h3 class="text-xl font-semibold text-gray-800">Mary</h3>
+            <p class="text-sm text-black mb-4">HR Manager</p>
+            <p class="text-gray-600 text-sm">
+              The HR that drives the team forward, ensuring a healthy and
+              productive work environment.
+            </p>
+          </div>
         </div>
 
-        <!-- Team Section -->
-        <div class="bg-neutral-200 py-12 rounded-lg shadow-lg mt-10 mx-4 md:mx-10 ">
-            <h2 class="text-3xl md:text-4xl lg:text-4.5xl font-bold font-playfair-display text-[#0D3451] text-center mb-10">Meet Our Team</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-poppins gap-6 justify-center">
-                <!-- Team Member 1 -->
-                <div class="bg-white p-6 rounded-3xl font-poppins shadow-lg text-center w-64 mx-auto">
-                    <img src="https://via.placeholder.com/100" alt="John" class="mx-auto rounded-full w-28 h-28 mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800">John</h3>
-                    <p class="text-sm text-black mb-4">CEO Vorkinsta</p>
-                    <p class="text-gray-600 text-sm">
-                        The one who started it all. It takes a lot of guts to create a start-up, and he's the one with all of it. Meet the CEO. Yes, he's got loads of patience and humility.
-                    </p>
-                </div>
-
-                <!-- Team Member 2 -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg text-center w-64 mx-auto">
-                    <img src="https://via.placeholder.com/100" alt="Mike" class="mx-auto rounded-full w-28 h-28 mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800">Mike</h3>
-                    <p class="text-sm text-black mb-4">Manager</p>
-                    <p class="text-gray-600 text-sm">
-                        Meet the manager. He's got loads of patience and humility, keeping the team and vision on track.
-                    </p>
-                </div>
-
-                <!-- Team Member 3 -->
-                <div class="bg-white p-6 rounded-3xl shadow-lg text-center w-64 mx-auto">
-                    <img src="https://via.placeholder.com/100" alt="Mary" class="mx-auto rounded-full w-28 h-28 mb-4">
-                    <h3 class="text-xl font-semibold text-gray-800">Mary</h3>
-                    <p class="text-sm text-black mb-4">HR Manager</p>
-                    <p class="text-gray-600 text-sm">
-                        The HR that drives the team forward, ensuring a healthy and productive work environment.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Pagination Dots -->
-            <div class="flex justify-center mt-6 space-x-2">
-                <span class="w-3 h-3 bg-gray-400 rounded-full"></span>
-                <span class="w-3 h-3 bg-gray-700 rounded-full"></span>
-                <span class="w-3 h-3 bg-gray-400 rounded-full"></span>
-            </div> 
+        <!-- Pagination Dots -->
+        <div class="flex justify-center mt-6 space-x-2">
+          <span class="w-3 h-3 bg-gray-400 rounded-full"></span>
+          <span class="w-3 h-3 bg-gray-700 rounded-full"></span>
+          <span class="w-3 h-3 bg-gray-400 rounded-full"></span>
         </div>
-        <br><br><br><br>
-        <!-- Footer -->
-        <div id="footer-placeholder"></div>
+      </div>
+
+      <br /><br /><br /><br />
+
+      <!-- Footer -->
+      <div id="footer-placeholder"></div>
     </div>
 
     <script>
-        // Navbar
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
+      // Navbar
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
 
-                // Reinitialize navbar script
-                const mobileMenuButton = document.getElementById("mobile-menu-button");
-                const mobileMenuClose = document.getElementById("mobile-menu-close");
-                const mobileMenu = document.getElementById("mobile-menu");
+          // Reinitialize navbar script
+          const mobileMenuButton =
+            document.getElementById("mobile-menu-button");
+          const mobileMenuClose = document.getElementById("mobile-menu-close");
+          const mobileMenu = document.getElementById("mobile-menu");
 
-                if (mobileMenuButton && mobileMenuClose && mobileMenu) {
-                    // Show mobile menu
-                    mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+          if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+            // Show mobile menu
+            mobileMenuButton.addEventListener("click", () =>
+              mobileMenu.classList.remove("hidden-menu")
+            );
 
-                    // Hide mobile menu
-                    mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
-                }
-            })
-            .catch(error => console.error('Error loading navbar:', error));
+            // Hide mobile menu
+            mobileMenuClose.addEventListener("click", () =>
+              mobileMenu.classList.add("hidden-menu")
+            );
+          }
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
 
-        // Footer
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading footer:', error));
+      // Footer
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading footer:", error));
     </script>
-</body>
-
+  </body>
 </html>
