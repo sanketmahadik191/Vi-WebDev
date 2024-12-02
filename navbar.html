@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navbar</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link href="./dist/tailwind.css" rel="stylesheet">
+  <!-- when pushing this code remember to chnage back to play cdn -->
+
+
   <script src="https://unpkg.com/heroicons@2.0.13/solid/esm/index.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* For mobile menu toggle */
     .hidden-menu {
-      display: none;
+      display: none !important;
     }
     .font-poppins {
       font-family: 'Poppins',sans-serif;
@@ -45,10 +49,10 @@
       </div>
       <ul class="flex flex-col items-center gap-6 py-4">
         <li><a href="/" class="text-white hover:text-gray-200">Home</a></li>
-        <li><a href="/about.html" class="text-white hover:text-gray-200">About Us</a></li>
-        <li><a href="/faq.html" class="text-white hover:text-gray-200">FAQ</a></li>
-        <li><a href="/login.html" class="text-white hover:text-gray-200">Login</a></li>
-        <li><a href="/selection.html" class="text-white hover:text-gray-200">Sign Up</a></li>
+        <li><a href="./aboutus_page.html" class="text-white hover:text-gray-200">About Us</a></li>
+        <li><a href="./faq.html" class="text-white hover:text-gray-200">FAQ</a></li>
+        <li><a href="./login.html" class="text-white hover:text-gray-200">Login</a></li>
+        <li><a href="./selection.html" class="text-white hover:text-gray-200">Sign Up</a></li>
       </ul>
     </div>
 
@@ -57,11 +61,11 @@
       <ul class="flex gap-6 lg:gap-12">
         <li><a href="/" class="text-white hover:text-gray-200">Home</a></li>
         <li><a href="./aboutus_page.html" class="text-white hover:text-gray-200">About Us</a></li>
-        <li><a href="/faq.html" class="text-white hover:text-gray-200">FAQ</a></li>
-        <li><a href="/blogs_page.html" class="text-white hover:text-gray-200">Blogs</a></li>
+        <li><a href="./faq.html" class="text-white hover:text-gray-200">FAQ</a></li>
+        <li><a href="./blogs_page.html" class="text-white hover:text-gray-200">Blogs</a></li>
       </ul>
-      <a href="/login.html"><button class="ml-5 lg:ml-10 bg-white font-medium text-[#0D3451] px-4 py-2 rounded-lg">Login</button></a>
-      <a href="/selection.html"><button class="ml-5 lg:ml-10 bg-white font-medium text-[#0D3451] px-4 py-2 rounded-lg">Sign Up</button></a>
+      <a href="./login.html"><button class="ml-5 lg:ml-10 bg-white font-medium text-[#0D3451] px-4 py-2 rounded-lg">Login</button></a>
+      <a href="./selection.html"><button class="ml-5 lg:ml-10 bg-white font-medium text-[#0D3451] px-4 py-2 rounded-lg">Sign Up</button></a>
     </div>
   </nav>
 
