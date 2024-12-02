@@ -12,19 +12,63 @@
             document.getElementById('add-certification').addEventListener('click', () => {
                 const certList = document.getElementById('certification-list');
                 const newCert = document.createElement('input');
-                newCert.type = 'text';
-                newCert.placeholder = 'Certification';
+                newCert.type = 'file';
+                newCert.accept = '.pdf, .doc, .docx';
                 newCert.classList.add('w-full', 'p-2', 'border', 'rounded-md', 'mt-2');
                 certList.appendChild(newCert);
             });
 
-            // Add Skill
-            document.getElementById('add-skill').addEventListener('click', () => {
-                const skillList = document.getElementById('skill-list');
-                const newSkill = document.createElement('span');
-                newSkill.textContent = 'New Skill';
-                newSkill.classList.add('px-3', 'py-1', 'bg-gray-200', 'rounded-full', 'text-sm', 'mt-2', 'inline-block');
-                skillList.appendChild(newSkill);
+            // Add Skill Functionality
+    document.getElementById('add-skill').addEventListener('click', () => {
+        // Show input field and submit button
+        document.getElementById('new-skill-container').classList.remove('hidden');
+        document.getElementById('add-skill').classList.add('hidden');
+    });
+
+    // Submit new skill
+    document.getElementById('submit-skill').addEventListener('click', () => {
+        const newSkill = document.getElementById('new-skill').value.trim();
+        if (newSkill) {
+            const skillList = document.getElementById('skill-list');
+            const newSkillSpan = document.createElement('span');
+            newSkillSpan.textContent = newSkill;
+            newSkillSpan.classList.add('px-3', 'py-1', 'bg-gray-200', 'rounded-full', 'text-sm', 'mt-2', 'inline-block');
+            skillList.appendChild(newSkillSpan);
+            document.getElementById('new-skill').value = ''; // Clear input
+            document.getElementById('new-skill-container').classList.add('hidden'); // Hide input
+            document.getElementById('add-skill').classList.remove('hidden'); // Show + Add button again
+        }
+    });
+
+            // Disable "Add More" if fields are empty
+            document.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', () => {
+                    const addMoreButton = document.querySelector('.add-more-btn');
+                    addMoreButton.disabled = !document.querySelector('input[type="text"]:valid') || !document.querySelector('input[type="email"]:valid');
+                });
+            });
+
+            // Form Validation
+            document.getElementById('profile-form').addEventListener('submit', (e) => {
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const resume = document.getElementById('file-input').files.length === 0;
+                const certification = document.getElementById('certification-list').querySelectorAll('input[type="file"]').length === 0;
+
+                if (!email.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
+                    alert('Please enter a valid email');
+                    e.preventDefault();
+                }
+
+                if (!phone.match(/^\d{10}$/)) {
+                    alert('Please enter a valid phone number');
+                    e.preventDefault();
+                }
+
+                if (resume || certification) {
+                    alert('Please add your resume and certification');
+                    e.preventDefault();
+                }
             });
         });
     </script>
@@ -41,62 +85,61 @@
             </div>
 
             <!-- Profile Form -->
-            <div class="flex bg-neutral-200 p-7 rounded-lg ">
+            <form id="profile-form" class="flex bg-neutral-200 p-7 rounded-lg" method="post">
                 <!-- Profile Image -->
                 <div class="flex justify-center md:justify-start items-center mb-28">
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Image"
-                        class="rounded-full border-4 border-neutral-400 w-34 h-34   ">
+                        class="rounded-full border-4 border-neutral-400 w-34 h-34">
                 </div>
-
 
                 <!-- Personal Info -->
                 <div class="space-y-4 pl-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-1">
                         <div>
-                            <label class="shadow-lg font-bold text-gray-900 p-1 rounded-full">Full Name</label>
-                            <input type="text" class="w-full p-2 rounded-lg border-2 border-gray-300"
-                                placeholder="Full Name">
+                            <label for="full-name" class="shadow-lg font-bold text-gray-900 p-1 rounded-full">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" class="w-full p-2 rounded-lg border-2 border-gray-300"
+                                placeholder="Full Name" required>
                         </div>
                         <div>
-                            <label class="text-gray-700 font-bold p-1">Email</label>
-                            <input type="email" class="w-full p-2 rounded-lg border-2 border-gray-300"
-                                placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-gray-700 font-bold p-1">Password</label>
-                            <input type="password" class="w-full rounded-lg p-2 border-2 border-gray-300"
-                                placeholder="Password">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 font-bold p-1">Phone Number</label>
-                            <input type="tel" class="w-full p-2 rounded-lg border-2 border-gray-300"
-                                placeholder="Phone Number">
+                            <label for="email" class="text-gray-700 font-bold p-1">Email</label>
+                            <input type="email" id="email" name="email" class="w-full p-2 rounded-lg border-2 border-gray-300"
+                                placeholder="Email" required>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-gray-700 font-bold p-1">Current Address</label>
-                            <input type="text" class="w-full p-2 rounded-lg border-2 border-gray-300"
-                                placeholder="Current Address">
+                            <label for="password" class="block text-gray-700 font-bold p-1">Password</label>
+                            <input type="password" id="password" name="password" class="w-full rounded-lg p-2 border-2 border-gray-300"
+                                placeholder="Password" required>
                         </div>
                         <div>
-                            <label class="block text-gray-700 font-bold p-1">State</label>
-                            <input type="text" class="w-full p-2 rounded-lg border-2 border-gray-300"
-                                placeholder="State">
+                            <label for="phone" class="block text-gray-700 font-bold p-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full p-2 rounded-lg border-2 border-gray-300"
+                                placeholder="Phone Number" pattern="\d{10}" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="current-address" class="block text-gray-700 font-bold p-1">Current Address</label>
+                            <input type="text" id="current-address" name="current-address" class="w-full p-2 rounded-lg border-2 border-gray-300"
+                                placeholder="Current Address" required>
+                        </div>
+                        <div>
+                            <label for="state" class="block text-gray-700 font-bold p-1">State</label>
+                            <input type="text" id="state" name="state" class="w-full p-2 rounded-lg border-2 border-gray-300"
+                                placeholder="State" required>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
 
             <!-- Experience and Skills Section -->
             <div class="bg-neutral-200 p-7 rounded-lg space-y-4">
                 <!-- Work Experience Section -->
                 <div class="space-y-1">
-                    <div class=" justify-between items-center">
-                        <label class="block text-gray-700 font-bold p-1">Work Experience</label>
-                        <select
+                    <div class="justify-between items-center">
+                        <label for="work-experience" class="block text-gray-700 font-bold p-1">Work Experience</label>
+                        <select id="work-experience" name="work-experience"
                             class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
                             <option>Total years of experience</option>
                         </select>
@@ -106,8 +149,7 @@
                 <!-- Certifications Section -->
                 <div class="space-y-1">
                     <div class="flex justify-between items-center">
-                        <label class="block text-gray-700 font-bold">Certification</label>
-
+                        <label for="certifications" class="block text-gray-700 font-bold">Certification</label>
                     </div>
                     <div id="certification-list"
                         class="w-full p-3 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 flex items-center">
@@ -119,68 +161,56 @@
                 </div>
 
                 <!-- Skills Section -->
-                <div class="space-y-1">
-                    <div class="flex justify-between items-center">
-                        <label class="block text-gray-700 font-bold">Skills</label>
-                    </div>
-                    <div id="skill-list"
-                        class="flex flex-wrap gap-2 w-full p-3 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
-                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">HTML</span>
-                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">CSS</span>
-                        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">Python</span>
-                        <div class="flex items-center ml-auto">
-                            <button id="add-skill" class="text-blue-500 font-medium hover:underline">
-                                + Add
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
+<div class="space-y-1">
+    <div class="flex justify-between items-center">
+        <label class="block text-gray-700 font-bold">Skills</label>
+    </div>
+    <div id="skill-list"
+        class="flex flex-wrap gap-2 w-full p-3 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
+        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">HTML</span>
+        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">CSS</span>
+        <span class="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium">Python</span>
+        <!-- Add skill input -->
+        <div id="new-skill-container" class="hidden w-full">
+            <input type="text" id="new-skill" placeholder="Enter new skill"
+                class="w-full p-2 border rounded-lg mt-2" />
+            <button id="submit-skill" class="bg-blue-600 text-white p-2 mt-2 rounded-lg">Add Skill</button>
+        </div>
+        <div class="flex items-center ml-auto">
+            <button id="add-skill" class="text-blue-500 font-medium hover:underline">
+                + Add
+            </button>
+        </div>
+    </div>
+</div>
             </div>
 
             <!-- Education and Resume Section -->
             <div class="bg-neutral-200 p-7 rounded-lg space-y-4">
                 <!-- Education Section -->
                 <div class="space-y-1">
-                    <div class="flex justify-between items-center">
-                        <label class=" text-gray-700 font-bold">Education</label>
-                        <button class="bg-blue-900 text-white px-2 py-1  rounded-lg">Add More</button>
+                    <div class="justify-between items-center">
+                        <label for="education" class="block text-gray-700 font-bold p-1">Education</label>
+                        <select id="education" name="education"
+                            class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
+                            <option>Undergraduate</option>
+                        </select>
                     </div>
-                    <select class="w-full p-3 border rounded-md">
-                        <option>Highest Education</option>
-                    </select>
                 </div>
 
                 <!-- Resume Section -->
-                <div class="space-y-2">
-                    <div class="flex justify-between items-center">
-                        <label class="block text-gray-700 font-bold">Resume</label>
-                    </div>
-                    <div id="certification-list"
-                        class="w-full p-3 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 flex items-center">
-                        <p class="text-gray-500 flex-1">No Resume added</p>
-                        <button id="add-certification" class="text-blue-500 font-medium hover:underline ml-4"
-                            onclick="document.getElementById('file-input').click()">
-                            + Add
-                        </button>
-                    </div>
-                    <input type="file" id="file-input" class="hidden" accept=".pdf, .doc, .docx"
-                        onchange="handleFileUpload(event)" />
+                <div class="space-y-1">
+                    <label for="file-input" class="block text-gray-700 font-bold">Upload Resume</label>
+                    <input type="file" id="file-input" name="file" class="bg-white w-full p-3 border border-gray-300 rounded-md shadow-sm">
                 </div>
             </div>
 
-            <!-- Portfolio Link Section -->
-            <div class="bg-neutral-200 p-7 rounded-lg space-y-4">
-                <div class="flex justify-between items-center">
-                    <label class="block text-gray-700 font-bold">Portfolio link</label>
-                    <button class="bg-blue-900 text-white px-3 py-1  rounded-lg">Add More</button>
-                </div>
-                <input type="url" class="w-full p-2 border rounded-md"
-                    placeholder="https://www.linkedin.com/in/username/">
+            <!-- Submit Section -->
+            <div class="flex justify-between mt-4">
+                <button type="submit" class="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-500" disabled>Submit</button>
             </div>
         </div>
     </div>
-
     <!-- Footer -->
     <div id="footer-placeholder"></div>
 
@@ -214,8 +244,6 @@
             })
             .catch(error => console.error('Error loading footer:', error));
     </script>
-
-
 </body>
 
 </html>
