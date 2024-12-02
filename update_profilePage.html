@@ -30,6 +30,13 @@
     </script>
 </head>
 
+
+
+<!-- NOTE: The below comment is for developers, reviwers & testers if they want then they can remove this comment.
+     Issue ID: IA43 - Button Color Changed according to the design rest profile photo and forms also made resposnive to the small & large screen sizes.
+ -->
+
+
 <body>
     <!-- Navbar Section -->
     <div id="navbar-placeholder"></div>
@@ -37,13 +44,13 @@
         <div class="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8 space-y-8 border-4 border-gray-300">
             <!-- Profile Header -->
             <div class="flex">
-                <button class="bg-blue-900 text-white px-4 py-2 rounded-lg">Edit Profile</button>
+                <button class="bg-[#0D3451] text-white px-4 py-2 rounded-lg">Edit Profile</button>
             </div>
 
             <!-- Profile Form -->
-            <div class="flex bg-neutral-200 p-7 rounded-lg ">
+            <div class="flex flex-col lg:flex-row bg-neutral-200 p-7 rounded-lg ">
                 <!-- Profile Image -->
-                <div class="flex justify-center md:justify-start items-center mb-28">
+                <div class="flex justify-center md:justify-center items-center mb-8 md:w-full lg:mb-28">
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Image"
                         class="rounded-full border-4 border-neutral-400 w-34 h-34   ">
                 </div>
@@ -144,7 +151,7 @@
                 <div class="space-y-1">
                     <div class="flex justify-between items-center">
                         <label class=" text-gray-700 font-bold">Education</label>
-                        <button class="bg-blue-900 text-white px-2 py-1  rounded-lg">Add More</button>
+                        <button class="bg-[#0D3451] text-white px-2 py-1  rounded-lg">Add More</button>
                     </div>
                     <select class="w-full p-3 border rounded-md">
                         <option>Highest Education</option>
@@ -173,7 +180,7 @@
             <div class="bg-neutral-200 p-7 rounded-lg space-y-4">
                 <div class="flex justify-between items-center">
                     <label class="block text-gray-700 font-bold">Portfolio link</label>
-                    <button class="bg-blue-900 text-white px-3 py-1  rounded-lg">Add More</button>
+                    <button class="bg-[#0D3451] text-white px-3 py-1  rounded-lg">Add More</button>
                 </div>
                 <input type="url" class="w-full p-2 border rounded-md"
                     placeholder="https://www.linkedin.com/in/username/">
