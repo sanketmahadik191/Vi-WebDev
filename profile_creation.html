@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Creation - Page 1</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    .font-poppins {
-      font-family: 'Poppins',sans-serif;
-    }
-    .font-playfair-display {
-      font-family: 'Playfair display', sans-serif;
-    }
-  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-playfair-display {
+            font-family: 'Playfair display', sans-serif;
+        }
+    </style>
 </head>
+
 <body>
 
-     <!-- Navbar Placeholder -->
-     <div id="navbar-placeholder"></div>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Main Container -->
     <div class="min-h-screen flex w-full items-center justify-center bg-cover bg-center mt-8 mb-8 px-4 sm:px-6 lg:px-8">
-        <form class="bg-white p-6 sm:p-10 rounded-2xl shadow-lg w-full max-w-xl sm:max-w-2xl lg:max-w-4xl border border-gray-300">
+        <form
+            class="bg-white p-6 sm:p-10 rounded-2xl shadow-lg w-full max-w-xl sm:max-w-2xl lg:max-w-4xl border border-gray-300">
             <h2 class="text-3xl font-bold font-playfair-display mb-6 sm:mb-1 text-start text-gray-900 tracking-wide">
                 Profile Details
             </h2>
@@ -33,70 +38,96 @@
                 <!-- First Name & Last Name -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
                     <div>
-                        <label class="block font-semibold text-gray-800 mb-2">First Name<span class="text-red-500">*</span></label>
-                        <input type="text" class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg" placeholder="eg: Albert">
+                        <label class="block font-semibold text-gray-800 mb-2">First Name<span
+                                class="text-red-500">*</span></label>
+                        <input required type="text"
+                            class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                            placeholder="eg: Albert">
                     </div>
                     <div>
-                        <label class="block font-semibold text-gray-800 mb-2">Last Name<span class="text-red-500">*</span></label>
-                        <input type="text" class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg" placeholder="eg: Einstein">
+                        <label class="block font-semibold text-gray-800 mb-2">Last Name<span
+                                class="text-red-500">*</span></label>
+                        <input required type="text"
+                            class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                            placeholder="eg: Einstein">
                     </div>
                 </div>
 
                 <!-- Phone & Email -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
                     <div>
-                        <label class="block font-semibold text-gray-800 mb-2">Phone Number<span class="text-red-500">*</span></label>
+                        <label class="block font-semibold text-gray-800 mb-2">Phone Number<span
+                                class="text-red-500">*</span></label>
                         <div class="flex border border-gray-800 shadow-sm rounded-lg overflow-hidden">
-                            <select class="bg-gray-100 p-2 border-r border-gray-300">
+                            <select required class="bg-gray-100 p-2 border-r border-gray-300">
                                 <option value="+91">IN +91</option>
                                 <option value="+1">US +1</option>
                                 <option value="+44">UK +44</option>
                             </select>
-                            <input type="number" class="w-full px-3 py-2 focus:outline-none focus:ring-2 focus:border-blue-500 focus:ring-blue-500" placeholder="eg. 9783-343-134">
+                            <input required type="number"
+                                class="w-full px-3 py-2 focus:outline-none focus:ring-2 focus:border-blue-500 focus:ring-blue-500"
+                                placeholder="eg. 9783-343-134">
                         </div>
                     </div>
                     <div>
-                        <label class="block font-semibold text-gray-800 mb-2">Email<span class="text-red-500">*</span></label>
-                        <input type="email" class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg" placeholder="eg: xyz@gmail.com">
+                        <label class="block font-semibold text-gray-800 mb-2">Email<span
+                                class="text-red-500">*</span></label>
+                        <input type="email"
+                            class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                            placeholder="eg: xyz@gmail.com">
                     </div>
                 </div>
 
                 <!-- Address & City -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
                     <div>
-                        <label class="block font-semibold text-gray-800 mb-2">Address<span class="text-red-500">*</span></label>
-                        <input type="text" class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg" placeholder="eg. No. 19">
+                        <label class="block font-semibold text-gray-800 mb-2">Address<span
+                                class="text-red-500">*</span></label>
+                        <input required type="text"
+                            class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                            placeholder="eg. No. 19">
                     </div>
                     <div>
-                        <label class="block font-semibold text-gray-800 mb-2">City<span class="text-red-500">*</span></label>
-                        <input type="text" class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg" placeholder="eg: Mumbai">
+                        <label class="block font-semibold text-gray-800 mb-2">City<span
+                                class="text-red-500">*</span></label>
+                        <input required type="text"
+                            class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                            placeholder="eg: Mumbai">
                     </div>
                 </div>
 
                 <!-- Pincode & State -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">
                     <div>
-                        <label class="block font-semibold text-gray-800 mb-2">Pin Code<span class="text-red-500">*</span></label>
-                        <input type="number" class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg" placeholder="eg: 400004">
+                        <label class="block font-semibold text-gray-800 mb-2">Pin Code<span
+                                class="text-red-500">*</span></label>
+                        <input required type="number"
+                            class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                            placeholder="eg: 400004">
                     </div>
                     <div>
-                        <label class="block font-semibold text-gray-800 mb-2">State<span class="text-red-500">*</span></label>
-                        <input type="text" class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg" placeholder="eg: Maharashtra">
+                        <label class="block font-semibold text-gray-800 mb-2">State<span
+                                class="text-red-500">*</span></label>
+                        <input required type="text"
+                            class="p-3 sm:p-2 block w-full rounded-md border border-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-300 hover:shadow-lg"
+                            placeholder="eg: Maharashtra">
                     </div>
                 </div>
 
                 <!-- Profile Photo Upload -->
                 <div class="mb-6">
-                    <label class="block font-semibold text-gray-800 mb-2">Profile Photo</label>
+                    <label class="block font-semibold text-gray-800 mb-2">Profile Photo <span
+                            class="text-red-500">*</span></label>
                     <p class="text-sm text-gray-500 mb-2">Upload a picture of yourself</p>
                     <div class="flex items-center justify-center w-full">
-                        <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
+                        <label
+                            class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                 <p class="mb-2 text-sm text-gray-500">
                                     <span class="font-semibold">Upload File</span> or drag and drop
                                 </p>
                             </div>
-                            <input type="file" class="hidden">
+                            <input required type="file" class="hidden">
                         </label>
                     </div>
                     <p class="text-sm text-gray-500 mt-2">Max file size: 5MB. File type - PNG, JPEG</p>
@@ -104,52 +135,55 @@
 
                 <!-- Resume Upload -->
                 <div class="mb-6">
-                    <label class="block font-semibold text-gray-800 mb-2">Upload Resume</label>
+                    <label class="block font-semibold text-gray-800 mb-2">Upload Resume <span
+                            class="text-red-500">*</span></label>
                     <p class="text-sm text-gray-500 mb-2">Upload your resume for employers to view</p>
                     <div class="flex items-center justify-center w-full">
-                        <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
+                        <label
+                            class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50">
                             <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                 <p class="mb-2 text-sm text-gray-500">
                                     <span class="font-semibold">Upload File</span> or drag and drop
                                 </p>
                             </div>
-                            <input type="file" class="hidden">
+                            <input required type="file" class="hidden">
                         </label>
                     </div>
                     <p class="text-sm text-gray-500 mt-2">Max file size: 10MB. File type - PDF, DOC, DOCX, PNG, JPEG</p>
                 </div>
 
                 <div class="flex justify-end mb-6 sm:mb-8">
-                    <a href="/profile_creation2.html" class="text-white h-8 bg-blue-950 rounded-md font-semibold w-20 flex items-center justify-center">Next</a>
+                    <a id="next-button" href="/profile_creation2.html"
+                        class="text-white h-8 bg-[#0D3451] rounded-md font-semibold w-20 flex items-center justify-center">Next</a>
                 </div>
             </div>
         </form>
     </div>
 
-        <!-- Footer Placeholder -->
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
     <script>
         // Load navbar and footer content
         fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
 
-            // Reinitialize navbar script
-            const mobileMenuButton = document.getElementById("mobile-menu-button");
-            const mobileMenuClose = document.getElementById("mobile-menu-close");
-            const mobileMenu = document.getElementById("mobile-menu");
+                // Reinitialize navbar script
+                const mobileMenuButton = document.getElementById("mobile-menu-button");
+                const mobileMenuClose = document.getElementById("mobile-menu-close");
+                const mobileMenu = document.getElementById("mobile-menu");
 
-            if (mobileMenuButton && mobileMenuClose && mobileMenu) {
-                // Show mobile menu
-                mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+                if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+                    // Show mobile menu
+                    mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
 
-                // Hide mobile menu
-                mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
-            }
-        })
-        .catch(error => console.error('Error loading navbar:', error));
+                    // Hide mobile menu
+                    mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
 
         fetch('footer.html')
             .then(response => response.text())
@@ -157,6 +191,44 @@
                 document.getElementById('footer-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Error loading footer:', error));
+
+        // NOTE: The below comment is for developers, reviwers & testers if they want then they can remove this comment.
+        // Issue ID: IA36 - Below code is solving the issue of Next button via checking each field whether the user has entered something or not
+        // Getting references to form inputs and the "Next" button
+        const inputs = document.querySelectorAll('input[required]');
+        const nextButton = document.getElementById('next-button');
+
+        // Function to validate all required fields
+        function validateForm() {
+            let isValid = true;
+
+            // Checking each required input
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                }
+            });
+
+            // Enabling / disabling the "Next" button based on validity
+            if (isValid) {
+                nextButton.classList.remove('bg-gray-400', 'cursor-not-allowed');
+                nextButton.classList.add('bg-[#0D3451]');
+                nextButton.style.pointerEvents = 'auto'; // Enable click
+            } else {
+                nextButton.classList.add('bg-gray-400', 'cursor-not-allowed');
+                nextButton.classList.remove('bg-[#0D3451]');
+                nextButton.style.pointerEvents = 'none'; // Disable click
+            }
+        }
+
+        // Adding event listeners to required inputs
+        inputs.forEach(input => {
+            input.addEventListener('input', validateForm);
+        });
+
+        // Runing validation on page load to set the initial button state
+        validateForm();
     </script>
 </body>
+
 </html>
