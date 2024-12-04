@@ -6,15 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selection - Vorkinsta</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <link href="./dist/tailwind.css" rel="stylesheet"> -->
+    <!-- when pushing this code remember to chnage back to play cdn -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .font-poppins {
-      font-family: 'Poppins',sans-serif;
-    }
-    .font-playfair-display {
-      font-family: 'Playfair display', sans-serif;
-    }
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .font-playfair-display {
+            font-family: 'Playfair display', sans-serif;
+        }
     </style>
 </head>
 
@@ -27,7 +32,8 @@
     <section class="flex flex-col items-center justify-center min-h-screen bg-gray-100 py-16 px-4">
         <!-- Header -->
         <div class="text-center mb-10">
-            <h1 class="text-4xl sm:text-3xl text-[#0D3451] font-semibold font-playfair-display mb-4">Join our platform</h1>
+            <h1 class="text-4xl sm:text-3xl text-[#0D3451] font-semibold font-playfair-display mb-4">Join our platform
+            </h1>
             <p class="text-gray-600 text-sm font-poppins sm:text-base max-w-md mx-auto">
                 Choose your role to get started and discover new opportunities tailored for you.
             </p>
@@ -86,24 +92,24 @@
     <script>
         // Navbar Loading
         fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
 
-            // Reinitialize navbar script
-            const mobileMenuButton = document.getElementById("mobile-menu-button");
-            const mobileMenuClose = document.getElementById("mobile-menu-close");
-            const mobileMenu = document.getElementById("mobile-menu");
+                // Reinitialize navbar script
+                const mobileMenuButton = document.getElementById("mobile-menu-button");
+                const mobileMenuClose = document.getElementById("mobile-menu-close");
+                const mobileMenu = document.getElementById("mobile-menu");
 
-            if (mobileMenuButton && mobileMenuClose && mobileMenu) {
-                // Show mobile menu
-                mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+                if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+                    // Show mobile menu
+                    mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
 
-                // Hide mobile menu
-                mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
-            }
-        })
-        .catch(error => console.error('Error loading navbar:', error));
+                    // Hide mobile menu
+                    mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
 
         // Footer Loading
         fetch('footer.html')

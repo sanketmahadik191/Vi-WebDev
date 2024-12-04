@@ -1,199 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job Listings</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link href="./dist/tailwind.css" rel="stylesheet"> -->
+  <!-- when pushing this code remember to chnage back to play cdn -->
+
 </head>
+
 <body class="bg-gray-100">
-<!-- Navbar Placeholder -->
-<div id="navbar-placeholder"></div>
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
 
-<!-- Main Container -->
+  <!-- Main Container -->
 
-    <!-- Saved Jobs Section Container -->
+  <!-- Saved Jobs Section Container -->
   <div class="flex justify-center items-center p-4  bg-gray-100">
     <div class="flex items-center justify-between p-4 bg-white rounded-md shadow-sm w-[30rem]">
-        <!-- Left section -->
-        <div class="text-black font-semibold">
-          Saved Jobs
-        </div>
-        <!-- Right section -->
-        <div class="text-right">
-          <span class="text-3xl font-bold text-black">03</span>
-          <span class="text-gray-400 text-sm">Saved job(s)</span>
-        </div>
+      <!-- Left section -->
+      <div class="text-black font-semibold">
+        Saved Jobs
       </div>
+      <!-- Right section -->
+      <div class="text-right">
+        <span class="text-3xl font-bold text-black">03</span>
+        <span class="text-gray-400 text-sm">Saved job(s)</span>
+      </div>
+    </div>
   </div>
 
   <!-- Job Listings Container -->
   <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-    
-        <!-- Job Card 1 -->
-        <div class="border border-gray-200 rounded-lg shadow-md p-4 mb-4 flex flex-col bg-white">
-        <!-- Logo -->
-        <!-- Job Info -->
-        <div class="ml-4 flex-1">
-            <div class="flex justify-between items-center gap-6 w-full">
-                <!-- Left section: Image and Title -->
-                <div class="flex gap-6 items-center">
-                  <img src="https://via.placeholder.com/50" alt="Company Logo" class="h-12 w-12 rounded-full">
-                  <h2 class="text-lg font-semibold">UI/UX Designer</h2>
-                </div>
-              
-                <!-- Right section: Button -->
-                <button class="text-red-500">
-                  X
-                </button>
-              </div>              
-            <div class="flex gap-6">
-                <p class="text-gray-500">Genex Technologies</p>
-               <span class="bg-blue-100 text-blue-600 text-sm px-2 py-1 rounded-full">Actively hiring</span>
-            </div>
-            <div class="flex items-center space-x-2 mt-1 text-gray-600">
-            <span class="inline-flex items-center">
-                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 1.53.54 3.22 1.71 4.58.34.4.85 1.03.79 1.67-.06.54-.25 1.19-.43 1.61-.25.58-.06 1.17.46 1.48.29.18.63.26.97.26h9.62c.34 0 .68-.08.97-.26.52-.31.71-.9.46-1.48-.18-.42-.37-1.07-.43-1.61-.06-.64.45-1.27.79-1.67C18.46 12.22 19 10.53 19 9c0-3.87-3.13-7-7-7zm0 18c-1.66 0-3 1.34-3 3h6c0-1.66-1.34-3-3-3z"></path></svg>
-                Mumbai
-            </span>
-            <span>•</span>
-            <span>3 Months</span>
-            <span>•</span>
-            <span>₹ 3000</span>
-            </div>
-            <p class="text-green-500 text-sm mt-1">Active 4 days ago</p>
-        </div>
-        <!-- Buttons -->
-            <div class="flex space-x-3 justify-end">
-                <button class="bg-white text-black border border-black px-4 py-2 rounded-lg">View Details</button>
-                <button class="bg-blue-950 text-white px-4 py-2 rounded-lg">Apply</button>
-            </div>
-        </div>
 
-        <!-- Job Card 2 -->
-        <div class="border border-gray-200 rounded-lg shadow-md p-4 mb-4 flex flex-col bg-white">
-          <!-- Logo -->
-          <!-- Job Info -->
-          <div class="ml-4 flex-1">
-              <div class="flex justify-between items-center gap-6 w-full">
-                  <!-- Left section: Image and Title -->
-                  <div class="flex gap-6 items-center">
-                    <img src="https://via.placeholder.com/50" alt="Company Logo" class="h-12 w-12 rounded-full">
-                    <h2 class="text-lg font-semibold">UI/UX Designer</h2>
-                  </div>
-                
-                  <!-- Right section: Button -->
-                  <button class="text-red-500">
-                    X
-                  </button>
-                </div>              
-              <div class="flex gap-6">
-                  <p class="text-gray-500">Genex Technologies</p>
-                 <span class="bg-blue-100 text-blue-600 text-sm px-2 py-1 rounded-full">Actively hiring</span>
-              </div>
-              <div class="flex items-center space-x-2 mt-1 text-gray-600">
-              <span class="inline-flex items-center">
-                  <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 1.53.54 3.22 1.71 4.58.34.4.85 1.03.79 1.67-.06.54-.25 1.19-.43 1.61-.25.58-.06 1.17.46 1.48.29.18.63.26.97.26h9.62c.34 0 .68-.08.97-.26.52-.31.71-.9.46-1.48-.18-.42-.37-1.07-.43-1.61-.06-.64.45-1.27.79-1.67C18.46 12.22 19 10.53 19 9c0-3.87-3.13-7-7-7zm0 18c-1.66 0-3 1.34-3 3h6c0-1.66-1.34-3-3-3z"></path></svg>
-                  Mumbai
-              </span>
-              <span>•</span>
-              <span>3 Months</span>
-              <span>•</span>
-              <span>₹ 3000</span>
-              </div>
-              <p class="text-green-500 text-sm mt-1">Active 4 days ago</p>
-          </div>
-          <!-- Buttons -->
-              <div class="flex space-x-3 justify-end">
-                  <button class="bg-white text-black border border-black px-4 py-2 rounded-lg">View Details</button>
-                  <button class="bg-blue-950 text-white px-4 py-2 rounded-lg">Apply</button>
-              </div>
-          </div>
-        
-          <!-- Job Card 3 -->
-        <div class="border border-gray-200 rounded-lg shadow-md p-4 mb-4 flex flex-col bg-white">
-          <!-- Logo -->
-          <!-- Job Info -->
-          <div class="ml-4 flex-1">
-              <div class="flex justify-between items-center gap-6 w-full">
-                  <!-- Left section: Image and Title -->
-                  <div class="flex gap-6 items-center">
-                    <img src="https://via.placeholder.com/50" alt="Company Logo" class="h-12 w-12 rounded-full">
-                    <h2 class="text-lg font-semibold">UI/UX Designer</h2>
-                  </div>
-                
-                  <!-- Right section: Button -->
-                  <button class="text-red-500">
-                    X
-                  </button>
-                </div>              
-              <div class="flex gap-6">
-                  <p class="text-gray-500">Genex Technologies</p>
-                 <span class="bg-blue-100 text-blue-600 text-sm px-2 py-1 rounded-full">Actively hiring</span>
-              </div>
-              <div class="flex items-center space-x-2 mt-1 text-gray-600">
-              <span class="inline-flex items-center">
-                  <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 1.53.54 3.22 1.71 4.58.34.4.85 1.03.79 1.67-.06.54-.25 1.19-.43 1.61-.25.58-.06 1.17.46 1.48.29.18.63.26.97.26h9.62c.34 0 .68-.08.97-.26.52-.31.71-.9.46-1.48-.18-.42-.37-1.07-.43-1.61-.06-.64.45-1.27.79-1.67C18.46 12.22 19 10.53 19 9c0-3.87-3.13-7-7-7zm0 18c-1.66 0-3 1.34-3 3h6c0-1.66-1.34-3-3-3z"></path></svg>
-                  Mumbai
-              </span>
-              <span>•</span>
-              <span>3 Months</span>
-              <span>•</span>
-              <span>₹ 3000</span>
-              </div>
-              <p class="text-green-500 text-sm mt-1">Active 4 days ago</p>
-          </div>
-          <!-- Buttons -->
-              <div class="flex space-x-3 justify-end">
-                  <button class="bg-white text-black border border-black px-4 py-2 rounded-lg">View Details</button>
-                  <button class="bg-blue-950 text-white px-4 py-2 rounded-lg">Apply</button>
-              </div>
+    <!-- Job Card 1 -->
+    <div class="border border-gray-200 rounded-lg shadow-md p-4 mb-4 flex flex-col bg-white">
+      <!-- Logo -->
+      <!-- Job Info -->
+      <div class="ml-4 flex-1">
+        <div class="flex justify-between items-center gap-6 w-full">
+          <!-- Left section: Image and Title -->
+          <div class="flex gap-6 items-center">
+            <img src="https://via.placeholder.com/50" alt="Company Logo" class="h-12 w-12 rounded-full">
+            <h2 class="text-lg font-semibold">UI/UX Designer</h2>
           </div>
 
-
-        
-        <!-- Pagination -->
-        <div class="flex justify-center mt-6 space-x-2">
-            <button class="px-3 py-1 bg-gray-300 rounded-lg">1</button>
-            <button class="px-3 py-1 bg-gray-100 rounded-lg">2</button>
-            <button class="px-3 py-1 bg-gray-100 rounded-lg">3</button>
-            <button class="px-3 py-1 bg-gray-300 rounded-lg">&gt;</button>
+          <!-- Right section: Button -->
+          <button class="text-red-500">
+            X
+          </button>
         </div>
+        <div class="flex gap-6">
+          <p class="text-gray-500">Genex Technologies</p>
+          <span class="bg-blue-100 text-blue-600 text-sm px-2 py-1 rounded-full">Actively hiring</span>
+        </div>
+        <div class="flex items-center space-x-2 mt-1 text-gray-600">
+          <span class="inline-flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 1.53.54 3.22 1.71 4.58.34.4.85 1.03.79 1.67-.06.54-.25 1.19-.43 1.61-.25.58-.06 1.17.46 1.48.29.18.63.26.97.26h9.62c.34 0 .68-.08.97-.26.52-.31.71-.9.46-1.48-.18-.42-.37-1.07-.43-1.61-.06-.64.45-1.27.79-1.67C18.46 12.22 19 10.53 19 9c0-3.87-3.13-7-7-7zm0 18c-1.66 0-3 1.34-3 3h6c0-1.66-1.34-3-3-3z">
+              </path>
+            </svg>
+            Mumbai
+          </span>
+          <span>•</span>
+          <span>3 Months</span>
+          <span>•</span>
+          <span>₹ 3000</span>
+        </div>
+        <p class="text-green-500 text-sm mt-1">Active 4 days ago</p>
+      </div>
+      <!-- Buttons -->
+      <div class="flex space-x-3 justify-end">
+        <button class="bg-white text-black border border-black px-4 py-2 rounded-lg">View Details</button>
+        <button class="bg-blue-950 text-white px-4 py-2 rounded-lg">Apply</button>
+      </div>
+    </div>
+
+    <!-- Job Card 2 -->
+    <div class="border border-gray-200 rounded-lg shadow-md p-4 mb-4 flex flex-col bg-white">
+      <!-- Logo -->
+      <!-- Job Info -->
+      <div class="ml-4 flex-1">
+        <div class="flex justify-between items-center gap-6 w-full">
+          <!-- Left section: Image and Title -->
+          <div class="flex gap-6 items-center">
+            <img src="https://via.placeholder.com/50" alt="Company Logo" class="h-12 w-12 rounded-full">
+            <h2 class="text-lg font-semibold">UI/UX Designer</h2>
+          </div>
+
+          <!-- Right section: Button -->
+          <button class="text-red-500">
+            X
+          </button>
+        </div>
+        <div class="flex gap-6">
+          <p class="text-gray-500">Genex Technologies</p>
+          <span class="bg-blue-100 text-blue-600 text-sm px-2 py-1 rounded-full">Actively hiring</span>
+        </div>
+        <div class="flex items-center space-x-2 mt-1 text-gray-600">
+          <span class="inline-flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 1.53.54 3.22 1.71 4.58.34.4.85 1.03.79 1.67-.06.54-.25 1.19-.43 1.61-.25.58-.06 1.17.46 1.48.29.18.63.26.97.26h9.62c.34 0 .68-.08.97-.26.52-.31.71-.9.46-1.48-.18-.42-.37-1.07-.43-1.61-.06-.64.45-1.27.79-1.67C18.46 12.22 19 10.53 19 9c0-3.87-3.13-7-7-7zm0 18c-1.66 0-3 1.34-3 3h6c0-1.66-1.34-3-3-3z">
+              </path>
+            </svg>
+            Mumbai
+          </span>
+          <span>•</span>
+          <span>3 Months</span>
+          <span>•</span>
+          <span>₹ 3000</span>
+        </div>
+        <p class="text-green-500 text-sm mt-1">Active 4 days ago</p>
+      </div>
+      <!-- Buttons -->
+      <div class="flex space-x-3 justify-end">
+        <button class="bg-white text-black border border-black px-4 py-2 rounded-lg">View Details</button>
+        <button class="bg-blue-950 text-white px-4 py-2 rounded-lg">Apply</button>
+      </div>
+    </div>
+
+    <!-- Job Card 3 -->
+    <div class="border border-gray-200 rounded-lg shadow-md p-4 mb-4 flex flex-col bg-white">
+      <!-- Logo -->
+      <!-- Job Info -->
+      <div class="ml-4 flex-1">
+        <div class="flex justify-between items-center gap-6 w-full">
+          <!-- Left section: Image and Title -->
+          <div class="flex gap-6 items-center">
+            <img src="https://via.placeholder.com/50" alt="Company Logo" class="h-12 w-12 rounded-full">
+            <h2 class="text-lg font-semibold">UI/UX Designer</h2>
+          </div>
+
+          <!-- Right section: Button -->
+          <button class="text-red-500">
+            X
+          </button>
+        </div>
+        <div class="flex gap-6">
+          <p class="text-gray-500">Genex Technologies</p>
+          <span class="bg-blue-100 text-blue-600 text-sm px-2 py-1 rounded-full">Actively hiring</span>
+        </div>
+        <div class="flex items-center space-x-2 mt-1 text-gray-600">
+          <span class="inline-flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 1.53.54 3.22 1.71 4.58.34.4.85 1.03.79 1.67-.06.54-.25 1.19-.43 1.61-.25.58-.06 1.17.46 1.48.29.18.63.26.97.26h9.62c.34 0 .68-.08.97-.26.52-.31.71-.9.46-1.48-.18-.42-.37-1.07-.43-1.61-.06-.64.45-1.27.79-1.67C18.46 12.22 19 10.53 19 9c0-3.87-3.13-7-7-7zm0 18c-1.66 0-3 1.34-3 3h6c0-1.66-1.34-3-3-3z">
+              </path>
+            </svg>
+            Mumbai
+          </span>
+          <span>•</span>
+          <span>3 Months</span>
+          <span>•</span>
+          <span>₹ 3000</span>
+        </div>
+        <p class="text-green-500 text-sm mt-1">Active 4 days ago</p>
+      </div>
+      <!-- Buttons -->
+      <div class="flex space-x-3 justify-end">
+        <button class="bg-white text-black border border-black px-4 py-2 rounded-lg">View Details</button>
+        <button class="bg-blue-950 text-white px-4 py-2 rounded-lg">Apply</button>
+      </div>
+    </div>
+
+
+
+    <!-- Pagination -->
+    <div class="flex justify-center mt-6 space-x-2">
+      <button class="px-3 py-1 bg-gray-300 rounded-lg">1</button>
+      <button class="px-3 py-1 bg-gray-100 rounded-lg">2</button>
+      <button class="px-3 py-1 bg-gray-100 rounded-lg">3</button>
+      <button class="px-3 py-1 bg-gray-300 rounded-lg">&gt;</button>
+    </div>
 
   </div>
-  
-      <!-- Footer Placeholder -->
-      <div id="footer-placeholder"></div>
 
-      <script>
-          // Load navbar and footer content
-          fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 
-            // Reinitialize navbar script
-            const mobileMenuButton = document.getElementById("mobile-menu-button");
-            const mobileMenuClose = document.getElementById("mobile-menu-close");
-            const mobileMenu = document.getElementById("mobile-menu");
+  <script>
+    // Load navbar and footer content
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
 
-            if (mobileMenuButton && mobileMenuClose && mobileMenu) {
-                // Show mobile menu
-                mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+        // Reinitialize navbar script
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenuClose = document.getElementById("mobile-menu-close");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-                // Hide mobile menu
-                mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
-            }
-        })
-        .catch(error => console.error('Error loading navbar:', error));
-  
-          fetch('footer.html')
-              .then(response => response.text())
-              .then(data => {
-                  document.getElementById('footer-placeholder').innerHTML = data;
-              })
-              .catch(error => console.error('Error loading footer:', error));
-      </script>
+        if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+          // Show mobile menu
+          mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+
+          // Hide mobile menu
+          mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
+        }
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
 
 </body>
+
 </html>
