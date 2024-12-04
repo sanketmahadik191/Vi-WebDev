@@ -5,86 +5,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Messages</title>
-<style>
 
-/* Responsive Design Adjustments */
-@media screen and (max-width: 768px) {
-  /* Adjust container heights for small screens */
-  .h-screen {
-    height: auto; /* Allow content to expand naturally */
-  }
-
-  /* Sidebar and chat areas layout */
-  .flex-col {
-    flex-direction: column; /* Stack elements vertically */
-  }
-
-  .w-full {
-    width: 100%; /* Ensure full width for narrow screens */
-  }
-
-  /* Sidebar adjustments */
-  .max-h-[70vh] {
-    max-height: 50vh; /* Reduce height for smaller devices */
-  }
-
-  /* Input field adjustments */
-  .px-4.py-2 {
-    padding: 8px 16px; /* Ensure padding fits smaller screens */
-  }
-
-  /* Mobile-specific tweaks */
-  [x-data="chatApp()"] .m-10 {
-    margin: 0; /* Remove excessive margins for small devices */
-  }
-
-  .bg-white.shadow-md {
-    box-shadow: none; /* Simplify for small screens */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  /* Reduce avatar sizes for very narrow screens */
-  .rounded-full.w-10.h-10 {
-    width: 8rem;
-    height: 8rem; /* Adjust avatar dimensions */
-  }
-
-  /* Message padding adjustments */
-  .p-4 {
-    padding: 12px; /* Slightly less padding for narrow screens */
-  }
-
-  /* Text size for chat bubbles */
-  .text-xs {
-    font-size: 0.75rem; /* Adjust for readability on small devices */
-  }
-}
-
-
-</style>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Alpine.js -->
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
+  <style>
+    .font-poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .font-playfair-display {
+      font-family: 'Playfair display', sans-serif;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-200 font-sans" x-data="chatApp()">
+<body>
   <!-- Navbar Section -->
   <div id="navbar-placeholder"></div>
 
-  <div class="flex flex-col md:flex-row h-screen antialiased text-gray-900 m-10 ">
+  <div class="bg-gray-200 flex flex-col md:flex-row h-screen antialiased text-gray-900" x-data="chatApp()">
     <!-- Left Sidebar (Message List) -->
-    <div class="flex flex-col w-full md:w-2/6 bg-white shadow-md">
-      <div class="flex items-center justify-between py-4 px-6 border-b border-gray-300 bg-gray-100">
+    <div class="flex flex-col w-full md:w-2/6">
+      <div class="flex items-center justify-between py-4 px-6 border-b border-gray-300">
+        <!-- Back button for mobile -->
         <template x-if="isMobile && selectedMessage">
-          <button @click="backToChatList"
-            class="text-gray-700 font-semibold rounded px-2 py-1 transition duration-200">← Back</button>
+          <button @click="backToChatList" class="text-gray-700 font-semibold rounded px-2 py-1 transition duration-200">
+            ← Back
+          </button>
         </template>
         <h2 class="text-xl font-semibold text-gray-800">Messages</h2>
       </div>
-
-      <div :class="{'hidden': selectedMessage && isMobile, 'block': true}" class="flex-grow overflow-y-auto">
+  
+      <!-- Message List -->
+      <div :class="{'hidden': selectedMessage && isMobile}" class="flex-grow overflow-y-auto">
         <div class="relative m-4">
           <span class="absolute inset-y-0 left-0 flex items-center pl-3">
             <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,17 +47,15 @@
                 d="M21 21l-4.35-4.35M15 11a6 6 0 111-11 6 6 0 01-1 11z"></path>
             </svg>
           </span>
-
           <input type="text" placeholder="Search Messages"
             class="w-full pl-10 py-3 pr-4 rounded-full bg-gray-100 text-gray-700 placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-500 transition duration-200" />
         </div>
-
-        <div class="flex-grow overflow-y-auto max-h-[70vh] bg-white">
-          <h3 class="px-4 py-2 text-md font-bold uppercase text-black">All Chats</h3>
+        <div class="flex-grow overflow-y-auto max-h-[70vh] bg-gray-200">
+          <h3 class="px-4 py-2 m-4 text-md font-bold uppercase text-black">All Chats</h3>
           <ul class="m-0 p-0">
             <template x-for="message in messages" :key="message.id">
               <li @click="selectMessage(message)"
-                class="px-4 py-3 mb-1 mx-2 bg-gray-100 border-b border-gray-300 hover:bg-gray-200 transition duration-150 cursor-pointer">
+                class="px-4 py-3 mb-1 mx-2 bg-white border-b border-gray-300 hover:bg-gray-100 transition duration-150 cursor-pointer">
                 <a href="#" class="flex items-center">
                   <img :src="message.avatar" alt="User Avatar" class="rounded-full w-10 h-10">
                   <div class="ml-3">
@@ -117,126 +70,40 @@
         </div>
       </div>
     </div>
-
+  
     <!-- Right Side (Message Details) -->
-    <div :class="{'hidden': !selectedMessage && isMobile, 'block': true}"
-      class="flex flex-col m-10 w-full md:w-4/6 bg-gray-100 shadow-md">
-      <!-- User Info -->
-      <template x-if="selectedMessage">
-        <div class="flex items-center p-4 border-b border-gray-300 bg-gray-100">
-          <img :src="selectedMessage.avatar" alt="User Avatar" class="rounded-full w-10 h-10">
-          <div class="ml-3">
-            <p class="text-lg font-bold text-gray-800" x-text="selectedMessage.sender"></p>
-          </div>
-        </div>
-      </template><!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Messages</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Alpine.js -->
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
-</head>
-
-<body class="bg-gray-200 font-sans" x-data="chatApp()">
-  <!-- Navbar Section -->
-  <div id="navbar-placeholder"></div>
-
-  <div class="flex flex-col md:flex-row h-screen antialiased text-gray-900 m-10">
-    <!-- Left Sidebar (Message List) -->
-    <div class="flex flex-col w-full sm:w-3/6 md:w-2/6 bg-white shadow-md">
-      <div class="flex items-center justify-between py-4 px-6 border-b border-gray-300 bg-gray-100">
-        <template x-if="isMobile && selectedMessage">
-          <button @click="backToChatList"
-            class="text-gray-700 font-semibold rounded px-2 py-1 transition duration-200">← Back</button>
-        </template>
-        <h2 class="text-xl font-semibold text-gray-800">Messages</h2>
+    <div :class="{'hidden': !selectedMessage && isMobile}" class="flex flex-col h-[85vh] md:h-auto w-full md:w-4/6 bg-gray-100">
+      <div class="flex items-center p-4 border-b border-gray-300">
+        <h2 class="ml-4 text-lg font-semibold" x-text="selectedMessage?.sender"></h2>
       </div>
-
-      <div :class="{'hidden': selectedMessage && isMobile, 'block': true}" class="flex-grow overflow-y-auto">
-        <div class="relative m-4">
-          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M21 21l-4.35-4.35M15 11a6 6 0 111-11 6 6 0 01-1 11z"></path>
-            </svg>
-          </span>
-
-          <input type="text" placeholder="Search Messages"
-            class="w-full pl-10 py-3 pr-4 rounded-full bg-gray-100 text-gray-700 placeholder-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-500 transition duration-200" />
-        </div>
-
-        <div class="flex-grow overflow-y-auto max-h-[70vh] bg-white">
-          <h3 class="px-4 py-2 text-md font-bold uppercase text-black">All Chats</h3>
-          <ul class="m-0 p-0">
-            <template x-for="message in messages" :key="message.id">
-              <li @click="selectMessage(message)"
-                class="px-4 py-3 mb-1 mx-2 bg-gray-100 border-b border-gray-300 hover:bg-gray-200 transition duration-150 cursor-pointer">
-                <a href="#" class="flex items-center">
-                  <img :src="message.avatar" alt="User  Avatar" class="rounded-full w-10 h-10">
-                  <div class="ml-3">
-                    <p class="text-sm font-bold text-black" x-text="message.sender"></p>
-                    <p class="text-xs text-gray-600 truncate" x-text="message.text"></p>
-                  </div>
-                  <span class="ml-auto text-xs text-gray-500" x-text="message.time"></span>
-                </a>
-              </li>
-            </template>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right Side (Message Details) -->
-    <div :class="{'hidden': !selectedMessage && isMobile, 'block': true}"
-      class="flex flex-col m-10 w-full sm:w-3/6 md:w-4/6 bg-gray-100 shadow-md">
-      <!-- User Info -->
-      <template x-if="selectedMessage">
-        <div class="flex items-center p-4 border-b border-gray-300 bg-gray-100">
-          <img :src="selectedMessage.avatar" alt="User  Avatar" class="rounded-full w-10 h-10">
-          <div class="ml-3">
-            <p class="text-lg font-bold text-gray-800" x-text="selectedMessage.sender"></p>
-          </div>
-        </div>
-      </template>
-
-      <!-- Message Container -->
-      <div class="flex-grow p-6 overflow-y-auto  
-
-      <!-- Message Container -->
       <div class="flex-grow p-6 overflow-y-auto">
-        <div class="flex flex-col space-y-4">
-          <template x-for="chat in chatMessages" :key="chat.id">
-            <div :class="chat.sentByUser ? 'self-end' : 'self-start'">
-              <div :class="chat.sentByUser ? 'bg-blue-100' : 'bg-gray-200'" class="p-4 rounded-lg shadow-lg max-w-lg">
+        <template x-for="chat in chatMessages" :key="chat.id">
+          <div :class="chat.sentByUser ? 'flex justify-end' : 'flex justify-start'">
+            <div class="max-w-lg">
+              <!-- Chat Bubble -->
+              <div :class="chat.sentByUser ? 'bg-blue-100' : 'bg-gray-200'" 
+                   class="p-4 rounded-lg shadow-lg">
                 <p class="text-xs" x-text="chat.message"></p>
               </div>
-              <div :class="chat.sentByUser ? 'text-right' : 'text-left'" class="mb-4">
+              <!-- Chat Time -->
+              <div :class="chat.sentByUser ? 'text-right' : 'text-left'" class="mt-2">
                 <p class="text-xs text-gray-500" x-text="chat.time"></p>
               </div>
             </div>
-          </template>
-        </div>
+          </div>
+        </template>        
       </div>
-
-      <!-- Input Field -->
       <div class="border-t border-gray-300 p-4 flex items-center space-x-2">
         <input type="text" x-model="newMessage" placeholder="Type a message..."
-          class="flex-grow px-4 py-2 rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 ease-in-out">
+          class="flex-grow px-4 py-2 rounded-full bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-400 transition" />
         <button @click="sendMessage"
-          class="bg-blue-800 text-white font-bold py-2 px-4 rounded-full transition duration-200 hover:bg-blue-600">Send</button>
+          class="bg-[#001f3f] text-white font-bold py-2 px-4 rounded-full transition hover:bg-blue-900">Send</button>
       </div>
     </div>
   </div>
-
+  
   <!-- Footer -->
   <div id="footer-placeholder"></div>
-
   <script>
     // Navbar
     fetch('navbar.html')
@@ -267,6 +134,10 @@
       })
       .catch(error => console.error('Error loading footer:', error));
 
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth < 768;
+    });
+
     function chatApp() {
       return {
         selectedMessage: null,
@@ -281,14 +152,10 @@
         newMessage: '',
         isMobile: window.innerWidth < 768, // Check if the screen width is less than 768px
         selectMessage(message) {
-          this.selectedMessage = message;
-          if (this.isMobile) {
-            // Scroll to top for better mobile view
-            window.scrollTo(0, 0);
-          }
+          this.selectedMessage = message; // Set selected message when a message is clicked
         },
         backToChatList() {
-          this.selectedMessage = null; // Reset selected message on back
+          this.selectedMessage = null; // Clear selected message when back is clicked
         },
         sendMessage() {
           if (this.newMessage.trim() !== '') {
@@ -298,12 +165,13 @@
               time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
               sentByUser: true
             });
-            this.newMessage = ''; // Clear the message input
+            this.newMessage = '';
           }
         },
       };
     }
   </script>
+
 </body>
 
 </html>
