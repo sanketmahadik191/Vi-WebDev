@@ -50,7 +50,7 @@
       </p>
       <div class="flex justify-center">
         <input type="text" 
-          class="border-2 border-gray-300 bg-white py-3 pl-6 pr-4 rounded-l-full w-48 sm:w-80 outline-none"
+          class="border-2 border-gray-300 bg-white py-3 pl-6 pr-4 rounded-l-full w-full sm:w-80 outline-none"
           placeholder="Search articles">
         <button class="custom-gradient text-white font-poppins px-8 py-3 rounded-r-full hover:opacity-90 transition-opacity">
           Search
@@ -64,7 +64,7 @@
     <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 font-playfair-display text-[#0D3451]">
       Featured Articles
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <!-- Article Card 1: Resume Building -->
       <div class="bg-white shadow-smooth rounded-lg overflow-hidden hover-lift">
         <img src="./assets/blogs/resume-building.jpg" alt="Resume Building" class="w-full h-48 object-cover">
@@ -120,7 +120,7 @@
     <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 font-playfair-display text-[#0D3451]">
       Browse by Category
     </h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
       <div class="bg-white p-6 rounded-lg text-center shadow-smooth hover:shadow-lg transition-all">
         <i class="fas fa-file-alt text-4xl text-[#0D3451] mb-4"></i>
         <h3 class="font-poppins font-semibold text-[#0D3451]">Resume Writing</h3>
@@ -148,101 +148,47 @@
     <p class="text-xl text-gray-600 mb-8 font-poppins">
       Subscribe to our newsletter and receive the latest career advice and job market trends.
     </p>
-    <div class="max-w-xl mx-auto flex">
+    <div class="max-w-xl mx-auto flex flex-col sm:flex-row">
       <input type="email" 
         class="flex-grow border-2 border-gray-300 bg-white py-3 pl-6 pr-4 rounded-l-full outline-none"
         placeholder="Enter your email">
-      <button class="custom-gradient text-white font-poppins px-8 py-3 rounded-r-full hover:opacity-90 transition-opacity">
+      <button class="custom-gradient text-white font-poppins px-8 py-3 rounded-r-full hover:opacity-90 transition-opacity mt-4 sm:mt-0">
         Subscribe
       </button>
     </div>
   </section>
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
 
-  <!-- Footer Content -->
-  <footer class="bg-gray-100 py-8 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center">
-      
-      <!-- Left Section -->
-      <div class="text-center lg:text-left mb-6 lg:mb-0">
-        <h2 class="text-xl font-semibold mb-4">Vorkinsta</h2>
-        <p class="text-md text-gray-600 max-w-md">
-          Vorkinsta lets any client connect with any consultant and collaborate independently on their own terms. We aim to increase collaboration in IT for a high-tech world, giving every member of our platform, big or small, the opportunity to realize their dreams of becoming an entrepreneur.
-        </p>
-        <p class="text-sm text-gray-600 mt-4 max-w-md">
-          We strictly advise using your own discretion when sharing confidential information such as name, phone, address, ID, photo, or any other information.
-        </p>
-
-        <!-- Social Media Icons -->
-        <div class="mt-8 flex lg:justify-start justify-center space-x-4">
-          <a href="#" aria-label="Facebook" class="text-blue-900 hover:text-blue-700">
-            <i class="fab fa-facebook-square" style="font-size: 24px;"></i>
-          </a>
-          <a href="#" aria-label="Instagram" class="hover:opacity-80">
-            <i class="fab fa-instagram" style="font-size: 24px;"></i>
-          </a>
-          <a href="#" aria-label="Twitter" class="text-blue-400 hover:text-blue-300">
-            <i class="fab fa-twitter" style="font-size: 24px;"></i>
-          </a>
-          <a href="#" aria-label="Gmail" class="hover:opacity-80">
-            <i class="fas fa-envelope" style="font-size: 24px;"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Right Section (Links) -->
-      <nav class="text-center lg:text-left">
-        <h3 class="text-xl font-semibold mb-4">Links</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="text-sm text-gray-600 hover:text-gray-900">Terms & Conditions</a></li>
-          <li><a href="#" class="text-sm text-gray-600 hover:text-gray-900">Privacy Policies</a></li>
-          <li><a href="#" class="text-sm text-gray-600 hover:text-gray-900">Help</a></li>
-          <li><a href="#" class="text-sm text-gray-600 hover:text-gray-900">Vorkinsta License</a></li>
-          <li><a href="#" class="text-sm text-gray-600 hover:text-gray-900">Partners</a></li>
-          <li><a href="#" class="text-sm text-white bg-black p-1 :text-gray-900">Select Language </a></li>
-          
-        </ul>
-      </nav>
-    </div>
-
-    <!-- Copyright Section -->
-    <div class="mt-4 text-center">
-      <p class="text-sm">&copy; Vorkinsta.Com, 2021. All Rights Reserved</p>
-    </div>
-  </footer>
-
-
-
-  <!--  Scipt --------------------- -->
   <script>
     // Navbar
     fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-placeholder').innerHTML = data;
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
 
-            // Reinitialize navbar script
-            const mobileMenuButton = document.getElementById("mobile-menu-button");
-            const mobileMenuClose = document.getElementById("mobile-menu-close");
-            const mobileMenu = document.getElementById("mobile-menu");
+                // Reinitialize navbar script
+                const mobileMenuButton = document.getElementById("mobile-menu-button");
+                const mobileMenuClose = document.getElementById("mobile-menu-close");
+                const mobileMenu = document.getElementById("mobile-menu");
 
-            if (mobileMenuButton && mobileMenuClose && mobileMenu) {
-                // Show mobile menu
-                mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
+                if (mobileMenuButton && mobileMenuClose && mobileMenu) {
+                    // Show mobile menu
+                    mobileMenuButton.addEventListener("click", () => mobileMenu.classList.remove("hidden-menu"));
 
-                // Hide mobile menu
-                mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
-            }
-        })
-        .catch(error => console.error('Error loading navbar:', error));
+                    // Hide mobile menu
+                    mobileMenuClose.addEventListener("click", () => mobileMenu.classList.add("hidden-menu"));
+                }
+            })
+            .catch(error => console.error('Error loading navbar:', error));
 
-    // Footer
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading footer:', error));
-</script>
+        // Footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+  </script>
 </body>
-
 </html>
