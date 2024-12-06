@@ -12,7 +12,97 @@
 
 </head>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+  
+    <style>
+    /* Fix horizontal overflow and improve responsiveness */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Prevent element sizes from exceeding their boundaries */
+    }
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden; /* Remove horizontal scrolling */
+    }
+
+    @media (max-width: 768px) {
+        .custom-gradient {
+            padding: 1rem;
+        }
+        nav img {
+            width: 8rem;
+        }
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero-section h1 {
+            font-size: 1.5rem;
+        }
+        .hero-section button {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
+        .intern-section img {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .custom-gradient {
+            text-align: center;
+            padding: 0.5rem;
+        }
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav ul li {
+            margin-bottom: 0.5rem;
+        }
+    }
+    
+<!--for screens smaller than 768px-->
+    @media (max-width: 768px) {
+  .custom-gradient {
+    padding: 1rem;
+  }
+  nav img {
+    width: 8rem;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  .hero-section h1 {
+    font-size: 1.5rem;
+  }
+  .hero-section button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+  .intern-section img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+<!--for screens smaller than 768px-->
+@media (max-width: 480px) {
+  .custom-gradient {
+    text-align: center;
+    padding: 0.5rem;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul li {
+    margin-bottom: 0.5rem;
+  }
+}
     /* For mobile menu toggle */
     .hidden-menu {
       display: none;
@@ -86,11 +176,11 @@
   </nav>
 
   <!-- --------------------Hero Section----------------------- -->
-<section class="bg-cover bg-center relative mb-16" style="background-image: url('./assets/home/homeImg.jpg'); height:87vh;">
+  <section class="bg-cover bg-center relative h-screen md:h-[87vh]" style="background-image: url('./assets/home/homeImg.jpg');">
   <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-    <div class="text-center text-white px-6 relative z-10  bg-opacity-75 p-8 rounded-xl shadow-2xl"> 
-      <h1 class="text-4xl md:text-5xl mb-[4rem] font-playfair-display tracking-wide">
-        An internship platform, connects <br> talent with real-world opportunities
+    <div class="text-center text-white px-4 sm:px-6 max-w-xs sm:max-w-md md:max-w-xl">
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-playfair-display">
+        An internship platform...
       </h1>
 
       <!-- Search Bar -->
